@@ -1,0 +1,32 @@
+1:139801464112896:2015-10-06 11:31:21.498 EDT -LOG:  Starting GTM proxy at (*:6666)
+LOCATION:  main, proxy_main.c:813
+1:139801445398272:2015-10-06 11:32:21.812 EDT -LOG:  unexpected EOF on client connection
+LOCATION:  ReadCommand, proxy_main.c:2074
+1:139801453790976:2015-10-06 11:32:51.836 EDT -LOG:  unexpected EOF on client connection
+LOCATION:  ReadCommand, proxy_main.c:2074
+1:139801445398272:2015-10-06 11:33:03.644 EDT -LOG:  unexpected EOF on client connection
+LOCATION:  ReadCommand, proxy_main.c:2074
+1:139801445398272:2015-10-06 11:33:21.821 EDT -LOG:  unexpected EOF on client connection
+LOCATION:  ReadCommand, proxy_main.c:2074
+1:139801453790976:2015-10-06 11:33:51.864 EDT -LOG:  unexpected EOF on client connection
+LOCATION:  ReadCommand, proxy_main.c:2074
+1:139801453790976:2015-10-06 11:34:21.890 EDT -LOG:  unexpected EOF on client connection
+LOCATION:  ReadCommand, proxy_main.c:2074
+1:139801453790976:2015-10-06 11:34:51.899 EDT -LOG:  unexpected EOF on client connection
+LOCATION:  ReadCommand, proxy_main.c:2074
+1:139801453790976:2015-10-06 11:35:21.859 EDT -LOG:  unexpected EOF on client connection
+LOCATION:  ReadCommand, proxy_main.c:2074
+1:139801453790976:2015-10-06 11:35:51.925 EDT -LOG:  unexpected EOF on client connection
+LOCATION:  ReadCommand, proxy_main.c:2074
+1:139801445398272:2015-10-06 11:36:21.879 EDT -LOG:  unexpected EOF on client connection
+LOCATION:  ReadCommand, proxy_main.c:2074
+1:139801445398272:2015-10-06 11:36:51.947 EDT -LOG:  unexpected EOF on client connection
+LOCATION:  ReadCommand, proxy_main.c:2074
+1:139801445398272:2015-10-06 11:37:21.904 EDT -LOG:  unexpected EOF on client connection
+LOCATION:  ReadCommand, proxy_main.c:2074
+1:139801445398272:2015-10-06 11:37:51.978 EDT -LOG:  unexpected EOF on client connection
+LOCATION:  ReadCommand, proxy_main.c:2074
+1:139801445398272:2015-10-06 11:38:21.936 EDT -LOG:  unexpected EOF on client connection
+LOCATION:  ReadCommand, proxy_main.c:2074
+1:139801453790976:2015-10-06 11:38:34.227 EDT -LOG:  unexpected EOF on client connection
+LOCATION:  ReadCommand, proxy_main.c:2074

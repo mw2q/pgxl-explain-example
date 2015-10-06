@@ -1,0 +1,74 @@
+BEGIN;
+BEGIN
+EXPLAIN
+select
+	s_name,
+	s_address
+from
+	supplier,
+	nation
+where
+	s_suppkey in (
+		select
+			ps_suppkey
+		from
+			partsupp
+		where
+			ps_partkey in (
+				select
+					p_partkey
+				from
+					part
+				where
+					p_name like 'chocolate%'
+			)
+			and ps_availqty > (
+				select
+					0.5 * sum(l_quantity)
+				from
+					lineitem
+				where
+					l_partkey = ps_partkey
+					and l_suppkey = ps_suppkey
+					and l_shipdate >= '1993-01-01'
+					and l_shipdate < cast(date '1993-01-01' + interval '1 year' as date)
+			)
+	)
+	and s_nationkey = n_nationkey
+	and n_name = 'EGYPT'
+order by
+	s_name;
+                                                                                     QUERY PLAN                                                                                     
+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+ Remote Subquery Scan on all (datanode_1_1,datanode_2_1)  (cost=25452821.40..25452827.70 rows=2518 width=51)
+   ->  Sort  (cost=25452821.40..25452827.70 rows=2518 width=51)
+         Sort Key: supplier.s_name
+         ->  Hash Join  (cost=25452204.30..25452679.16 rows=2518 width=51)
+               Hash Cond: (partsupp.ps_suppkey = supplier.s_suppkey)
+               ->  HashAggregate  (cost=25449762.81..25450098.47 rows=33566 width=4)
+                     Group Key: partsupp.ps_suppkey
+                     ->  Nested Loop  (cost=0.18..25449605.43 rows=62952 width=4)
+                           ->  Seq Scan on part  (cost=0.00..65525.03 rows=20202 width=4)
+                                 Filter: ((p_name)::text ~~ 'chocolate%'::text)
+                           ->  Index Scan using pk_partsupp on partsupp  (cost=0.18..1256.48 rows=3 width=8)
+                                 Index Cond: (ps_partkey = part.p_partkey)
+                                 Filter: ((ps_availqty)::double precision > (SubPlan 1))
+                                 SubPlan 1
+                                   ->  Aggregate  (cost=137.01..137.02 rows=1 width=4)
+                                         ->  Remote Subquery Scan on all (datanode_1_1,datanode_2_1)  (cost=0.19..137.01 rows=1 width=4)
+                                               ->  Aggregate  (cost=0.19..137.01 rows=1 width=4)
+                                                     ->  Index Scan using lineitem_l_partkey_l_quantity_l_shipmode_idx on lineitem  (cost=0.19..137.01 rows=1 width=4)
+                                                           Index Cond: (l_partkey = partsupp.ps_partkey)
+                                                           Filter: ((l_shipdate >= '1993-01-01'::date) AND (l_shipdate < '1994-01-01'::date) AND (l_suppkey = partsupp.ps_suppkey))
+               ->  Hash  (cost=2391.48..2391.48 rows=4000 width=55)
+                     ->  Nested Loop  (cost=79.17..2391.48 rows=4000 width=55)
+                           ->  Seq Scan on nation  (cost=0.00..1.31 rows=1 width=4)
+                                 Filter: (n_name = 'EGYPT'::bpchar)
+                           ->  Bitmap Heap Scan on supplier  (cost=79.17..2350.17 rows=4000 width=59)
+                                 Recheck Cond: (s_nationkey = nation.n_nationkey)
+                                 ->  Bitmap Index Scan on supplier_s_nationkey_s_suppkey_idx  (cost=0.00..78.17 rows=4000 width=0)
+                                       Index Cond: (s_nationkey = nation.n_nationkey)
+(28 rows)
+
+COMMIT;
+COMMIT

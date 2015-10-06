@@ -1,0 +1,36 @@
+1:139734098581248:2015-10-06 11:38:40.269 EDT -LOG:  Starting GTM proxy at (*:6666)
+LOCATION:  main, proxy_main.c:813
+1:139734088259328:2015-10-06 11:39:10.568 EDT -LOG:  unexpected EOF on client connection
+LOCATION:  ReadCommand, proxy_main.c:2074
+1:139734088259328:2015-10-06 11:39:43.340 EDT -LOG:  unexpected EOF on client connection
+LOCATION:  ReadCommand, proxy_main.c:2074
+1:139734088259328:2015-10-06 11:40:10.738 EDT -LOG:  unexpected EOF on client connection
+LOCATION:  ReadCommand, proxy_main.c:2074
+1:139734079866624:2015-10-06 11:40:41.461 EDT -LOG:  unexpected EOF on client connection
+LOCATION:  ReadCommand, proxy_main.c:2074
+1:139734088259328:2015-10-06 11:41:10.615 EDT -LOG:  unexpected EOF on client connection
+LOCATION:  ReadCommand, proxy_main.c:2074
+1:139734079866624:2015-10-06 11:41:40.622 EDT -LOG:  unexpected EOF on client connection
+LOCATION:  ReadCommand, proxy_main.c:2074
+1:139734088259328:2015-10-06 11:42:10.716 EDT -LOG:  unexpected EOF on client connection
+LOCATION:  ReadCommand, proxy_main.c:2074
+1:139734088259328:2015-10-06 11:42:40.654 EDT -LOG:  unexpected EOF on client connection
+LOCATION:  ReadCommand, proxy_main.c:2074
+1:139734088259328:2015-10-06 11:43:10.673 EDT -LOG:  unexpected EOF on client connection
+LOCATION:  ReadCommand, proxy_main.c:2074
+1:139734088259328:2015-10-06 11:43:40.692 EDT -LOG:  unexpected EOF on client connection
+LOCATION:  ReadCommand, proxy_main.c:2074
+1:139734079866624:2015-10-06 11:44:10.706 EDT -LOG:  unexpected EOF on client connection
+LOCATION:  ReadCommand, proxy_main.c:2074
+1:139734079866624:2015-10-06 11:44:40.725 EDT -LOG:  unexpected EOF on client connection
+LOCATION:  ReadCommand, proxy_main.c:2074
+1:139734088259328:2015-10-06 11:45:10.729 EDT -LOG:  unexpected EOF on client connection
+LOCATION:  ReadCommand, proxy_main.c:2074
+1:139734088259328:2015-10-06 11:45:40.735 EDT -LOG:  unexpected EOF on client connection
+LOCATION:  ReadCommand, proxy_main.c:2074
+1:139734079866624:2015-10-06 11:46:10.774 EDT -LOG:  unexpected EOF on client connection
+LOCATION:  ReadCommand, proxy_main.c:2074
+1:139734079866624:2015-10-06 11:46:40.744 EDT -LOG:  unexpected EOF on client connection
+LOCATION:  ReadCommand, proxy_main.c:2074
+1:139734088259328:2015-10-06 11:47:04.788 EDT -LOG:  unexpected EOF on client connection
+LOCATION:  ReadCommand, proxy_main.c:2074

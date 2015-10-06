@@ -1,0 +1,38 @@
+BEGIN;
+BEGIN
+EXPLAIN (ANALYZE, BUFFERS)
+select
+	l_orderkey,
+	sum(l_extendedprice * (1 - l_discount)) as revenue,
+	o_orderdate,
+	o_shippriority
+from
+	customer,
+	orders,
+	lineitem
+where
+	c_mktsegment = 'BUILDING'
+	and c_custkey = o_custkey
+	and l_orderkey = o_orderkey
+	and o_orderdate < date '1995-03-30'
+	and l_shipdate > date '1995-03-30'
+group by
+	l_orderkey,
+	o_orderdate,
+	o_shippriority
+order by
+	revenue desc,
+	o_orderdate
+LIMIT 10;
+                                                                              QUERY PLAN                                                                               
+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------
+ Limit  (cost=2646948.88..2646948.91 rows=10 width=20) (actual time=13548.454..13548.456 rows=10 loops=1)
+   Buffers: shared hit=6
+   ->  Remote Subquery Scan on all (datanode_1_1,datanode_2_1)  (cost=2646948.88..2654164.20 rows=2886128 width=20) (actual time=13548.453..13548.455 rows=10 loops=1)
+         Buffers: shared hit=6
+ Planning time: 0.899 ms
+ Execution time: 13561.231 ms
+(6 rows)
+
+COMMIT;
+COMMIT

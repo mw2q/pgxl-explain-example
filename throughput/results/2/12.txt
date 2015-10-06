@@ -1,0 +1,46 @@
+BEGIN;
+BEGIN
+EXPLAIN (ANALYZE, BUFFERS)
+select
+	l_shipmode,
+	sum(case
+		when o_orderpriority = '1-URGENT'
+			or o_orderpriority = '2-HIGH'
+			then 1
+		else 0
+	end) as high_line_count,
+	sum(case
+		when o_orderpriority <> '1-URGENT'
+			and o_orderpriority <> '2-HIGH'
+			then 1
+		else 0
+	end) as low_line_count
+from
+	orders,
+	lineitem
+where
+	o_orderkey = l_orderkey
+	and l_shipmode in ('MAIL', 'AIR')
+	and l_commitdate < l_receiptdate
+	and l_shipdate < l_commitdate
+	and l_receiptdate >= date '1995-01-01'
+	and l_receiptdate < date '1995-01-01' + interval '1 year'
+group by
+	l_shipmode
+order by
+	l_shipmode;
+                                                                                QUERY PLAN                                                                                
+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+ Sort  (cost=1998958.01..1998958.01 rows=1 width=27) (actual time=21901.459..21901.459 rows=2 loops=1)
+   Sort Key: lineitem.l_shipmode
+   Sort Method: quicksort  Memory: 25kB
+   Buffers: shared hit=5
+   ->  HashAggregate  (cost=1998957.99..1998958.00 rows=1 width=27) (actual time=21901.376..21901.376 rows=2 loops=1)
+         Group Key: lineitem.l_shipmode
+         ->  Remote Subquery Scan on all (datanode_1_1,datanode_2_1)  (cost=678751.66..1993894.63 rows=289335 width=27) (actual time=21901.311..21901.317 rows=4 loops=1)
+ Planning time: 1.660 ms
+ Execution time: 21940.202 ms
+(9 rows)
+
+COMMIT;
+COMMIT

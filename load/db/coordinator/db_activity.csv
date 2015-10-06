@@ -1,0 +1,219 @@
+ctime,pid,usesysid,application_name,client_addr,client_port,backend_start,xact_start,query_start,waiting,query,state,state_change
+1444144636.20729,32584,10,psql,,-1,2015-10-06 11:17:14.681261-04,2015-10-06 11:17:14.685969-04,2015-10-06 11:17:14.691406-04,f,COPY lineitem FROM '/tmp/dbt3/dss/lineitem.tbl.1' USING DELIMITERS '|';,active,2015-10-06 11:17:14.687113-04
+1444144636.20729,32556,10,psql,,-1,2015-10-06 11:17:14.670728-04,2015-10-06 11:17:14.673895-04,2015-10-06 11:17:14.677951-04,f,COPY nation FROM '/tmp/dbt3/dss/nation.tbl' USING DELIMITERS '|';,active,2015-10-06 11:17:14.675145-04
+1444144636.20729,32557,10,psql,,-1,2015-10-06 11:17:14.672984-04,2015-10-06 11:17:14.681821-04,2015-10-06 11:17:14.692166-04,f,COPY region FROM '/tmp/dbt3/dss/region.tbl' USING DELIMITERS '|';,active,2015-10-06 11:17:14.683748-04
+1444144636.20729,32570,10,psql,,-1,2015-10-06 11:17:14.676906-04,2015-10-06 11:17:14.685239-04,2015-10-06 11:17:14.695947-04,f,COPY part FROM '/tmp/dbt3/dss/part.tbl.2' USING DELIMITERS '|';,active,2015-10-06 11:17:14.688006-04
+1444144636.20729,32574,10,psql,,-1,2015-10-06 11:17:14.677161-04,2015-10-06 11:17:14.683869-04,2015-10-06 11:17:14.692028-04,f,COPY supplier FROM '/tmp/dbt3/dss/supplier.tbl.2' USING DELIMITERS '|';,active,2015-10-06 11:17:14.685702-04
+1444144636.20729,32575,10,psql,,-1,2015-10-06 11:17:14.677317-04,2015-10-06 11:17:14.683724-04,2015-10-06 11:17:14.69142-04,f,COPY orders FROM '/tmp/dbt3/dss/orders.tbl.1' USING DELIMITERS '|';,active,2015-10-06 11:17:14.685731-04
+1444144636.20729,32572,10,psql,,-1,2015-10-06 11:17:14.676906-04,2015-10-06 11:17:14.686675-04,2015-10-06 11:17:14.695366-04,f,COPY partsupp FROM '/tmp/dbt3/dss/partsupp.tbl.2' USING DELIMITERS '|';,active,2015-10-06 11:17:14.68816-04
+1444144636.20729,32581,10,psql,,-1,2015-10-06 11:17:14.68133-04,2015-10-06 11:17:14.68636-04,2015-10-06 11:17:14.692273-04,f,COPY part FROM '/tmp/dbt3/dss/part.tbl.1' USING DELIMITERS '|';,active,2015-10-06 11:17:14.687628-04
+1444144636.20729,32573,10,psql,,-1,2015-10-06 11:17:14.682029-04,2015-10-06 11:17:14.688738-04,2015-10-06 11:17:14.696045-04,f,COPY partsupp FROM '/tmp/dbt3/dss/partsupp.tbl.1' USING DELIMITERS '|';,active,2015-10-06 11:17:14.68976-04
+1444144636.20729,32571,10,psql,,-1,2015-10-06 11:17:14.682785-04,2015-10-06 11:17:14.689703-04,2015-10-06 11:17:14.72804-04,f,COPY orders FROM '/tmp/dbt3/dss/orders.tbl.2' USING DELIMITERS '|';,active,2015-10-06 11:17:14.721502-04
+1444144636.20729,32590,10,psql,,-1,2015-10-06 11:17:14.683356-04,2015-10-06 11:17:14.686319-04,2015-10-06 11:17:14.691322-04,f,COPY supplier FROM '/tmp/dbt3/dss/supplier.tbl.1' USING DELIMITERS '|';,active,2015-10-06 11:17:14.688697-04
+1444144636.20729,32585,10,psql,,-1,2015-10-06 11:17:14.685856-04,2015-10-06 11:17:14.688557-04,2015-10-06 11:17:14.692106-04,f,COPY customer FROM '/tmp/dbt3/dss/customer.tbl.2' USING DELIMITERS '|';,active,2015-10-06 11:17:14.689782-04
+1444144636.20729,32594,10,psql,,-1,2015-10-06 11:17:14.687811-04,2015-10-06 11:17:14.718781-04,2015-10-06 11:17:14.753044-04,f,COPY customer FROM '/tmp/dbt3/dss/customer.tbl.1' USING DELIMITERS '|';,active,2015-10-06 11:17:14.722461-04
+1444144636.20729,32593,10,psql,,-1,2015-10-06 11:17:14.687884-04,2015-10-06 11:17:14.68977-04,2015-10-06 11:17:14.723193-04,f,COPY lineitem FROM '/tmp/dbt3/dss/lineitem.tbl.2' USING DELIMITERS '|';,active,2015-10-06 11:17:14.721662-04
+1444144636.20729,32624,10,psql,127.0.0.1,42379,2015-10-06 11:17:16.135761-04,,2015-10-06 11:17:16.218303-04,f,"COPY (SELECT EXTRACT(EPOCH FROM TRANSACTION_TIMESTAMP()) AS ctime, a.schemaname, a.relname, a.indexrelname, idx_scan, idx_tup_read, idx_tup_fetch, idx_blks_read, idx_blks_hit FROM pg_stat_all_indexes a, pg_statio_all_indexes b WHERE a.indexrelid = b.indexrelid) TO STDOUT (FORMAT CSV, HEADER);",active,2015-10-06 11:17:16.178313-04
+1444144636.20729,32632,10,psql,127.0.0.1,42384,2015-10-06 11:17:16.14027-04,2015-10-06 11:17:16.20553-04,2015-10-06 11:17:16.271859-04,f,"COPY (SELECT EXTRACT(EPOCH FROM TRANSACTION_TIMESTAMP()) AS ctime, pid, usesysid, application_name, client_addr, client_port, backend_start, xact_start, query_start, waiting, query , state, state_change FROM pg_stat_activity) TO STDOUT (FORMAT CSV, HEADER);",active,2015-10-06 11:17:16.207051-04
+1444144697.33477,32584,10,psql,,-1,2015-10-06 11:17:14.681261-04,2015-10-06 11:17:14.685969-04,2015-10-06 11:17:14.691406-04,f,COPY lineitem FROM '/tmp/dbt3/dss/lineitem.tbl.1' USING DELIMITERS '|';,active,2015-10-06 11:17:14.687113-04
+1444144697.33477,32699,10,psql,127.0.0.1,42540,2015-10-06 11:18:17.284783-04,2015-10-06 11:18:17.292892-04,2015-10-06 11:18:17.322281-04,f,"COPY (SELECT EXTRACT(EPOCH FROM TRANSACTION_TIMESTAMP()) AS ctime, a.schemaname, a.relname, seq_scan, seq_tup_read, idx_scan, idx_tup_fetch, n_tup_ins, n_tup_upd, n_tup_del, n_tup_hot_upd, n_live_tup, n_dead_tup, heap_blks_read, heap_blks_hit, idx_blks_read, idx_blks_hit, toast_blks_read, toast_blks_hit, tidx_blks_read, tidx_blks_hit FROM pg_statio_all_tables a, pg_stat_all_tables b WHERE a.relid = b.relid) TO STDOUT (FORMAT CSV);",active,2015-10-06 11:18:17.317327-04
+1444144697.33477,32701,10,psql,127.0.0.1,42543,2015-10-06 11:18:17.288746-04,2015-10-06 11:18:17.320392-04,2015-10-06 11:18:17.3539-04,f,"COPY (SELECT EXTRACT(EPOCH FROM TRANSACTION_TIMESTAMP()) AS ctime, a.schemaname, a.relname, a.indexrelname, idx_scan, idx_tup_read, idx_tup_fetch, idx_blks_read, idx_blks_hit FROM pg_stat_all_indexes a, pg_statio_all_indexes b WHERE a.indexrelid = b.indexrelid) TO STDOUT (FORMAT CSV);",active,2015-10-06 11:18:17.323044-04
+1444144697.33477,32570,10,psql,,-1,2015-10-06 11:17:14.676906-04,2015-10-06 11:17:14.685239-04,2015-10-06 11:17:14.695947-04,f,COPY part FROM '/tmp/dbt3/dss/part.tbl.2' USING DELIMITERS '|';,active,2015-10-06 11:17:14.688006-04
+1444144697.33477,32575,10,psql,,-1,2015-10-06 11:17:14.677317-04,2015-10-06 11:17:14.683724-04,2015-10-06 11:17:14.69142-04,f,COPY orders FROM '/tmp/dbt3/dss/orders.tbl.1' USING DELIMITERS '|';,active,2015-10-06 11:17:14.685731-04
+1444144697.33477,32572,10,psql,,-1,2015-10-06 11:17:14.676906-04,2015-10-06 11:17:14.686675-04,2015-10-06 11:17:14.695366-04,f,COPY partsupp FROM '/tmp/dbt3/dss/partsupp.tbl.2' USING DELIMITERS '|';,active,2015-10-06 11:17:14.68816-04
+1444144697.33477,32700,10,psql,127.0.0.1,42542,2015-10-06 11:18:17.300447-04,2015-10-06 11:18:17.318818-04,2015-10-06 11:18:17.341039-04,f,"COPY (SELECT EXTRACT(EPOCH FROM TRANSACTION_TIMESTAMP()) AS ctime, numbackends, xact_commit, xact_rollback, blks_read, blks_hit, tup_returned, tup_fetched, tup_inserted, tup_updated, tup_deleted FROM pg_stat_database) TO STDOUT (FORMAT CSV);",active,2015-10-06 11:18:17.323491-04
+1444144697.33477,32573,10,psql,,-1,2015-10-06 11:17:14.682029-04,2015-10-06 11:17:14.688738-04,2015-10-06 11:17:14.696045-04,f,COPY partsupp FROM '/tmp/dbt3/dss/partsupp.tbl.1' USING DELIMITERS '|';,active,2015-10-06 11:17:14.68976-04
+1444144697.33477,32571,10,psql,,-1,2015-10-06 11:17:14.682785-04,2015-10-06 11:17:14.689703-04,2015-10-06 11:17:14.72804-04,f,COPY orders FROM '/tmp/dbt3/dss/orders.tbl.2' USING DELIMITERS '|';,active,2015-10-06 11:17:14.721502-04
+1444144697.33477,32703,10,psql,127.0.0.1,42552,2015-10-06 11:18:17.305579-04,2015-10-06 11:18:17.33056-04,2015-10-06 11:18:17.358452-04,f,"COPY (SELECT EXTRACT(EPOCH FROM TRANSACTION_TIMESTAMP()) AS ctime, pid, usesysid, application_name, client_addr, client_port, backend_start, xact_start, query_start, waiting, query , state, state_change FROM pg_stat_activity) TO STDOUT (FORMAT CSV);",active,2015-10-06 11:18:17.334344-04
+1444144697.33477,32585,10,psql,,-1,2015-10-06 11:17:14.685856-04,2015-10-06 11:17:14.688557-04,2015-10-06 11:17:14.692106-04,f,COPY customer FROM '/tmp/dbt3/dss/customer.tbl.2' USING DELIMITERS '|';,active,2015-10-06 11:17:14.689782-04
+1444144697.33477,32594,10,psql,,-1,2015-10-06 11:17:14.687811-04,2015-10-06 11:17:14.718781-04,2015-10-06 11:17:14.753044-04,f,COPY customer FROM '/tmp/dbt3/dss/customer.tbl.1' USING DELIMITERS '|';,active,2015-10-06 11:17:14.722461-04
+1444144697.33477,32593,10,psql,,-1,2015-10-06 11:17:14.687884-04,2015-10-06 11:17:14.68977-04,2015-10-06 11:17:14.723193-04,f,COPY lineitem FROM '/tmp/dbt3/dss/lineitem.tbl.2' USING DELIMITERS '|';,active,2015-10-06 11:17:14.721662-04
+1444144757.51548,32584,10,psql,,-1,2015-10-06 11:17:14.681261-04,2015-10-06 11:17:14.685969-04,2015-10-06 11:17:14.691406-04,f,COPY lineitem FROM '/tmp/dbt3/dss/lineitem.tbl.1' USING DELIMITERS '|';,active,2015-10-06 11:17:14.687113-04
+1444144757.51548,32737,10,psql,,-1,2015-10-06 11:18:56.891252-04,2015-10-06 11:18:56.90088-04,2015-10-06 11:18:56.920777-04,f,"
+CREATE INDEX customer_c_phone_idx_c_acctbal
+ON customer (substr(c_phone::text, 1, 2))
+WHERE c_acctbal > 0.00;",active,2015-10-06 11:18:56.912023-04
+1444144757.51548,32717,10,psql,,-1,2015-10-06 11:18:20.21535-04,2015-10-06 11:18:20.232189-04,2015-10-06 11:18:20.277218-04,f,"
+CREATE INDEX part_p_container_p_brand_p_partkey_idx
+ON part(p_container, p_brand, p_partkey);",active,2015-10-06 11:18:20.266868-04
+1444144757.51548,305,10,psql,127.0.0.1,42615,2015-10-06 11:19:17.459525-04,,2015-10-06 11:19:17.490074-04,f,"COPY (SELECT EXTRACT(EPOCH FROM TRANSACTION_TIMESTAMP()) AS ctime, relname, pid, mode, granted FROM pg_locks, pg_class WHERE relfilenode = relation ORDER BY relname) TO STDOUT (FORMAT CSV);",idle,2015-10-06 11:19:17.551543-04
+1444144757.51548,32719,10,psql,,-1,2015-10-06 11:18:20.224108-04,2015-10-06 11:18:20.246702-04,2015-10-06 11:18:20.29224-04,f,"
+CREATE INDEX part_p_name_idx
+ON part(p_name);",active,2015-10-06 11:18:20.2705-04
+1444144757.51548,32575,10,psql,,-1,2015-10-06 11:17:14.677317-04,2015-10-06 11:17:14.683724-04,2015-10-06 11:17:14.69142-04,f,COPY orders FROM '/tmp/dbt3/dss/orders.tbl.1' USING DELIMITERS '|';,active,2015-10-06 11:17:14.685731-04
+1444144757.51548,32572,10,psql,,-1,2015-10-06 11:17:14.676906-04,2015-10-06 11:17:14.686675-04,2015-10-06 11:17:14.695366-04,f,COPY partsupp FROM '/tmp/dbt3/dss/partsupp.tbl.2' USING DELIMITERS '|';,active,2015-10-06 11:17:14.68816-04
+1444144757.51548,32720,10,psql,,-1,2015-10-06 11:18:20.225701-04,2015-10-06 11:18:20.270957-04,2015-10-06 11:18:20.312375-04,f,"
+CREATE INDEX part_p_size_idx
+ON part(p_size);",active,2015-10-06 11:18:20.270685-04
+1444144757.51548,32573,10,psql,,-1,2015-10-06 11:17:14.682029-04,2015-10-06 11:17:14.688738-04,2015-10-06 11:17:14.696045-04,f,COPY partsupp FROM '/tmp/dbt3/dss/partsupp.tbl.1' USING DELIMITERS '|';,active,2015-10-06 11:17:14.68976-04
+1444144757.51548,32571,10,psql,,-1,2015-10-06 11:17:14.682785-04,2015-10-06 11:17:14.689703-04,2015-10-06 11:17:14.72804-04,f,COPY orders FROM '/tmp/dbt3/dss/orders.tbl.2' USING DELIMITERS '|';,active,2015-10-06 11:17:14.721502-04
+1444144757.51548,32736,10,psql,,-1,2015-10-06 11:18:56.89284-04,2015-10-06 11:18:56.900722-04,2015-10-06 11:18:56.920511-04,f,"
+CREATE INDEX customer_c_mktsegment_c_custkey_idx
+ON customer (c_mktsegment, c_custkey);",active,2015-10-06 11:18:56.913407-04
+1444144757.51548,32735,10,psql,,-1,2015-10-06 11:18:56.894985-04,2015-10-06 11:18:56.909192-04,2015-10-06 11:18:56.927551-04,f,"
+CREATE INDEX customer_c_nationkey_c_custkey_idx
+ON customer (c_nationkey, c_custkey);",active,2015-10-06 11:18:56.914195-04
+1444144757.51548,32738,10,psql,,-1,2015-10-06 11:18:56.924662-04,2015-10-06 11:18:56.928378-04,2015-10-06 11:18:56.939537-04,f,"
+CREATE INDEX customer_c_phone_idx
+ON customer (substr(c_phone::text, 1, 2), c_acctbal);",active,2015-10-06 11:18:56.936684-04
+1444144757.51548,32593,10,psql,,-1,2015-10-06 11:17:14.687884-04,2015-10-06 11:17:14.68977-04,2015-10-06 11:17:14.723193-04,f,COPY lineitem FROM '/tmp/dbt3/dss/lineitem.tbl.2' USING DELIMITERS '|';,active,2015-10-06 11:17:14.721662-04
+1444144757.51548,32739,10,psql,,-1,2015-10-06 11:18:56.927233-04,2015-10-06 11:18:56.93697-04,2015-10-06 11:18:56.950745-04,t,"
+ALTER TABLE customer
+ADD CONSTRAINT pk_customer PRIMARY KEY (c_custkey);",active,2015-10-06 11:18:56.941873-04
+1444144757.51548,306,10,psql,127.0.0.1,42616,2015-10-06 11:19:17.468198-04,2015-10-06 11:19:17.484259-04,2015-10-06 11:19:17.530387-04,f,"COPY (SELECT EXTRACT(EPOCH FROM TRANSACTION_TIMESTAMP()) AS ctime, pid, usesysid, application_name, client_addr, client_port, backend_start, xact_start, query_start, waiting, query , state, state_change FROM pg_stat_activity) TO STDOUT (FORMAT CSV);",active,2015-10-06 11:19:17.515164-04
+1444144757.51548,309,10,psql,127.0.0.1,42629,2015-10-06 11:19:17.471984-04,2015-10-06 11:19:17.492409-04,2015-10-06 11:19:17.533615-04,f,"COPY (SELECT EXTRACT(EPOCH FROM TRANSACTION_TIMESTAMP()) AS ctime, a.schemaname, a.relname, seq_scan, seq_tup_read, idx_scan, idx_tup_fetch, n_tup_ins, n_tup_upd, n_tup_del, n_tup_hot_upd, n_live_tup, n_dead_tup, heap_blks_read, heap_blks_hit, idx_blks_read, idx_blks_hit, toast_blks_read, toast_blks_hit, tidx_blks_read, tidx_blks_hit FROM pg_statio_all_tables a, pg_stat_all_tables b WHERE a.relid = b.relid) TO STDOUT (FORMAT CSV);",active,2015-10-06 11:19:17.514026-04
+1444144757.51548,310,10,psql,127.0.0.1,42630,2015-10-06 11:19:17.473929-04,2015-10-06 11:19:17.492558-04,2015-10-06 11:19:17.532347-04,f,"COPY (SELECT EXTRACT(EPOCH FROM TRANSACTION_TIMESTAMP()) AS ctime, a.schemaname, a.relname, a.indexrelname, idx_scan, idx_tup_read, idx_tup_fetch, idx_blks_read, idx_blks_hit FROM pg_stat_all_indexes a, pg_statio_all_indexes b WHERE a.indexrelid = b.indexrelid) TO STDOUT (FORMAT CSV);",active,2015-10-06 11:19:17.51454-04
+1444144757.51548,311,10,psql,127.0.0.1,42631,2015-10-06 11:19:17.485628-04,2015-10-06 11:19:17.520807-04,2015-10-06 11:19:17.562915-04,f,"COPY (SELECT EXTRACT(EPOCH FROM TRANSACTION_TIMESTAMP()) AS ctime, numbackends, xact_commit, xact_rollback, blks_read, blks_hit, tup_returned, tup_fetched, tup_inserted, tup_updated, tup_deleted FROM pg_stat_database) TO STDOUT (FORMAT CSV);",active,2015-10-06 11:19:17.528581-04
+1444144817.45909,32584,10,psql,,-1,2015-10-06 11:17:14.681261-04,2015-10-06 11:17:14.685969-04,2015-10-06 11:17:14.691406-04,f,COPY lineitem FROM '/tmp/dbt3/dss/lineitem.tbl.1' USING DELIMITERS '|';,active,2015-10-06 11:17:14.687113-04
+1444144817.45909,325,10,psql,,-1,2015-10-06 11:19:58.000038-04,2015-10-06 11:19:58.032196-04,2015-10-06 11:19:58.067373-04,t,"
+CREATE INDEX partsupp_ps_suppkey_idx
+ON partsupp (ps_suppkey);",active,2015-10-06 11:19:58.035844-04
+1444144817.45909,349,10,psql,,-1,2015-10-06 11:20:17.153835-04,2015-10-06 11:20:17.175397-04,2015-10-06 11:20:17.198666-04,f,VACUUM ANALYZE part;,active,2015-10-06 11:20:17.177984-04
+1444144817.45909,326,10,psql,,-1,2015-10-06 11:19:58.001184-04,2015-10-06 11:19:58.032436-04,2015-10-06 11:19:58.066261-04,f,"
+ALTER TABLE partsupp
+ADD CONSTRAINT pk_partsupp
+PRIMARY KEY (ps_partkey, ps_suppkey);",active,2015-10-06 11:19:58.035554-04
+1444144817.45909,374,10,psql,127.0.0.1,42686,2015-10-06 11:20:17.431114-04,2015-10-06 11:20:17.453827-04,2015-10-06 11:20:17.472322-04,f,"COPY (SELECT EXTRACT(EPOCH FROM TRANSACTION_TIMESTAMP()) AS ctime, pid, usesysid, application_name, client_addr, client_port, backend_start, xact_start, query_start, waiting, query , state, state_change FROM pg_stat_activity) TO STDOUT (FORMAT CSV);",active,2015-10-06 11:20:17.458709-04
+1444144817.45909,32575,10,psql,,-1,2015-10-06 11:17:14.677317-04,2015-10-06 11:17:14.683724-04,2015-10-06 11:17:14.69142-04,f,COPY orders FROM '/tmp/dbt3/dss/orders.tbl.1' USING DELIMITERS '|';,active,2015-10-06 11:17:14.685731-04
+1444144817.45909,373,10,psql,127.0.0.1,42680,2015-10-06 11:20:17.43959-04,2015-10-06 11:20:17.453117-04,2015-10-06 11:20:17.479725-04,f,"COPY (SELECT EXTRACT(EPOCH FROM TRANSACTION_TIMESTAMP()) AS ctime, relname, pid, mode, granted FROM pg_locks, pg_class WHERE relfilenode = relation ORDER BY relname) TO STDOUT (FORMAT CSV);",active,2015-10-06 11:20:17.467041-04
+1444144817.45909,375,10,psql,127.0.0.1,42692,2015-10-06 11:20:17.442168-04,2015-10-06 11:20:17.481986-04,2015-10-06 11:20:17.512767-04,f,"COPY (SELECT EXTRACT(EPOCH FROM TRANSACTION_TIMESTAMP()) AS ctime, numbackends, xact_commit, xact_rollback, blks_read, blks_hit, tup_returned, tup_fetched, tup_inserted, tup_updated, tup_deleted FROM pg_stat_database) TO STDOUT (FORMAT CSV);",active,2015-10-06 11:20:17.484855-04
+1444144817.45909,32571,10,psql,,-1,2015-10-06 11:17:14.682785-04,2015-10-06 11:17:14.689703-04,2015-10-06 11:17:14.72804-04,f,COPY orders FROM '/tmp/dbt3/dss/orders.tbl.2' USING DELIMITERS '|';,active,2015-10-06 11:17:14.721502-04
+1444144817.45909,32593,10,psql,,-1,2015-10-06 11:17:14.687884-04,2015-10-06 11:17:14.68977-04,2015-10-06 11:17:14.723193-04,f,COPY lineitem FROM '/tmp/dbt3/dss/lineitem.tbl.2' USING DELIMITERS '|';,active,2015-10-06 11:17:14.721662-04
+1444144817.45909,32739,10,psql,,-1,2015-10-06 11:18:56.927233-04,2015-10-06 11:18:56.93697-04,2015-10-06 11:18:56.950745-04,f,"
+ALTER TABLE customer
+ADD CONSTRAINT pk_customer PRIMARY KEY (c_custkey);",active,2015-10-06 11:18:56.941873-04
+1444144877.47761,32584,10,psql,,-1,2015-10-06 11:17:14.681261-04,2015-10-06 11:17:14.685969-04,2015-10-06 11:17:14.691406-04,f,COPY lineitem FROM '/tmp/dbt3/dss/lineitem.tbl.1' USING DELIMITERS '|';,active,2015-10-06 11:17:14.687113-04
+1444144877.47761,32575,10,psql,,-1,2015-10-06 11:17:14.677317-04,2015-10-06 11:17:14.683724-04,2015-10-06 11:17:14.69142-04,f,COPY orders FROM '/tmp/dbt3/dss/orders.tbl.1' USING DELIMITERS '|';,active,2015-10-06 11:17:14.685731-04
+1444144877.47761,419,10,psql,127.0.0.1,42738,2015-10-06 11:21:17.420416-04,2015-10-06 11:21:17.475703-04,2015-10-06 11:21:17.532289-04,f,"COPY (SELECT EXTRACT(EPOCH FROM TRANSACTION_TIMESTAMP()) AS ctime, pid, usesysid, application_name, client_addr, client_port, backend_start, xact_start, query_start, waiting, query , state, state_change FROM pg_stat_activity) TO STDOUT (FORMAT CSV);",active,2015-10-06 11:21:17.477396-04
+1444144877.47761,32571,10,psql,,-1,2015-10-06 11:17:14.682785-04,2015-10-06 11:17:14.689703-04,2015-10-06 11:17:14.72804-04,f,COPY orders FROM '/tmp/dbt3/dss/orders.tbl.2' USING DELIMITERS '|';,active,2015-10-06 11:17:14.721502-04
+1444144877.47761,32593,10,psql,,-1,2015-10-06 11:17:14.687884-04,2015-10-06 11:17:14.68977-04,2015-10-06 11:17:14.723193-04,f,COPY lineitem FROM '/tmp/dbt3/dss/lineitem.tbl.2' USING DELIMITERS '|';,active,2015-10-06 11:17:14.721662-04
+1444144937.40014,32584,10,psql,,-1,2015-10-06 11:17:14.681261-04,2015-10-06 11:17:14.685969-04,2015-10-06 11:17:14.691406-04,f,COPY lineitem FROM '/tmp/dbt3/dss/lineitem.tbl.1' USING DELIMITERS '|';,active,2015-10-06 11:17:14.687113-04
+1444144937.40014,457,10,psql,127.0.0.1,42776,2015-10-06 11:22:17.391956-04,2015-10-06 11:22:17.397682-04,2015-10-06 11:22:17.404428-04,f,"COPY (SELECT EXTRACT(EPOCH FROM TRANSACTION_TIMESTAMP()) AS ctime, pid, usesysid, application_name, client_addr, client_port, backend_start, xact_start, query_start, waiting, query , state, state_change FROM pg_stat_activity) TO STDOUT (FORMAT CSV);",active,2015-10-06 11:22:17.399135-04
+1444144937.40014,438,10,psql,,-1,2015-10-06 11:21:47.314862-04,2015-10-06 11:21:47.317343-04,2015-10-06 11:21:47.322135-04,f,"
+CREATE INDEX orders_o_orderkey_o_orderdate_idx
+ON orders (o_orderkey, o_orderdate);",active,2015-10-06 11:21:47.320918-04
+1444144937.40014,439,10,psql,,-1,2015-10-06 11:21:47.315907-04,2015-10-06 11:21:47.317756-04,2015-10-06 11:21:47.322963-04,f,"
+CREATE INDEX orders_o_orderdate_o_orderkey_idx
+ON orders (o_orderdate, o_orderkey);",active,2015-10-06 11:21:47.32198-04
+1444144937.40014,32593,10,psql,,-1,2015-10-06 11:17:14.687884-04,2015-10-06 11:17:14.68977-04,2015-10-06 11:17:14.723193-04,f,COPY lineitem FROM '/tmp/dbt3/dss/lineitem.tbl.2' USING DELIMITERS '|';,active,2015-10-06 11:17:14.721662-04
+1444144997.43609,32584,10,psql,,-1,2015-10-06 11:17:14.681261-04,2015-10-06 11:17:14.685969-04,2015-10-06 11:17:14.691406-04,f,COPY lineitem FROM '/tmp/dbt3/dss/lineitem.tbl.1' USING DELIMITERS '|';,active,2015-10-06 11:17:14.687113-04
+1444144997.43609,509,10,psql,127.0.0.1,42833,2015-10-06 11:23:17.414876-04,2015-10-06 11:23:17.433157-04,2015-10-06 11:23:17.453772-04,f,"COPY (SELECT EXTRACT(EPOCH FROM TRANSACTION_TIMESTAMP()) AS ctime, pid, usesysid, application_name, client_addr, client_port, backend_start, xact_start, query_start, waiting, query , state, state_change FROM pg_stat_activity) TO STDOUT (FORMAT CSV);",active,2015-10-06 11:23:17.435873-04
+1444144997.43609,512,10,psql,127.0.0.1,42836,2015-10-06 11:23:17.429113-04,,,f,"",,
+1444144997.43609,32593,10,psql,,-1,2015-10-06 11:17:14.687884-04,2015-10-06 11:17:14.68977-04,2015-10-06 11:17:14.723193-04,f,COPY lineitem FROM '/tmp/dbt3/dss/lineitem.tbl.2' USING DELIMITERS '|';,active,2015-10-06 11:17:14.721662-04
+1444145057.46764,32584,10,psql,,-1,2015-10-06 11:17:14.681261-04,2015-10-06 11:17:14.685969-04,2015-10-06 11:17:14.691406-04,f,COPY lineitem FROM '/tmp/dbt3/dss/lineitem.tbl.1' USING DELIMITERS '|';,active,2015-10-06 11:17:14.687113-04
+1444145057.46764,556,10,psql,127.0.0.1,42906,2015-10-06 11:24:17.457237-04,2015-10-06 11:24:17.458109-04,2015-10-06 11:24:17.45986-04,f,"COPY (SELECT EXTRACT(EPOCH FROM TRANSACTION_TIMESTAMP()) AS ctime, pid, usesysid, application_name, client_addr, client_port, backend_start, xact_start, query_start, waiting, query , state, state_change FROM pg_stat_activity) TO STDOUT (FORMAT CSV);",active,2015-10-06 11:24:17.459425-04
+1444145057.46764,548,10,psql,127.0.0.1,42882,2015-10-06 11:24:17.426083-04,2015-10-06 11:24:17.460143-04,2015-10-06 11:24:17.495029-04,f,"COPY (SELECT EXTRACT(EPOCH FROM TRANSACTION_TIMESTAMP()) AS ctime, a.schemaname, a.relname, seq_scan, seq_tup_read, idx_scan, idx_tup_fetch, n_tup_ins, n_tup_upd, n_tup_del, n_tup_hot_upd, n_live_tup, n_dead_tup, heap_blks_read, heap_blks_hit, idx_blks_read, idx_blks_hit, toast_blks_read, toast_blks_hit, tidx_blks_read, tidx_blks_hit FROM pg_statio_all_tables a, pg_stat_all_tables b WHERE a.relid = b.relid) TO STDOUT (FORMAT CSV);",active,2015-10-06 11:24:17.461461-04
+1444145057.46764,551,10,psql,127.0.0.1,42884,2015-10-06 11:24:17.430273-04,2015-10-06 11:24:17.446333-04,2015-10-06 11:24:17.463269-04,f,"COPY (SELECT EXTRACT(EPOCH FROM TRANSACTION_TIMESTAMP()) AS ctime, a.schemaname, a.relname, a.indexrelname, idx_scan, idx_tup_read, idx_tup_fetch, idx_blks_read, idx_blks_hit FROM pg_stat_all_indexes a, pg_statio_all_indexes b WHERE a.indexrelid = b.indexrelid) TO STDOUT (FORMAT CSV);",active,2015-10-06 11:24:17.447675-04
+1444145057.46764,552,10,psql,127.0.0.1,42886,2015-10-06 11:24:17.438245-04,,,f,"",,
+1444145057.46764,32593,10,psql,,-1,2015-10-06 11:17:14.687884-04,2015-10-06 11:17:14.68977-04,2015-10-06 11:17:14.723193-04,f,COPY lineitem FROM '/tmp/dbt3/dss/lineitem.tbl.2' USING DELIMITERS '|';,active,2015-10-06 11:17:14.721662-04
+1444145117.49581,32584,10,psql,,-1,2015-10-06 11:17:14.681261-04,2015-10-06 11:17:14.685969-04,2015-10-06 11:17:14.691406-04,f,COPY lineitem FROM '/tmp/dbt3/dss/lineitem.tbl.1' USING DELIMITERS '|';,active,2015-10-06 11:17:14.687113-04
+1444145117.49581,591,10,psql,127.0.0.1,42937,2015-10-06 11:25:17.457397-04,2015-10-06 11:25:17.484332-04,2015-10-06 11:25:17.514335-04,f,"COPY (SELECT EXTRACT(EPOCH FROM TRANSACTION_TIMESTAMP()) AS ctime, pid, usesysid, application_name, client_addr, client_port, backend_start, xact_start, query_start, waiting, query , state, state_change FROM pg_stat_activity) TO STDOUT (FORMAT CSV);",active,2015-10-06 11:25:17.495376-04
+1444145117.49581,589,10,psql,127.0.0.1,42933,2015-10-06 11:25:17.465723-04,2015-10-06 11:25:17.484161-04,2015-10-06 11:25:17.503686-04,f,"COPY (SELECT EXTRACT(EPOCH FROM TRANSACTION_TIMESTAMP()) AS ctime, a.schemaname, a.relname, a.indexrelname, idx_scan, idx_tup_read, idx_tup_fetch, idx_blks_read, idx_blks_hit FROM pg_stat_all_indexes a, pg_statio_all_indexes b WHERE a.indexrelid = b.indexrelid) TO STDOUT (FORMAT CSV);",active,2015-10-06 11:25:17.48567-04
+1444145117.49581,32593,10,psql,,-1,2015-10-06 11:17:14.687884-04,2015-10-06 11:17:14.68977-04,2015-10-06 11:17:14.723193-04,f,COPY lineitem FROM '/tmp/dbt3/dss/lineitem.tbl.2' USING DELIMITERS '|';,active,2015-10-06 11:17:14.721662-04
+1444145177.46111,613,10,psql,,-1,2015-10-06 11:26:00.767695-04,2015-10-06 11:26:00.772524-04,2015-10-06 11:26:00.779232-04,t,"
+CREATE INDEX lineitem_l_orderkey_idx_l_returnflag
+ON lineitem (l_orderkey)
+WHERE l_returnflag = 'R';",active,2015-10-06 11:26:00.775311-04
+1444145177.46111,612,10,psql,,-1,2015-10-06 11:26:00.767454-04,2015-10-06 11:26:00.772383-04,2015-10-06 11:26:00.779147-04,t,"
+CREATE INDEX lineitem_l_partkey_l_quantity_l_shipmode_idx
+ON lineitem (l_partkey, l_quantity, l_shipmode);",active,2015-10-06 11:26:00.775382-04
+1444145177.46111,611,10,psql,,-1,2015-10-06 11:26:00.767879-04,2015-10-06 11:26:00.769588-04,2015-10-06 11:26:00.773289-04,f,"
+ALTER TABLE lineitem
+ADD CONSTRAINT pk_lineitem PRIMARY KEY (l_orderkey, l_linenumber);",active,2015-10-06 11:26:00.772354-04
+1444145177.46111,619,10,psql,,-1,2015-10-06 11:26:00.770713-04,2015-10-06 11:26:00.776466-04,2015-10-06 11:26:00.790723-04,t,"
+CREATE INDEX lineitem_l_orderkey_l_linenumber_l_shipdate_idx
+ON lineitem (l_orderkey, l_linenumber, l_shipdate);",active,2015-10-06 11:26:00.785809-04
+1444145177.46111,620,10,psql,,-1,2015-10-06 11:26:00.771855-04,2015-10-06 11:26:00.776853-04,2015-10-06 11:26:00.791271-04,t,"
+CREATE INDEX lineitem_l_orderkey_idx
+ON lineitem (l_orderkey);",active,2015-10-06 11:26:00.787256-04
+1444145177.46111,615,10,psql,,-1,2015-10-06 11:26:00.772148-04,2015-10-06 11:26:00.777027-04,2015-10-06 11:26:00.789494-04,t,"
+CREATE INDEX lineitem_l_shipdate_l_suppkey__idx
+ON lineitem (l_shipdate, l_suppkey);",active,2015-10-06 11:26:00.78747-04
+1444145177.46111,614,10,psql,,-1,2015-10-06 11:26:00.773144-04,2015-10-06 11:26:00.775845-04,2015-10-06 11:26:00.787594-04,t,"
+CREATE INDEX lineitem_l_orderkey_idx_part1
+ON lineitem (l_orderkey)
+WHERE l_commitdate < l_receiptdate;",active,2015-10-06 11:26:00.785725-04
+1444145177.46111,621,10,psql,,-1,2015-10-06 11:26:00.775875-04,2015-10-06 11:26:00.784269-04,2015-10-06 11:26:00.793456-04,t,"
+CREATE INDEX lineitem_l_orderkey_idx_part2
+ON lineitem (l_orderkey)
+WHERE l_commitdate < l_receiptdate
+  AND l_shipdate < l_commitdate;",active,2015-10-06 11:26:00.785639-04
+1444145177.46111,654,10,psql,127.0.0.1,43006,2015-10-06 11:26:17.439946-04,2015-10-06 11:26:17.440754-04,2015-10-06 11:26:17.461305-04,f,"COPY (SELECT EXTRACT(EPOCH FROM TRANSACTION_TIMESTAMP()) AS ctime, pid, usesysid, application_name, client_addr, client_port, backend_start, xact_start, query_start, waiting, query , state, state_change FROM pg_stat_activity) TO STDOUT (FORMAT CSV);",active,2015-10-06 11:26:17.460898-04
+1444145177.46111,652,10,psql,127.0.0.1,43004,2015-10-06 11:26:17.448744-04,,,f,"",,
+1444145237.46473,613,10,psql,,-1,2015-10-06 11:26:00.767695-04,2015-10-06 11:26:00.772524-04,2015-10-06 11:26:00.779232-04,f,"
+CREATE INDEX lineitem_l_orderkey_idx_l_returnflag
+ON lineitem (l_orderkey)
+WHERE l_returnflag = 'R';",active,2015-10-06 11:26:00.775311-04
+1444145237.46473,612,10,psql,,-1,2015-10-06 11:26:00.767454-04,2015-10-06 11:26:00.772383-04,2015-10-06 11:26:00.779147-04,f,"
+CREATE INDEX lineitem_l_partkey_l_quantity_l_shipmode_idx
+ON lineitem (l_partkey, l_quantity, l_shipmode);",active,2015-10-06 11:26:00.775382-04
+1444145237.46473,694,10,psql,127.0.0.1,43046,2015-10-06 11:27:17.44266-04,2015-10-06 11:27:17.443614-04,2015-10-06 11:27:17.464979-04,f,"COPY (SELECT EXTRACT(EPOCH FROM TRANSACTION_TIMESTAMP()) AS ctime, pid, usesysid, application_name, client_addr, client_port, backend_start, xact_start, query_start, waiting, query , state, state_change FROM pg_stat_activity) TO STDOUT (FORMAT CSV);",active,2015-10-06 11:27:17.464494-04
+1444145237.46473,619,10,psql,,-1,2015-10-06 11:26:00.770713-04,2015-10-06 11:26:00.776466-04,2015-10-06 11:26:00.790723-04,f,"
+CREATE INDEX lineitem_l_orderkey_l_linenumber_l_shipdate_idx
+ON lineitem (l_orderkey, l_linenumber, l_shipdate);",active,2015-10-06 11:26:00.785809-04
+1444145237.46473,620,10,psql,,-1,2015-10-06 11:26:00.771855-04,2015-10-06 11:26:00.776853-04,2015-10-06 11:26:00.791271-04,f,"
+CREATE INDEX lineitem_l_orderkey_idx
+ON lineitem (l_orderkey);",active,2015-10-06 11:26:00.787256-04
+1444145237.46473,615,10,psql,,-1,2015-10-06 11:26:00.772148-04,2015-10-06 11:26:00.777027-04,2015-10-06 11:26:00.789494-04,f,"
+CREATE INDEX lineitem_l_shipdate_l_suppkey__idx
+ON lineitem (l_shipdate, l_suppkey);",active,2015-10-06 11:26:00.78747-04
+1444145237.46473,614,10,psql,,-1,2015-10-06 11:26:00.773144-04,2015-10-06 11:26:00.775845-04,2015-10-06 11:26:00.787594-04,f,"
+CREATE INDEX lineitem_l_orderkey_idx_part1
+ON lineitem (l_orderkey)
+WHERE l_commitdate < l_receiptdate;",active,2015-10-06 11:26:00.785725-04
+1444145237.46473,621,10,psql,,-1,2015-10-06 11:26:00.775875-04,2015-10-06 11:26:00.784269-04,2015-10-06 11:26:00.793456-04,f,"
+CREATE INDEX lineitem_l_orderkey_idx_part2
+ON lineitem (l_orderkey)
+WHERE l_commitdate < l_receiptdate
+  AND l_shipdate < l_commitdate;",active,2015-10-06 11:26:00.785639-04
+1444145237.46473,693,10,psql,127.0.0.1,43044,2015-10-06 11:27:17.443957-04,2015-10-06 11:27:17.463664-04,2015-10-06 11:27:17.484204-04,f,"COPY (SELECT EXTRACT(EPOCH FROM TRANSACTION_TIMESTAMP()) AS ctime, numbackends, xact_commit, xact_rollback, blks_read, blks_hit, tup_returned, tup_fetched, tup_inserted, tup_updated, tup_deleted FROM pg_stat_database) TO STDOUT (FORMAT CSV);",active,2015-10-06 11:27:17.464942-04
+1444145237.46473,697,10,psql,127.0.0.1,43052,2015-10-06 11:27:17.452869-04,2015-10-06 11:27:17.464896-04,2015-10-06 11:27:17.477967-04,f,"COPY (SELECT EXTRACT(EPOCH FROM TRANSACTION_TIMESTAMP()) AS ctime, relname, pid, mode, granted FROM pg_locks, pg_class WHERE relfilenode = relation ORDER BY relname) TO STDOUT (FORMAT CSV);",active,2015-10-06 11:27:17.466375-04
+1444145237.46473,696,10,psql,127.0.0.1,43050,2015-10-06 11:27:17.453906-04,2015-10-06 11:27:17.466052-04,2015-10-06 11:27:17.487074-04,f,"COPY (SELECT EXTRACT(EPOCH FROM TRANSACTION_TIMESTAMP()) AS ctime, a.schemaname, a.relname, a.indexrelname, idx_scan, idx_tup_read, idx_tup_fetch, idx_blks_read, idx_blks_hit FROM pg_stat_all_indexes a, pg_statio_all_indexes b WHERE a.indexrelid = b.indexrelid) TO STDOUT (FORMAT CSV);",active,2015-10-06 11:27:17.475888-04
+1444145237.46473,699,10,psql,127.0.0.1,43060,2015-10-06 11:27:17.463946-04,2015-10-06 11:27:17.474011-04,2015-10-06 11:27:17.484968-04,f,"COPY (SELECT EXTRACT(EPOCH FROM TRANSACTION_TIMESTAMP()) AS ctime, a.schemaname, a.relname, seq_scan, seq_tup_read, idx_scan, idx_tup_fetch, n_tup_ins, n_tup_upd, n_tup_del, n_tup_hot_upd, n_live_tup, n_dead_tup, heap_blks_read, heap_blks_hit, idx_blks_read, idx_blks_hit, toast_blks_read, toast_blks_hit, tidx_blks_read, tidx_blks_hit FROM pg_statio_all_tables a, pg_stat_all_tables b WHERE a.relid = b.relid) TO STDOUT (FORMAT CSV);",active,2015-10-06 11:27:17.475341-04
+1444145297.50555,736,10,psql,127.0.0.1,43120,2015-10-06 11:28:17.487937-04,2015-10-06 11:28:17.489401-04,2015-10-06 11:28:17.495256-04,f,"COPY (SELECT EXTRACT(EPOCH FROM TRANSACTION_TIMESTAMP()) AS ctime, a.schemaname, a.relname, seq_scan, seq_tup_read, idx_scan, idx_tup_fetch, n_tup_ins, n_tup_upd, n_tup_del, n_tup_hot_upd, n_live_tup, n_dead_tup, heap_blks_read, heap_blks_hit, idx_blks_read, idx_blks_hit, toast_blks_read, toast_blks_hit, tidx_blks_read, tidx_blks_hit FROM pg_statio_all_tables a, pg_stat_all_tables b WHERE a.relid = b.relid) TO STDOUT (FORMAT CSV);",active,2015-10-06 11:28:17.494193-04
+1444145297.50555,612,10,psql,,-1,2015-10-06 11:26:00.767454-04,2015-10-06 11:26:00.772383-04,2015-10-06 11:26:00.779147-04,f,"
+CREATE INDEX lineitem_l_partkey_l_quantity_l_shipmode_idx
+ON lineitem (l_partkey, l_quantity, l_shipmode);",active,2015-10-06 11:26:00.775382-04
+1444145297.50555,735,10,psql,127.0.0.1,43119,2015-10-06 11:28:17.488662-04,2015-10-06 11:28:17.492867-04,2015-10-06 11:28:17.497918-04,f,"COPY (SELECT EXTRACT(EPOCH FROM TRANSACTION_TIMESTAMP()) AS ctime, a.schemaname, a.relname, a.indexrelname, idx_scan, idx_tup_read, idx_tup_fetch, idx_blks_read, idx_blks_hit FROM pg_stat_all_indexes a, pg_statio_all_indexes b WHERE a.indexrelid = b.indexrelid) TO STDOUT (FORMAT CSV);",active,2015-10-06 11:28:17.494074-04
+1444145297.50555,619,10,psql,,-1,2015-10-06 11:26:00.770713-04,2015-10-06 11:26:00.776466-04,2015-10-06 11:26:00.790723-04,f,"
+CREATE INDEX lineitem_l_orderkey_l_linenumber_l_shipdate_idx
+ON lineitem (l_orderkey, l_linenumber, l_shipdate);",active,2015-10-06 11:26:00.785809-04
+1444145297.50555,620,10,psql,,-1,2015-10-06 11:26:00.771855-04,2015-10-06 11:26:00.776853-04,2015-10-06 11:26:00.791271-04,f,"
+CREATE INDEX lineitem_l_orderkey_idx
+ON lineitem (l_orderkey);",active,2015-10-06 11:26:00.787256-04
+1444145297.50555,615,10,psql,,-1,2015-10-06 11:26:00.772148-04,2015-10-06 11:26:00.777027-04,2015-10-06 11:26:00.789494-04,f,"
+CREATE INDEX lineitem_l_shipdate_l_suppkey__idx
+ON lineitem (l_shipdate, l_suppkey);",active,2015-10-06 11:26:00.78747-04
+1444145297.50555,614,10,psql,,-1,2015-10-06 11:26:00.773144-04,2015-10-06 11:26:00.775845-04,2015-10-06 11:26:00.787594-04,f,"
+CREATE INDEX lineitem_l_orderkey_idx_part1
+ON lineitem (l_orderkey)
+WHERE l_commitdate < l_receiptdate;",active,2015-10-06 11:26:00.785725-04
+1444145297.50555,737,10,psql,127.0.0.1,43123,2015-10-06 11:28:17.494135-04,2015-10-06 11:28:17.49907-04,2015-10-06 11:28:17.506647-04,f,"COPY (SELECT EXTRACT(EPOCH FROM TRANSACTION_TIMESTAMP()) AS ctime, numbackends, xact_commit, xact_rollback, blks_read, blks_hit, tup_returned, tup_fetched, tup_inserted, tup_updated, tup_deleted FROM pg_stat_database) TO STDOUT (FORMAT CSV);",active,2015-10-06 11:28:17.502106-04
+1444145297.50555,740,10,psql,127.0.0.1,43132,2015-10-06 11:28:17.494898-04,2015-10-06 11:28:17.498976-04,2015-10-06 11:28:17.507611-04,f,"COPY (SELECT EXTRACT(EPOCH FROM TRANSACTION_TIMESTAMP()) AS ctime, relname, pid, mode, granted FROM pg_locks, pg_class WHERE relfilenode = relation ORDER BY relname) TO STDOUT (FORMAT CSV);",active,2015-10-06 11:28:17.503919-04
+1444145297.50555,741,10,psql,127.0.0.1,43133,2015-10-06 11:28:17.495635-04,2015-10-06 11:28:17.503963-04,2015-10-06 11:28:17.513261-04,f,"COPY (SELECT EXTRACT(EPOCH FROM TRANSACTION_TIMESTAMP()) AS ctime, pid, usesysid, application_name, client_addr, client_port, backend_start, xact_start, query_start, waiting, query , state, state_change FROM pg_stat_activity) TO STDOUT (FORMAT CSV);",active,2015-10-06 11:28:17.505336-04
+1444145357.5249,772,10,psql,127.0.0.1,43199,2015-10-06 11:29:17.475949-04,,2015-10-06 11:29:17.509674-04,f,"COPY (SELECT EXTRACT(EPOCH FROM TRANSACTION_TIMESTAMP()) AS ctime, a.schemaname, a.relname, seq_scan, seq_tup_read, idx_scan, idx_tup_fetch, n_tup_ins, n_tup_upd, n_tup_del, n_tup_hot_upd, n_live_tup, n_dead_tup, heap_blks_read, heap_blks_hit, idx_blks_read, idx_blks_hit, toast_blks_read, toast_blks_hit, tidx_blks_read, tidx_blks_hit FROM pg_statio_all_tables a, pg_stat_all_tables b WHERE a.relid = b.relid) TO STDOUT (FORMAT CSV);",active,2015-10-06 11:29:17.496219-04
+1444145357.5249,612,10,psql,,-1,2015-10-06 11:26:00.767454-04,2015-10-06 11:26:00.772383-04,2015-10-06 11:26:00.779147-04,f,"
+CREATE INDEX lineitem_l_partkey_l_quantity_l_shipmode_idx
+ON lineitem (l_partkey, l_quantity, l_shipmode);",active,2015-10-06 11:26:00.775382-04
+1444145357.5249,771,10,psql,127.0.0.1,43194,2015-10-06 11:29:17.477726-04,,2015-10-06 11:29:17.484536-04,f,"COPY (SELECT EXTRACT(EPOCH FROM TRANSACTION_TIMESTAMP()) AS ctime, a.schemaname, a.relname, a.indexrelname, idx_scan, idx_tup_read, idx_tup_fetch, idx_blks_read, idx_blks_hit FROM pg_stat_all_indexes a, pg_statio_all_indexes b WHERE a.indexrelid = b.indexrelid) TO STDOUT (FORMAT CSV);",idle,2015-10-06 11:29:17.525587-04
+1444145357.5249,619,10,psql,,-1,2015-10-06 11:26:00.770713-04,2015-10-06 11:26:00.776466-04,2015-10-06 11:26:00.790723-04,f,"
+CREATE INDEX lineitem_l_orderkey_l_linenumber_l_shipdate_idx
+ON lineitem (l_orderkey, l_linenumber, l_shipdate);",active,2015-10-06 11:26:00.785809-04
+1444145357.5249,620,10,psql,,-1,2015-10-06 11:26:00.771855-04,2015-10-06 11:26:00.776853-04,2015-10-06 11:26:00.791271-04,f,"
+CREATE INDEX lineitem_l_orderkey_idx
+ON lineitem (l_orderkey);",active,2015-10-06 11:26:00.787256-04
+1444145357.5249,615,10,psql,,-1,2015-10-06 11:26:00.772148-04,2015-10-06 11:26:00.777027-04,2015-10-06 11:26:00.789494-04,f,"
+CREATE INDEX lineitem_l_shipdate_l_suppkey__idx
+ON lineitem (l_shipdate, l_suppkey);",active,2015-10-06 11:26:00.78747-04
+1444145357.5249,774,10,psql,127.0.0.1,43204,2015-10-06 11:29:17.489062-04,,2015-10-06 11:29:17.530878-04,f,"COPY (SELECT EXTRACT(EPOCH FROM TRANSACTION_TIMESTAMP()) AS ctime, numbackends, xact_commit, xact_rollback, blks_read, blks_hit, tup_returned, tup_fetched, tup_inserted, tup_updated, tup_deleted FROM pg_stat_database) TO STDOUT (FORMAT CSV);",active,2015-10-06 11:29:17.516572-04
+1444145357.5249,783,10,psql,127.0.0.1,43209,2015-10-06 11:29:17.502838-04,2015-10-06 11:29:17.522243-04,2015-10-06 11:29:17.543651-04,f,"COPY (SELECT EXTRACT(EPOCH FROM TRANSACTION_TIMESTAMP()) AS ctime, pid, usesysid, application_name, client_addr, client_port, backend_start, xact_start, query_start, waiting, query , state, state_change FROM pg_stat_activity) TO STDOUT (FORMAT CSV);",active,2015-10-06 11:29:17.524665-04
+1444145417.53034,826,10,psql,127.0.0.1,43277,2015-10-06 11:30:17.523946-04,2015-10-06 11:30:17.525976-04,2015-10-06 11:30:17.528911-04,f,"COPY (SELECT EXTRACT(EPOCH FROM TRANSACTION_TIMESTAMP()) AS ctime, a.schemaname, a.relname, seq_scan, seq_tup_read, idx_scan, idx_tup_fetch, n_tup_ins, n_tup_upd, n_tup_del, n_tup_hot_upd, n_live_tup, n_dead_tup, heap_blks_read, heap_blks_hit, idx_blks_read, idx_blks_hit, toast_blks_read, toast_blks_hit, tidx_blks_read, tidx_blks_hit FROM pg_statio_all_tables a, pg_stat_all_tables b WHERE a.relid = b.relid) TO STDOUT (FORMAT CSV);",active,2015-10-06 11:30:17.527495-04
+1444145417.53034,612,10,psql,,-1,2015-10-06 11:26:00.767454-04,2015-10-06 11:26:00.772383-04,2015-10-06 11:26:00.779147-04,f,"
+CREATE INDEX lineitem_l_partkey_l_quantity_l_shipmode_idx
+ON lineitem (l_partkey, l_quantity, l_shipmode);",active,2015-10-06 11:26:00.775382-04
+1444145417.53034,823,10,psql,127.0.0.1,43272,2015-10-06 11:30:17.524194-04,,,f,"",,
+1444145417.53034,827,10,psql,127.0.0.1,43278,2015-10-06 11:30:17.524961-04,2015-10-06 11:30:17.537277-04,2015-10-06 11:30:17.55168-04,f,"COPY (SELECT EXTRACT(EPOCH FROM TRANSACTION_TIMESTAMP()) AS ctime, a.schemaname, a.relname, a.indexrelname, idx_scan, idx_tup_read, idx_tup_fetch, idx_blks_read, idx_blks_hit FROM pg_stat_all_indexes a, pg_statio_all_indexes b WHERE a.indexrelid = b.indexrelid) TO STDOUT (FORMAT CSV);",active,2015-10-06 11:30:17.539969-04
+1444145417.53034,824,10,psql,127.0.0.1,43275,2015-10-06 11:30:17.521482-04,2015-10-06 11:30:17.528984-04,2015-10-06 11:30:17.530645-04,f,"COPY (SELECT EXTRACT(EPOCH FROM TRANSACTION_TIMESTAMP()) AS ctime, pid, usesysid, application_name, client_addr, client_port, backend_start, xact_start, query_start, waiting, query , state, state_change FROM pg_stat_activity) TO STDOUT (FORMAT CSV);",active,2015-10-06 11:30:17.530155-04
+1444145417.53034,615,10,psql,,-1,2015-10-06 11:26:00.772148-04,2015-10-06 11:26:00.777027-04,2015-10-06 11:26:00.789494-04,f,"
+CREATE INDEX lineitem_l_shipdate_l_suppkey__idx
+ON lineitem (l_shipdate, l_suppkey);",active,2015-10-06 11:26:00.78747-04

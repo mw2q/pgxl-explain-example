@@ -1,0 +1,322 @@
+Linux 3.16.0-38-generic (pgxl) 	10/06/2015 	_x86_64_	(4 CPU)
+
+#      Time       PID    %usr %system  %guest    %CPU   CPU  minflt/s  majflt/s     VSZ    RSS   %MEM   kB_rd/s   kB_wr/s kB_ccwr/s   cswch/s nvcswch/s  Command
+ 1444144639         1    0.00    0.00    0.00    0.00     3      0.00      0.00   19292    672   0.00     -1.00     -1.00     -1.00      0.00      0.00  /sbin/init 
+ 1444144639       323    0.00    0.00    0.00    0.00     1      0.00      0.00   20032    384   0.00     -1.00     -1.00     -1.00      0.00      0.00  crond 
+ 1444144639       358    0.00    0.00    0.00    0.00     1      0.00      0.00   93988    352   0.00     -1.00     -1.00     -1.00      0.00      0.00  sshd: mark@pts/4  
+ 1444144639     32267    0.00    0.00    0.00    0.00     3      0.00      0.00  106128   2296   0.01      0.00      0.00      0.00      0.00      0.00  /bin/sh /usr/local/bin/dbt3-pgxl-load-test -o /tmp/pgxl-explain-example/load -p -c max_prepared_transactions=30 -c shared_buffe
+ 1444144639     32291    0.00    0.00    0.00    0.00     1      0.00      0.00  101036   2012   0.01      0.00      0.00      0.00      0.00      0.00  sar -o /tmp/pgxl-explain-example/load/pgxl/sar_raw.out 60 
+ 1444144639     32294    0.00    0.00    0.00    0.00     1      0.00      0.00   59884   6292   0.04      0.00      0.00      0.00      0.00      0.00  ssh pgxl1 
+ 1444144639     32295    0.00    0.00    0.00    0.00     1      0.00      0.00  101024   1880   0.01      0.00      0.00      0.00      0.00      0.00  pidstat -h -l -d -r -u -w 60 
+ 1444144639     32296    0.00    0.00    0.00    0.00     3      0.00      0.00   59884   6300   0.04      0.00      0.00      0.00      0.00      0.00  ssh pgxl2 
+ 1444144639     32299    0.00    0.00    0.00    0.00     3      0.00      0.00   59884   6332   0.04      0.00      0.00      0.00      0.00      0.00  ssh pgxl2 
+ 1444144639     32300    0.00    0.00    0.00    0.00     2      0.00      0.00  101036   1996   0.01      0.00      0.00      0.00      0.00      0.00  sadc 60 -z -S ALL /tmp/pgxl-explain-example/load/pgxl/sar_raw.out 
+ 1444144639     32302    0.00    0.00    0.00    0.00     1      0.00      0.00   59884   6240   0.04      0.00      0.00      0.00      0.00      0.00  ssh pgxl1 
+ 1444144639     32395    0.00    0.00    0.00    0.00     0      0.00      0.00 1781296  11364   0.07      0.00      0.00      0.00      0.00      0.00  gtm -D /tmp/dbt3/pgdata/gtm -l /tmp/pgxl-explain-example/load/gtm.log 
+ 1444144639     32416    0.00    0.00    0.00    0.00     3      0.00      0.00  680772  39948   0.24      0.00      0.00      0.00      0.00      0.00  /opt/pgxl/bin/postgres --coordinator -D /tmp/dbt3/pgdata/coordinator -c pooler_port=35432 -c listen_addresses=* -c max_prepared
+ 1444144639     32418    0.00    0.00    0.00    0.00     2      0.00      0.00  682112   5364   0.03      0.00      0.00      0.00      0.00      0.00  postgres: pooler process                                                                                                       
+ 1444144639     32419    0.00    0.00    0.00    0.00     2      0.00      0.00  680912   8684   0.05      0.00      0.00      0.00      0.00      0.00  postgres: checkpointer process                                                                                                 
+ 1444144639     32420    0.00    0.00    0.00    0.00     0      0.00      0.00  680772   5168   0.03      0.00      0.00      0.00      0.00      0.00  postgres: writer process                                                                                                       
+ 1444144639     32421    0.00    0.00    0.00    0.00     3      0.00      0.00  680772  20164   0.12      0.00      0.00      0.00      0.00      0.00  postgres: wal writer process                                                                                                   
+ 1444144639     32422    0.00    0.00    0.00    0.00     0      0.00      0.00  681356   6368   0.04      0.00      0.00      0.00      0.00      0.00  postgres: autovacuum launcher process                                                                                          
+ 1444144639     32423    0.00    0.00    0.00    0.00     0      0.00      0.00  118956   3348   0.02      0.00      0.00      0.00      0.00      0.00  postgres: stats collector process                                                                                              
+ 1444144639     32534    0.00    0.00    0.00    0.00     1      0.00      0.00  106128   2788   0.02      0.00      0.00      0.00      0.00      0.00  /bin/sh /usr/local/bin/dbt3-pgxl-dbstat /tmp/pgxl-explain-example/load 
+ 1444144639     32535    0.00    0.00    0.00    0.00     2      0.00      0.00  106124   2732   0.02      0.00      0.00      0.00      0.00      0.00  /bin/sh /usr/local/bin/dbt3-pgxl-load-data 
+
+#      Time       PID    %usr %system  %guest    %CPU   CPU  minflt/s  majflt/s     VSZ    RSS   %MEM   kB_rd/s   kB_wr/s kB_ccwr/s   cswch/s nvcswch/s  Command
+ 1444144699         1    0.00    0.02    0.00    0.02     0      0.00      0.00   19292    672   0.00     -1.00     -1.00     -1.00      0.20      0.00  /sbin/init 
+ 1444144699       323    0.00    0.00    0.00    0.00     1      0.05      0.00   20032    384   0.00     -1.00     -1.00     -1.00      0.02      0.00  crond 
+ 1444144699       358    0.00    0.00    0.00    0.00     0      0.00      0.00   93988    352   0.00     -1.00     -1.00     -1.00      0.32      0.25  sshd: mark@pts/4  
+ 1444144699     32291    0.00    0.00    0.00    0.00     2      0.00      0.00  101036   2012   0.01      0.00      0.07      0.00      0.02      0.00  sar -o /tmp/pgxl-explain-example/load/pgxl/sar_raw.out 60 
+ 1444144699     32295    0.00    0.00    0.00    0.00     3      2.42      0.00  101024   1884   0.01      0.13      0.13      0.00      0.17      0.27  pidstat -h -l -d -r -u -w 60 
+ 1444144699     32300    0.00    0.00    0.00    0.00     0      0.52      0.00  101036   1996   0.01      0.60      0.40      0.00      0.68      0.15  sadc 60 -z -S ALL /tmp/pgxl-explain-example/load/pgxl/sar_raw.out 
+ 1444144699     32395    0.00    0.03    0.00    0.03     0      2.17      0.00 1740268   7556   0.05      0.00      0.00      0.00      0.33      0.03  gtm -D /tmp/dbt3/pgdata/gtm -l /tmp/pgxl-explain-example/load/gtm.log 
+ 1444144699     32416    0.00    0.00    0.00    0.00     0      2.25      0.00  680772  39948   0.24    229.07      4.73      0.33      0.57      0.02  /opt/pgxl/bin/postgres --coordinator -D /tmp/dbt3/pgdata/coordinator -c pooler_port=35432 -c listen_addresses=* -c max_prepared
+ 1444144699     32418    0.00    0.00    0.00    0.00     1      0.00      0.00  682112   5364   0.03      0.00      0.00      0.00      1.08      0.47  postgres: pooler process                                                                                                       
+ 1444144699     32420    0.00    0.02    0.00    0.02     0      8.43      0.00  680772   7016   0.04      0.00      0.00      0.00      4.95      0.08  postgres: writer process                                                                                                       
+ 1444144699     32421    0.00    0.02    0.00    0.02     3      0.00      0.00  680772  20164   0.12      0.00      2.00      0.00      4.07      0.17  postgres: wal writer process                                                                                                   
+ 1444144699     32422    0.00    0.00    0.00    0.00     0      0.73      0.00  681356   6564   0.04      0.00      0.00      0.00      0.43      0.05  postgres: autovacuum launcher process                                                                                          
+ 1444144699     32423    0.00    0.00    0.00    0.00     0      0.33      0.00  118956   3348   0.02      0.00      2.27      0.20      1.22      0.05  postgres: stats collector process                                                                                              
+ 1444144699     32534    0.00    0.00    0.00    0.00     0      1.65      0.00  106128   2792   0.02      1.13      0.00      0.00      0.05      0.00  /bin/sh /usr/local/bin/dbt3-pgxl-dbstat /tmp/pgxl-explain-example/load 
+ 1444144699     32535    0.00    0.00    0.00    0.00     0      0.00      0.00  106124   2732   0.02      0.47      0.00      0.00      0.05      0.00  /bin/sh /usr/local/bin/dbt3-pgxl-load-data 
+
+#      Time       PID    %usr %system  %guest    %CPU   CPU  minflt/s  majflt/s     VSZ    RSS   %MEM   kB_rd/s   kB_wr/s kB_ccwr/s   cswch/s nvcswch/s  Command
+ 1444144759         1    0.00    0.00    0.00    0.00     0      0.00      0.00   19292    672   0.00     -1.00     -1.00     -1.00      0.23      0.00  /sbin/init 
+ 1444144759       323    0.00    0.00    0.00    0.00     1      0.05      0.00   20032    384   0.00     -1.00     -1.00     -1.00      0.02      0.00  crond 
+ 1444144759       358    0.00    0.00    0.00    0.00     2      0.00      0.00   93988    352   0.00     -1.00     -1.00     -1.00      0.10      0.00  sshd: mark@pts/4  
+ 1444144759     32291    0.00    0.00    0.00    0.00     0      0.00      0.00  101036   2012   0.01      0.00      0.07      0.00      0.48      0.02  sar -o /tmp/pgxl-explain-example/load/pgxl/sar_raw.out 60 
+ 1444144759     32295    0.00    0.02    0.00    0.02     3      2.40      0.00  101024   1884   0.01      0.20      0.13      0.00      0.15      0.43  pidstat -h -l -d -r -u -w 60 
+ 1444144759     32300    0.00    0.02    0.00    0.02     0      0.88      0.00  101032   1996   0.01      0.47      0.73      0.00      0.73      0.53  sadc 60 -z -S ALL /tmp/pgxl-explain-example/load/pgxl/sar_raw.out 
+ 1444144759     32395    0.02    0.12    0.00    0.13     2      2.37      0.00 1846784   7928   0.05      0.00     14.87      0.00      0.43      0.33  gtm -D /tmp/dbt3/pgdata/gtm -l /tmp/pgxl-explain-example/load/gtm.log 
+ 1444144759     32416    0.00    0.02    0.00    0.02     1      2.55      0.00  680772  39948   0.24   3960.67      7.20      0.13      0.45      0.03  /opt/pgxl/bin/postgres --coordinator -D /tmp/dbt3/pgdata/coordinator -c pooler_port=35432 -c listen_addresses=* -c max_prepared
+ 1444144759     32418    0.00    0.00    0.00    0.00     1      0.00      0.00  682112   5364   0.03      0.00      0.00      0.00      0.53      0.00  postgres: pooler process                                                                                                       
+ 1444144759     32420    0.00    0.00    0.00    0.00     2      2.23      0.00  680772   7544   0.05      0.00      0.00      0.00      1.58      0.03  postgres: writer process                                                                                                       
+ 1444144759     32421    0.00    0.00    0.00    0.00     2      0.00      0.00  680772  20164   0.12      0.00      1.33      0.00      3.45      0.08  postgres: wal writer process                                                                                                   
+ 1444144759     32422    0.00    0.00    0.00    0.00     2      0.15      0.00  681356   6568   0.04      0.00      0.00      0.00      0.33      0.05  postgres: autovacuum launcher process                                                                                          
+ 1444144759     32423    0.00    0.02    0.00    0.02     3      0.23      0.00  118956   3348   0.02      0.00      1.47      0.00      1.25      0.05  postgres: stats collector process                                                                                              
+ 1444144759     32534    0.00    0.00    0.00    0.00     0      1.75      0.00  106128   2792   0.02      0.00      0.00      0.00      0.07      0.00  /bin/sh /usr/local/bin/dbt3-pgxl-dbstat /tmp/pgxl-explain-example/load 
+
+#      Time       PID    %usr %system  %guest    %CPU   CPU  minflt/s  majflt/s     VSZ    RSS   %MEM   kB_rd/s   kB_wr/s kB_ccwr/s   cswch/s nvcswch/s  Command
+ 1444144819         1    0.00    0.00    0.00    0.00     0      0.00      0.00   19292    672   0.00     -1.00     -1.00     -1.00      0.25      0.00  /sbin/init 
+ 1444144819       248    0.00    0.00    0.00    0.00     1      0.15      0.10  245104    272   0.00     -1.00     -1.00     -1.00      0.00      0.00  /sbin/rsyslogd -i /var/run/syslogd.pid -c 5 
+ 1444144819       322    0.00    0.00    0.00    0.00     1      2.80      0.00  114944   2996   0.02      0.00      0.00      0.00      0.03      0.05  psql -v ON_ERROR_STOP=1 -X -c 
+ALTER TABLE partsupp
+ADD CONSTRAINT pk_partsupp
+PRIMARY KEY (ps_partkey, ps_suppkey); 
+ 1444144819       323    0.00    0.00    0.00    0.00     2      0.18      0.02   20032    384   0.00     -1.00     -1.00     -1.00      0.05      0.02  crond 
+ 1444144819       324    0.00    0.00    0.00    0.00     1      2.83      0.00  114944   3064   0.02      0.00      0.00      0.00      0.03      0.03  psql -v ON_ERROR_STOP=1 -X -c 
+CREATE INDEX partsupp_ps_suppkey_idx
+ON partsupp (ps_suppkey); 
+ 1444144819       325    0.00    0.00    0.00    0.00     1      7.12      0.00  682032   9476   0.06      0.00      0.07      0.00      0.22      0.02  postgres: mark dbt3 [local] CREATE INDEX waiting                                                                               
+ 1444144819       326    0.00    0.00    0.00    0.00     1      7.98      0.00  682120  12048   0.07      0.00      0.13      0.00      0.40      0.08  postgres: mark dbt3 [local] ALTER TABLE                                                                                        
+ 1444144819       348    0.00    0.00    0.00    0.00     3      2.48      0.00  114944   3160   0.02      0.00      0.00      0.00      0.03      0.03  psql -v ON_ERROR_STOP=1 -X -c VACUUM ANALYZE part; 
+ 1444144819       349    0.00    0.00    0.00    0.00     3      6.77      0.00  682032   9476   0.06      0.00      0.00      0.00      0.22      0.07  postgres: mark dbt3 [local] VACUUM                                                                                             
+ 1444144819       354    0.00    0.00    0.00    0.00     2      1.47      0.00  100968    444   0.00      0.00      0.00      0.00      0.02      0.05  sleep 60 
+ 1444144819       358    0.00    0.00    0.00    0.00     1      0.00      0.00   93988    352   0.00     -1.00     -1.00     -1.00      0.22      0.02  sshd: mark@pts/4  
+ 1444144819     32291    0.00    0.00    0.00    0.00     0      0.00      0.00  101036   2012   0.01      0.00      0.13      0.00      0.03      0.00  sar -o /tmp/pgxl-explain-example/load/pgxl/sar_raw.out 60 
+ 1444144819     32295    0.00    0.02    0.00    0.02     3      2.87      0.00  101024   1884   0.01      0.07      0.07      0.00      0.13      0.07  pidstat -h -l -d -r -u -w 60 
+ 1444144819     32300    0.00    0.00    0.00    0.00     0      0.50      0.00  101032   1996   0.01      0.47      0.40      0.00      0.50      0.27  sadc 60 -z -S ALL /tmp/pgxl-explain-example/load/pgxl/sar_raw.out 
+ 1444144819     32395    0.00    0.05    0.00    0.05     0      1.65      0.00 1797608   8068   0.05      0.00      0.00      0.00      0.33      0.08  gtm -D /tmp/dbt3/pgdata/gtm -l /tmp/pgxl-explain-example/load/gtm.log 
+ 1444144819     32416    0.00    0.00    0.00    0.00     0      1.50      0.00  680772  39948   0.24      0.00      4.53      0.47      0.40      0.00  /opt/pgxl/bin/postgres --coordinator -D /tmp/dbt3/pgdata/coordinator -c pooler_port=35432 -c listen_addresses=* -c max_prepared
+ 1444144819     32418    0.00    0.00    0.00    0.00     3      0.00      0.00  682112   5364   0.03      0.00      0.00      0.00      0.70      0.02  postgres: pooler process                                                                                                       
+
+#      Time       PID    %usr %system  %guest    %CPU   CPU  minflt/s  majflt/s     VSZ    RSS   %MEM   kB_rd/s   kB_wr/s kB_ccwr/s   cswch/s nvcswch/s  Command
+ 1444144879         1    0.00    0.00    0.00    0.00     0      0.00      0.00   19292    672   0.00     -1.00     -1.00     -1.00      0.22      0.00  /sbin/init 
+ 1444144879       323    0.00    0.00    0.00    0.00     2      0.12      0.00   20032    464   0.00     -1.00     -1.00     -1.00      0.02      0.00  crond 
+ 1444144879       358    0.00    0.00    0.00    0.00     3      0.00      0.00   93988    352   0.00     -1.00     -1.00     -1.00      0.12      0.05  sshd: mark@pts/4  
+ 1444144879       401    0.00    0.00    0.00    0.00     3      1.45      0.00  100968    408   0.00      0.00      0.00      0.00      0.02      0.03  sleep 60 
+ 1444144879     32294    0.00    0.00    0.00    0.00     3      0.00      0.00   59884   6292   0.04      0.00      0.00      0.00      0.03      0.00  ssh pgxl1 
+ 1444144879     32295    0.00    0.00    0.00    0.00     3      2.00      0.00  101024   1884   0.01      0.07      0.13      0.00      0.17      0.05  pidstat -h -l -d -r -u -w 60 
+ 1444144879     32296    0.00    0.00    0.00    0.00     3      0.00      0.00   59884   6300   0.04      0.00      0.00      0.00      0.03      0.00  ssh pgxl2 
+ 1444144879     32299    0.00    0.02    0.00    0.02     3      0.00      0.00   59884   6332   0.04      0.00      0.00      0.00      0.03      0.00  ssh pgxl2 
+ 1444144879     32300    0.00    0.00    0.00    0.00     3      0.03      0.00  101036   1996   0.01      0.13      0.00      0.00      0.18      0.03  sadc 60 -z -S ALL /tmp/pgxl-explain-example/load/pgxl/sar_raw.out 
+ 1444144879     32302    0.00    0.00    0.00    0.00     1      0.00      0.00   59884   6240   0.04      0.00      0.00      0.00      0.03      0.00  ssh pgxl1 
+ 1444144879     32395    0.00    0.03    0.00    0.03     3      1.23      0.00 1764824   8188   0.05      0.00      6.73      0.00      0.20      0.12  gtm -D /tmp/dbt3/pgdata/gtm -l /tmp/pgxl-explain-example/load/gtm.log 
+ 1444144879     32416    0.02    0.00    0.00    0.02     0      1.35      0.00  680772  39948   0.24      0.00      4.00      0.20      0.37      0.12  /opt/pgxl/bin/postgres --coordinator -D /tmp/dbt3/pgdata/coordinator -c pooler_port=35432 -c listen_addresses=* -c max_prepared
+ 1444144879     32418    0.00    0.00    0.00    0.00     0      0.00      0.00  682112   5364   0.03      0.00      0.00      0.00      0.60      0.03  postgres: pooler process                                                                                                       
+ 1444144879     32419    0.00    0.00    0.00    0.00     2     19.50      0.00  680912   8684   0.05      0.00      1.60      0.00      0.58      0.02  postgres: checkpointer process                                                                                                 
+ 1444144879     32420    0.00    0.03    0.00    0.03     1     18.62      0.00  680772   7544   0.05      0.00      0.00      0.00     10.85      0.18  postgres: writer process                                                                                                       
+ 1444144879     32421    0.00    0.05    0.00    0.05     1     69.82      0.00  680772  20164   0.12      0.00     11.20      0.00     18.50      0.50  postgres: wal writer process                                                                                                   
+ 1444144879     32422    0.00    0.00    0.00    0.00     1      5.40      0.00  681356   6584   0.04      0.00      0.00      0.00      1.67      0.27  postgres: autovacuum launcher process                                                                                          
+ 1444144879     32423    0.00    0.02    0.00    0.02     0      2.93      0.00  118956   3348   0.02      0.00      7.53      0.20      7.35      0.27  postgres: stats collector process                                                                                              
+ 1444144879     32534    0.00    0.02    0.00    0.02     2     15.55      0.00  106128   2792   0.02      4.00      0.20      0.00      0.63      0.05  /bin/sh /usr/local/bin/dbt3-pgxl-dbstat /tmp/pgxl-explain-example/load 
+
+#      Time       PID    %usr %system  %guest    %CPU   CPU  minflt/s  majflt/s     VSZ    RSS   %MEM   kB_rd/s   kB_wr/s kB_ccwr/s   cswch/s nvcswch/s  Command
+ 1444144939         1    0.00    0.00    0.00    0.00     3      0.00      0.00   19292    672   0.00     -1.00     -1.00     -1.00      0.25      0.02  /sbin/init 
+ 1444144939       323    0.00    0.00    0.00    0.00     2      0.05      0.00   20032    464   0.00     -1.00     -1.00     -1.00      0.02      0.00  crond 
+ 1444144939       358    0.00    0.00    0.00    0.00     0      0.00      0.00   93988    352   0.00     -1.00     -1.00     -1.00      0.05      0.00  sshd: mark@pts/4  
+ 1444144939       434    0.00    0.00    0.00    0.00     0      2.78      0.00  114944   3000   0.02      0.00      0.00      0.00      0.03      0.05  psql -v ON_ERROR_STOP=1 -X -c 
+CREATE INDEX orders_o_orderdate_o_orderkey_idx
+ON orders (o_orderdate, o_orderkey); 
+ 1444144939       435    0.00    0.00    0.00    0.00     3      2.82      0.00  114944   3008   0.02      0.00      0.00      0.00      0.03      0.02  psql -v ON_ERROR_STOP=1 -X -c 
+CREATE INDEX orders_o_orderkey_o_orderdate_idx
+ON orders (o_orderkey, o_orderdate); 
+ 1444144939       438    0.00    0.00    0.00    0.00     2      7.80      0.00  682032  11752   0.07      0.00      0.13      0.00      0.42      0.18  postgres: mark dbt3 [local] CREATE INDEX                                                                                       
+ 1444144939       439    0.00    0.00    0.00    0.00     2      7.87      0.00  682032  11692   0.07      0.00      0.27      0.00      0.35      0.22  postgres: mark dbt3 [local] CREATE INDEX                                                                                       
+ 1444144939       455    0.00    0.00    0.00    0.00     3      1.43      0.00  100968    464   0.00      0.00      0.00      0.00      0.02      0.00  sleep 60 
+ 1444144939     32291    0.00    0.00    0.00    0.00     0      0.00      0.00  101036   2012   0.01      0.00      0.07      0.00      0.03      0.00  sar -o /tmp/pgxl-explain-example/load/pgxl/sar_raw.out 60 
+ 1444144939     32295    0.00    0.02    0.00    0.02     3      2.67      0.00  101024   1884   0.01      0.07      0.13      0.00      0.18      0.05  pidstat -h -l -d -r -u -w 60 
+ 1444144939     32300    0.00    0.00    0.00    0.00     3      0.50      0.00  101036   1996   0.01      0.60      0.33      0.00      0.63      0.05  sadc 60 -z -S ALL /tmp/pgxl-explain-example/load/pgxl/sar_raw.out 
+ 1444144939     32395    0.02    0.00    0.00    0.02     3      1.32      0.00 1764824   8276   0.05      0.00      0.00      0.00      0.27      0.00  gtm -D /tmp/dbt3/pgdata/gtm -l /tmp/pgxl-explain-example/load/gtm.log 
+ 1444144939     32416    0.00    0.00    0.00    0.00     1      1.50      0.00  680772  39948   0.24  26487.47      1.33      0.07      0.28      0.00  /opt/pgxl/bin/postgres --coordinator -D /tmp/dbt3/pgdata/coordinator -c pooler_port=35432 -c listen_addresses=* -c max_prepared
+ 1444144939     32418    0.00    0.00    0.00    0.00     1      0.00      0.00  682112   5364   0.03      0.00      0.00      0.00      0.25      0.00  postgres: pooler process                                                                                                       
+ 1444144939     32419    0.00    0.02    0.00    0.02     0      0.50      0.00  680912  10872   0.07      0.00     12.00      0.00      3.15      0.62  postgres: checkpointer process                                                                                                 
+ 1444144939     32420    0.00    0.00    0.00    0.00     3      0.00      0.00  680772   7544   0.05      0.00      0.00      0.00      0.20      0.02  postgres: writer process                                                                                                       
+
+#      Time       PID    %usr %system  %guest    %CPU   CPU  minflt/s  majflt/s     VSZ    RSS   %MEM   kB_rd/s   kB_wr/s kB_ccwr/s   cswch/s nvcswch/s  Command
+ 1444144999         1    0.00    0.00    0.00    0.00     1      0.00      0.00   19292    672   0.00     -1.00     -1.00     -1.00      0.25      0.02  /sbin/init 
+ 1444144999       323    0.00    0.00    0.00    0.00     2      0.05      0.00   20032    464   0.00     -1.00     -1.00     -1.00      0.02      0.00  crond 
+ 1444144999       358    0.00    0.00    0.00    0.00     1      0.00      0.00   93988    352   0.00     -1.00     -1.00     -1.00      0.07      0.05  sshd: mark@pts/4  
+ 1444144999       494    0.00    0.00    0.00    0.00     1      1.43      0.00  100968    460   0.00      0.00      0.00      0.00      0.02      0.02  sleep 60 
+ 1444144999     32291    0.00    0.00    0.00    0.00     0      0.00      0.00  101036   2012   0.01      0.00      0.07      0.00      0.03      0.00  sar -o /tmp/pgxl-explain-example/load/pgxl/sar_raw.out 60 
+ 1444144999     32295    0.00    0.00    0.00    0.00     3      2.13      0.00  101024   1884   0.01      0.07      0.13      0.00      0.17      0.00  pidstat -h -l -d -r -u -w 60 
+ 1444144999     32300    0.00    0.00    0.00    0.00     3      0.50      0.00  101032   1996   0.01      0.60      0.40      0.00      0.65      0.02  sadc 60 -z -S ALL /tmp/pgxl-explain-example/load/pgxl/sar_raw.out 
+ 1444144999     32395    0.00    0.02    0.00    0.02     0      1.03      0.00 1748432   8364   0.05      0.00      0.00      0.00      0.20      0.00  gtm -D /tmp/dbt3/pgdata/gtm -l /tmp/pgxl-explain-example/load/gtm.log 
+ 1444144999     32416    0.00    0.00    0.00    0.00     1      1.20      0.00  680772  39948   0.24      0.00      2.13      0.13      0.30      0.00  /opt/pgxl/bin/postgres --coordinator -D /tmp/dbt3/pgdata/coordinator -c pooler_port=35432 -c listen_addresses=* -c max_prepared
+ 1444144999     32418    0.00    0.00    0.00    0.00     3      0.00      0.00  682112   5364   0.03      0.00      0.00      0.00      0.28      0.00  postgres: pooler process                                                                                                       
+ 1444144999     32420    0.00    0.00    0.00    0.00     0      0.00      0.00  680772   7544   0.05      0.00      0.00      0.00      0.27      0.00  postgres: writer process                                                                                                       
+ 1444144999     32421    0.02    0.07    0.00    0.08     1     69.82      0.00  680772  20164   0.12      0.00     15.33      0.00     26.02      0.63  postgres: wal writer process                                                                                                   
+ 1444144999     32422    0.02    0.00    0.00    0.02     0      5.72      0.00  681356   6596   0.04      0.00      0.00      0.00      2.33      0.30  postgres: autovacuum launcher process                                                                                          
+ 1444144999     32423    0.00    0.02    0.00    0.02     1      3.33      0.00  118956   3348   0.02      0.00      9.93      0.20     10.50      0.30  postgres: stats collector process                                                                                              
+ 1444144999     32534    0.00    0.02    0.00    0.02     1     18.87      0.00  106128   2792   0.02      4.00      0.20      0.00      0.77      0.05  /bin/sh /usr/local/bin/dbt3-pgxl-dbstat /tmp/pgxl-explain-example/load 
+
+#      Time       PID    %usr %system  %guest    %CPU   CPU  minflt/s  majflt/s     VSZ    RSS   %MEM   kB_rd/s   kB_wr/s kB_ccwr/s   cswch/s nvcswch/s  Command
+ 1444145059         1    0.00    0.00    0.00    0.00     1      0.00      0.00   19292    672   0.00     -1.00     -1.00     -1.00      0.25      0.02  /sbin/init 
+ 1444145059       323    0.00    0.00    0.00    0.00     2      0.05      0.00   20032    464   0.00     -1.00     -1.00     -1.00      0.02      0.02  crond 
+ 1444145059       532    0.00    0.00    0.00    0.00     3      1.42      0.00  100968    492   0.00      0.00      0.00      0.00      0.02      0.00  sleep 60 
+ 1444145059      6810    0.00    0.00    0.00    0.00     0      0.00      0.00  236956   7268   0.04      0.00      0.00      0.00      0.00      0.00  gvim 
+ 1444145059     32257    0.00    0.00    0.00    0.00     0      0.00      0.00  106128    776   0.00      0.00      0.00      0.00      0.00      0.00  /bin/sh /usr/local/bin/dbt3-run-workload -a pgxl -f 10 -n 2 -e -o /tmp/pgxl-explain-example 
+ 1444145059     32267    0.00    0.00    0.00    0.00     3      0.00      0.00  106128   2116   0.01      0.00      0.00      0.00      0.00      0.00  /bin/sh /usr/local/bin/dbt3-pgxl-load-test -o /tmp/pgxl-explain-example/load -p -c max_prepared_transactions=30 -c shared_buffe
+ 1444145059     32291    0.00    0.00    0.00    0.00     3      0.00      0.00  101036   2012   0.01      0.00      0.07      0.00      0.02      0.00  sar -o /tmp/pgxl-explain-example/load/pgxl/sar_raw.out 60 
+ 1444145059     32295    0.00    0.02    0.00    0.02     2      2.40      0.00  101024   1884   0.01      0.13      0.13      0.00      0.17      0.02  pidstat -h -l -d -r -u -w 60 
+ 1444145059     32300    0.00    0.00    0.00    0.00     1      0.57      0.00  101036   1996   0.01      0.67      0.40      0.00      0.73      0.02  sadc 60 -z -S ALL /tmp/pgxl-explain-example/load/pgxl/sar_raw.out 
+ 1444145059     32395    0.00    0.02    0.00    0.02     1      0.82      0.00 1748432   8428   0.05      0.00      0.00      0.00      0.18      0.00  gtm -D /tmp/dbt3/pgdata/gtm -l /tmp/pgxl-explain-example/load/gtm.log 
+ 1444145059     32416    0.00    0.00    0.00    0.00     1      1.05      0.00  680772  39948   0.24      0.00      0.00      0.00      0.23      0.00  /opt/pgxl/bin/postgres --coordinator -D /tmp/dbt3/pgdata/coordinator -c pooler_port=35432 -c listen_addresses=* -c max_prepared
+ 1444145059     32418    0.02    0.00    0.00    0.02     1      0.00      0.00  682112   5364   0.03      0.00      0.00      0.00      0.03      0.00  postgres: pooler process                                                                                                       
+ 1444145059     32420    0.00    0.00    0.00    0.00     0      0.00      0.00  680772   7544   0.05      0.00      0.00      0.00      0.20      0.00  postgres: writer process                                                                                                       
+ 1444145059     32421    0.00    0.00    0.00    0.00     0      0.00      0.00  680772  20164   0.12      0.00      1.07      0.00      2.88      0.10  postgres: wal writer process                                                                                                   
+ 1444145059     32422    0.00    0.00    0.00    0.00     0      0.13      0.00  681356   6596   0.04      0.00      0.00      0.00      0.33      0.00  postgres: autovacuum launcher process                                                                                          
+ 1444145059     32423    0.00    0.00    0.00    0.00     2      0.17      0.00  118956   3348   0.02      0.00      0.93      0.00      0.53      0.02  postgres: stats collector process                                                                                              
+ 1444145059     32534    0.00    0.00    0.00    0.00     3      1.70      0.00  106128   2796   0.02      0.00      0.00      0.00      0.07      0.05  /bin/sh /usr/local/bin/dbt3-pgxl-dbstat /tmp/pgxl-explain-example/load 
+
+#      Time       PID    %usr %system  %guest    %CPU   CPU  minflt/s  majflt/s     VSZ    RSS   %MEM   kB_rd/s   kB_wr/s kB_ccwr/s   cswch/s nvcswch/s  Command
+ 1444145119         1    0.00    0.00    0.00    0.00     1      0.00      0.00   19292    672   0.00     -1.00     -1.00     -1.00      0.23      0.00  /sbin/init 
+ 1444145119       248    0.00    0.00    0.00    0.00     1      0.00      0.02  245104    272   0.00     -1.00     -1.00     -1.00      0.00      0.00  /sbin/rsyslogd -i /var/run/syslogd.pid -c 5 
+ 1444145119       323    0.00    0.00    0.00    0.00     2      0.05      0.00   20032    464   0.00     -1.00     -1.00     -1.00      0.02      0.00  crond 
+ 1444145119       571    0.00    0.00    0.00    0.00     0      1.45      0.00  100968    408   0.00      0.00      0.00      0.00      0.02      0.03  sleep 60 
+ 1444145119     32291    0.00    0.00    0.00    0.00     1      0.00      0.00  101036   2012   0.01      0.00      0.07      0.00      0.02      0.00  sar -o /tmp/pgxl-explain-example/load/pgxl/sar_raw.out 60 
+ 1444145119     32294    0.00    0.00    0.00    0.00     0      0.00      0.00   59884   6292   0.04      0.00      0.00      0.00      0.03      0.02  ssh pgxl1 
+ 1444145119     32295    0.00    0.00    0.00    0.00     3      2.40      0.00  101024   1884   0.01      0.07      0.13      0.00      0.17      0.02  pidstat -h -l -d -r -u -w 60 
+ 1444145119     32296    0.00    0.00    0.00    0.00     3      0.00      0.00   59884   6300   0.04      0.00      0.00      0.00      0.03      0.02  ssh pgxl2 
+ 1444145119     32299    0.00    0.00    0.00    0.00     0      0.00      0.00   59884   6332   0.04      0.00      0.00      0.00      0.03      0.02  ssh pgxl2 
+ 1444145119     32300    0.00    0.00    0.00    0.00     3      0.43      0.00  101036   1996   0.01      0.40      0.33      0.00      0.47      0.02  sadc 60 -z -S ALL /tmp/pgxl-explain-example/load/pgxl/sar_raw.out 
+ 1444145119     32302    0.00    0.00    0.00    0.00     0      0.00      0.00   59884   6240   0.04      0.00      0.00      0.00      0.03      0.00  ssh pgxl1 
+ 1444145119     32395    0.00    0.00    0.00    0.00     2      0.85      0.00 1748432   8484   0.05      0.00      0.00      0.00      0.18      0.00  gtm -D /tmp/dbt3/pgdata/gtm -l /tmp/pgxl-explain-example/load/gtm.log 
+ 1444145119     32416    0.00    0.00    0.00    0.00     2      1.05      0.00  680772  39948   0.24      0.00      0.00      0.00      0.20      0.00  /opt/pgxl/bin/postgres --coordinator -D /tmp/dbt3/pgdata/coordinator -c pooler_port=35432 -c listen_addresses=* -c max_prepared
+ 1444145119     32418    0.00    0.00    0.00    0.00     3      0.00      0.00  682112   5364   0.03      0.00      0.00      0.00      0.03      0.00  postgres: pooler process                                                                                                       
+ 1444145119     32420    0.00    0.00    0.00    0.00     0      0.00      0.00  680772   7544   0.05      0.00      0.00      0.00      0.20      0.00  postgres: writer process                                                                                                       
+ 1444145119     32421    0.00    0.02    0.00    0.02     1      0.00      0.00  680772  20164   0.12      0.00      1.20      0.00      3.05      0.00  postgres: wal writer process                                                                                                   
+ 1444145119     32422    0.00    0.00    0.00    0.00     1      0.13      0.00  681356   6596   0.04      0.00      0.00      0.00      0.33      0.03  postgres: autovacuum launcher process                                                                                          
+ 1444145119     32423    0.02    0.02    0.00    0.03     2      0.17      0.00  118956   3348   0.02      0.00      0.93      0.00      0.77      0.02  postgres: stats collector process                                                                                              
+ 1444145119     32534    0.00    0.00    0.00    0.00     3      1.70      0.00  106128   2796   0.02      0.00      0.00      0.00      0.07      0.00  /bin/sh /usr/local/bin/dbt3-pgxl-dbstat /tmp/pgxl-explain-example/load 
+
+#      Time       PID    %usr %system  %guest    %CPU   CPU  minflt/s  majflt/s     VSZ    RSS   %MEM   kB_rd/s   kB_wr/s kB_ccwr/s   cswch/s nvcswch/s  Command
+ 1444145179         1    0.00    0.00    0.00    0.00     0      0.00      0.00   19292    672   0.00     -1.00     -1.00     -1.00      0.18      0.00  /sbin/init 
+ 1444145179       323    0.00    0.00    0.00    0.00     2      0.05      0.00   20032    464   0.00     -1.00     -1.00     -1.00      0.02      0.00  crond 
+ 1444145179       358    0.00    0.00    0.00    0.00     1      0.00      0.00   93988    352   0.00     -1.00     -1.00     -1.00      0.03      0.02  sshd: mark@pts/4  
+ 1444145179       603    0.00    0.00    0.00    0.00     0      2.83      0.00  114944   3080   0.02      0.00      0.00      0.00      0.03      0.02  psql -v ON_ERROR_STOP=1 -X -c 
+ALTER TABLE lineitem
+ADD CONSTRAINT pk_lineitem PRIMARY KEY (l_orderkey, l_linenumber); 
+ 1444145179       604    0.00    0.00    0.00    0.00     3      2.83      0.00  114944   3008   0.02      0.00      0.00      0.00      0.03      0.05  psql -v ON_ERROR_STOP=1 -X -c 
+CREATE INDEX lineitem_l_partkey_l_quantity_l_shipmode_idx
+ON lineitem (l_partkey, l_quantity, l_
+ 1444145179       605    0.00    0.00    0.00    0.00     0      2.83      0.00  114944   3116   0.02      0.00      0.00      0.00      0.03      0.05  psql -v ON_ERROR_STOP=1 -X -c 
+CREATE INDEX lineitem_l_orderkey_idx
+ON lineitem (l_orderkey); 
+ 1444145179       606    0.00    0.00    0.00    0.00     0      2.83      0.00  114944   3044   0.02      0.00      0.00      0.00      0.03      0.03  psql -v ON_ERROR_STOP=1 -X -c 
+CREATE INDEX lineitem_l_orderkey_idx_l_returnflag
+ON lineitem (l_orderkey)
+WHERE l_returnflag = 
+ 1444145179       607    0.00    0.00    0.00    0.00     2      2.85      0.00  114944   3076   0.02      0.00      0.00      0.00      0.03      0.03  psql -v ON_ERROR_STOP=1 -X -c 
+CREATE INDEX lineitem_l_orderkey_idx_part1
+ON lineitem (l_orderkey)
+WHERE l_commitdate < l_recei
+ 1444145179       608    0.00    0.00    0.00    0.00     2      2.85      0.00  114944   3036   0.02      0.00      0.00      0.00      0.03      0.05  psql -v ON_ERROR_STOP=1 -X -c 
+CREATE INDEX lineitem_l_orderkey_idx_part2
+ON lineitem (l_orderkey)
+WHERE l_commitdate < l_recei
+ 1444145179       609    0.00    0.00    0.00    0.00     1      2.85      0.00  114944   3008   0.02      0.00      0.00      0.00      0.03      0.03  psql -v ON_ERROR_STOP=1 -X -c 
+CREATE INDEX lineitem_l_shipdate_l_suppkey__idx
+ON lineitem (l_shipdate, l_suppkey); 
+ 1444145179       610    0.00    0.00    0.00    0.00     3      2.82      0.00  114944   2996   0.02      0.00      0.00      0.00      0.03      0.05  psql -v ON_ERROR_STOP=1 -X -c 
+CREATE INDEX lineitem_l_orderkey_l_linenumber_l_shipdate_idx
+ON lineitem (l_orderkey, l_linenumb
+ 1444145179       611    0.00    0.00    0.00    0.00     1      8.05      0.00  682032  11752   0.07      0.00      0.13      0.00      0.32      0.30  postgres: mark dbt3 [local] ALTER TABLE                                                                                        
+ 1444145179       612    0.00    0.00    0.00    0.00     1      7.13      0.00  682032   9552   0.06      0.00      0.00      0.00      0.25      0.00  postgres: mark dbt3 [local] CREATE INDEX waiting                                                                               
+ 1444145179       613    0.00    0.00    0.00    0.00     2      7.15      0.00  682032   9540   0.06      0.00      0.07      0.00      0.22      0.02  postgres: mark dbt3 [local] CREATE INDEX waiting                                                                               
+ 1444145179       614    0.00    0.00    0.00    0.00     0      7.18      0.00  682032   9552   0.06      0.00      0.00      0.00      0.23      0.03  postgres: mark dbt3 [local] CREATE INDEX waiting                                                                               
+ 1444145179       615    0.00    0.00    0.00    0.00     0      7.10      0.00  682032   9480   0.06      0.00      0.00      0.00      0.23      0.05  postgres: mark dbt3 [local] CREATE INDEX waiting                                                                               
+ 1444145179       619    0.00    0.00    0.00    0.00     3      7.13      0.00  682032   9420   0.06      0.00      0.07      0.00      0.25      0.07  postgres: mark dbt3 [local] CREATE INDEX waiting                                                                               
+ 1444145179       620    0.00    0.00    0.00    0.00     1      7.10      0.00  682032   9480   0.06      0.00      0.00      0.00      0.22      0.03  postgres: mark dbt3 [local] CREATE INDEX waiting                                                                               
+ 1444145179       621    0.00    0.00    0.00    0.00     1      7.15      0.00  682032   9484   0.06      0.00      0.00      0.00      0.28      0.02  postgres: mark dbt3 [local] CREATE INDEX waiting                                                                               
+ 1444145179       636    0.00    0.00    0.00    0.00     3      1.42      0.00  100968    456   0.00      0.00      0.00      0.00      0.02      0.00  sleep 60 
+ 1444145179     32291    0.00    0.00    0.00    0.00     3      0.00      0.00  101036   2012   0.01      0.00      0.07      0.00      0.02      0.00  sar -o /tmp/pgxl-explain-example/load/pgxl/sar_raw.out 60 
+
+#      Time       PID    %usr %system  %guest    %CPU   CPU  minflt/s  majflt/s     VSZ    RSS   %MEM   kB_rd/s   kB_wr/s kB_ccwr/s   cswch/s nvcswch/s  Command
+ 1444145239         1    0.00    0.00    0.00    0.00     0      0.00      0.00   19292    668   0.00     -1.00     -1.00     -1.00      0.25      0.00  /sbin/init 
+ 1444145239       248    0.00    0.00    0.00    0.00     1      0.00      0.00  245104    268   0.00     -1.00     -1.00     -1.00      0.00      0.00  /sbin/rsyslogd -i /var/run/syslogd.pid -c 5 
+ 1444145239       323    0.00    0.00    0.00    0.00     2      0.05      0.00   20032    464   0.00     -1.00     -1.00     -1.00      0.02      0.02  crond 
+ 1444145239       356    0.00    0.00    0.00    0.00     1      0.00      0.00   93844    336   0.00     -1.00     -1.00     -1.00      0.00      0.00  sshd: mark [priv] 
+ 1444145239       358    0.00    0.00    0.00    0.00     1      0.00      0.00   93988    352   0.00     -1.00     -1.00     -1.00      0.02      0.00  sshd: mark@pts/4  
+ 1444145239       359    0.00    0.00    0.00    0.00     0      0.00      0.00  108464    612   0.00      0.00      0.00      0.00      0.00      0.00  -bash 
+ 1444145239       612    0.00    0.00    0.00    0.00     0      1.07      0.00  682032  11356   0.07      0.00      0.13      0.00      0.22      0.07  postgres: mark dbt3 [local] CREATE INDEX                                                                                       
+ 1444145239       613    0.00    0.00    0.00    0.00     2      1.10      0.00  682032  11440   0.07      0.13      0.20      0.00      0.30      0.00  postgres: mark dbt3 [local] CREATE INDEX                                                                                       
+ 1444145239       614    0.00    0.00    0.00    0.00     0      0.95      0.00  682032  11680   0.07      0.00      0.13      0.00      0.33      0.03  postgres: mark dbt3 [local] CREATE INDEX                                                                                       
+ 1444145239       615    0.00    0.00    0.00    0.00     0      0.85      0.00  682032  11680   0.07      0.13      0.27      0.00      0.27      0.02  postgres: mark dbt3 [local] CREATE INDEX                                                                                       
+ 1444145239       619    0.00    0.00    0.00    0.00     3      0.92      0.00  682032  11340   0.07      0.00      0.13      0.00      0.20      0.03  postgres: mark dbt3 [local] CREATE INDEX                                                                                       
+ 1444145239       620    0.00    0.00    0.00    0.00     0      0.78      0.00  682032  11560   0.07      0.00      0.13      0.00      0.18      0.03  postgres: mark dbt3 [local] CREATE INDEX                                                                                       
+ 1444145239       621    0.00    0.00    0.00    0.00     1      0.88      0.00  682032  11680   0.07      0.07      0.20      0.00      0.25      0.05  postgres: mark dbt3 [local] CREATE INDEX                                                                                       
+ 1444145239       677    0.00    0.00    0.00    0.00     0      1.45      0.00  100968    460   0.00      0.00      0.00      0.00      0.05      0.02  sleep 60 
+ 1444145239     32257    0.00    0.00    0.00    0.00     0      0.00      0.00  106128    772   0.00      0.00      0.00      0.00      0.00      0.00  /bin/sh /usr/local/bin/dbt3-run-workload -a pgxl -f 10 -n 2 -e -o /tmp/pgxl-explain-example 
+ 1444145239     32267    0.00    0.00    0.00    0.00     3      0.00      0.00  106128   2088   0.01      0.00      0.00      0.00      0.00      0.00  /bin/sh /usr/local/bin/dbt3-pgxl-load-test -o /tmp/pgxl-explain-example/load -p -c max_prepared_transactions=30 -c shared_buffe
+ 1444145239     32291    0.00    0.00    0.00    0.00     3      0.00      0.00  101036   2012   0.01      0.00      0.07      0.00      0.02      0.00  sar -o /tmp/pgxl-explain-example/load/pgxl/sar_raw.out 60 
+ 1444145239     32295    0.00    0.08    0.00    0.08     3     30.17      0.00  101024   1884   0.01      1.33      1.40      0.00      2.02      1.05  pidstat -h -l -d -r -u -w 60 
+ 1444145239     32296    0.02    0.00    0.00    0.02     3      8.08      0.25   59884   6300   0.04     11.00      0.07      0.00      1.22      0.45  ssh pgxl2 
+
+#      Time       PID    %usr %system  %guest    %CPU   CPU  minflt/s  majflt/s     VSZ    RSS   %MEM   kB_rd/s   kB_wr/s kB_ccwr/s   cswch/s nvcswch/s  Command
+ 1444145299         1    0.00    0.00    0.00    0.00     0      0.02      0.00   19292    432   0.00     -1.00     -1.00     -1.00      0.25      0.00  /sbin/init 
+ 1444145299       248    0.00    0.00    0.00    0.00     1      0.02      0.00  245104    272   0.00     -1.00     -1.00     -1.00      0.00      0.00  /sbin/rsyslogd -i /var/run/syslogd.pid -c 5 
+ 1444145299       323    0.00    0.00    0.00    0.00     2      0.05      0.00   20032    464   0.00     -1.00     -1.00     -1.00      0.02      0.00  crond 
+ 1444145299       356    0.00    0.00    0.00    0.00     1      0.02      0.00   93844    340   0.00     -1.00     -1.00     -1.00      0.00      0.00  sshd: mark [priv] 
+ 1444145299       358    0.00    0.00    0.00    0.00     2      0.00      0.00   93988    176   0.00     -1.00     -1.00     -1.00      0.05      0.02  sshd: mark@pts/4  
+ 1444145299       359    0.00    0.00    0.00    0.00     0      0.02      0.00  108464    532   0.00      0.00      0.00      0.00      0.00      0.00  -bash 
+ 1444145299       604    0.00    0.00    0.00    0.00     3      0.00      0.00  114944   2116   0.01      0.00      0.00      0.00      0.00      0.00  psql -v ON_ERROR_STOP=1 -X -c 
+CREATE INDEX lineitem_l_partkey_l_quantity_l_shipmode_idx
+ON lineitem (l_partkey, l_quantity, l_
+ 1444145299       605    0.00    0.00    0.00    0.00     0      0.00      0.00  114944   2276   0.01      0.00      0.00      0.00      0.00      0.00  psql -v ON_ERROR_STOP=1 -X -c 
+CREATE INDEX lineitem_l_orderkey_idx
+ON lineitem (l_orderkey); 
+ 1444145299       607    0.00    0.00    0.00    0.00     2      0.00      0.00  114944   2216   0.01      0.00      0.00      0.00      0.00      0.00  psql -v ON_ERROR_STOP=1 -X -c 
+CREATE INDEX lineitem_l_orderkey_idx_part1
+ON lineitem (l_orderkey)
+WHERE l_commitdate < l_recei
+ 1444145299       609    0.00    0.00    0.00    0.00     1      0.00      0.00  114944   2116   0.01      0.00      0.00      0.00      0.00      0.00  psql -v ON_ERROR_STOP=1 -X -c 
+CREATE INDEX lineitem_l_shipdate_l_suppkey__idx
+ON lineitem (l_shipdate, l_suppkey); 
+ 1444145299       610    0.00    0.00    0.00    0.00     3      0.00      0.00  114944   2168   0.01      0.00      0.00      0.00      0.00      0.00  psql -v ON_ERROR_STOP=1 -X -c 
+CREATE INDEX lineitem_l_orderkey_l_linenumber_l_shipdate_idx
+ON lineitem (l_orderkey, l_linenumb
+ 1444145299       612    0.00    0.00    0.00    0.00     0      0.00      0.00  682032  10716   0.07      0.00      0.00      0.00      0.00      0.00  postgres: mark dbt3 [local] CREATE INDEX                                                                                       
+ 1444145299       614    0.00    0.00    0.00    0.00     0      0.00      0.00  682032  11040   0.07      0.00      0.00      0.00      0.00      0.00  postgres: mark dbt3 [local] CREATE INDEX                                                                                       
+ 1444145299       615    0.00    0.00    0.00    0.00     0      0.00      0.00  682032  11040   0.07      0.00      0.00      0.00      0.00      0.00  postgres: mark dbt3 [local] CREATE INDEX                                                                                       
+ 1444145299       619    0.00    0.00    0.00    0.00     3      0.00      0.00  682032  10700   0.07      0.00      0.00      0.00      0.00      0.00  postgres: mark dbt3 [local] CREATE INDEX                                                                                       
+ 1444145299       620    0.00    0.00    0.00    0.00     0      0.00      0.00  682032  10920   0.07      0.00      0.00      0.00      0.00      0.00  postgres: mark dbt3 [local] CREATE INDEX                                                                                       
+ 1444145299       719    0.00    0.00    0.00    0.00     0      1.33      0.08  100968    400   0.00      7.73      0.00      0.00      0.12      0.02  sleep 60 
+ 1444145299      6810    0.00    0.00    0.00    0.00     0      0.00      0.00  236956   7056   0.04      0.00      0.00      0.00      0.00      0.00  gvim 
+ 1444145299     32257    0.00    0.00    0.00    0.00     0      0.02      0.00  106128    368   0.00      0.00      0.00      0.00      0.00      0.00  /bin/sh /usr/local/bin/dbt3-run-workload -a pgxl -f 10 -n 2 -e -o /tmp/pgxl-explain-example 
+ 1444145299     32267    0.00    0.00    0.00    0.00     3      0.00      0.00  106128   1740   0.01      0.00      0.00      0.00      0.00      0.00  /bin/sh /usr/local/bin/dbt3-pgxl-load-test -o /tmp/pgxl-explain-example/load -p -c max_prepared_transactions=30 -c shared_buffe
+ 1444145299     32291    0.00    0.00    0.00    0.00     3      0.00      0.00  101036   1580   0.01      0.00      0.07      0.00      0.02      0.00  sar -o /tmp/pgxl-explain-example/load/pgxl/sar_raw.out 60 
+ 1444145299     32292    0.00    0.00    0.00    0.00     3      0.00      0.00  106128    224   0.00      0.00      0.00      0.00      0.00      0.00  /bin/sh /usr/local/bin/dbt3-sysstats --outdir /tmp/pgxl-explain-example/load --sample 60 --mpp 1 
+ 1444145299     32293    0.00    0.00    0.00    0.00     2      0.00      0.00  106128    224   0.00      0.00      0.00      0.00      0.00      0.00  /bin/sh /usr/local/bin/dbt3-sysstats --outdir /tmp/pgxl-explain-example/load --sample 60 --mpp 1 
+ 1444145299     32294    0.00    0.00    0.00    0.00     0      0.00      0.00   59884   3728   0.02      0.00      0.00      0.00      0.00      0.00  ssh pgxl1 
+ 1444145299     32295    0.00    0.00    0.00    0.00     3      2.15      0.00  101024   1580   0.01      0.13      0.13      0.00      0.17      0.05  pidstat -h -l -d -r -u -w 60 
+ 1444145299     32296    0.00    0.00    0.00    0.00     3      0.00      0.00   59884   3780   0.02      0.00      0.00      0.00      0.00      0.00  ssh pgxl2 
+ 1444145299     32297    0.00    0.00    0.00    0.00     2      1.08      0.00  106128    224   0.00      0.00      0.00      0.00      0.02      0.00  /bin/sh /usr/local/bin/dbt3-sysstats --outdir /tmp/pgxl-explain-example/load --sample 60 --mpp 1 
+ 1444145299     32298    0.00    0.00    0.00    0.00     3      1.12      0.00  106128   1572   0.01      0.00      0.00      0.00      0.02      0.00  /bin/sh /usr/local/bin/dbt3-sysstats --outdir /tmp/pgxl-explain-example/load --sample 60 --mpp 1 
+ 1444145299     32299    0.02    0.02    0.00    0.03     0      8.13      0.32   59884   3844   0.02     10.60      0.07      0.00      1.28      0.20  ssh pgxl2 
+ 1444145299     32300    0.02    0.02    0.00    0.03     3      7.80      0.02  101032   1640   0.01      7.67      4.47      0.00      7.42      1.52  sadc 60 -z -S ALL /tmp/pgxl-explain-example/load/pgxl/sar_raw.out 
+
+#      Time       PID    %usr %system  %guest    %CPU   CPU  minflt/s  majflt/s     VSZ    RSS   %MEM   kB_rd/s   kB_wr/s kB_ccwr/s   cswch/s nvcswch/s  Command
+ 1444145359         1    0.00    0.00    0.00    0.00     0      0.00      0.00   19292    432   0.00     -1.00     -1.00     -1.00      0.15      0.02  /sbin/init 
+ 1444145359       323    0.00    0.00    0.00    0.00     2      0.05      0.00   20032    464   0.00     -1.00     -1.00     -1.00      0.02      0.00  crond 
+ 1444145359       358    0.00    0.00    0.00    0.00     1      0.00      0.02   93988    176   0.00     -1.00     -1.00     -1.00      0.10      0.02  sshd: mark@pts/4  
+ 1444145359       620    0.00    0.00    0.00    0.00     0      0.07      0.00  682032  10920   0.07      0.00      0.20      0.00      0.23      0.03  postgres: mark dbt3 [local] CREATE INDEX                                                                                       
+ 1444145359       763    0.00    0.00    0.00    0.00     1      1.42      0.00  100968    424   0.00      0.00      0.00      0.00      0.02      0.02  sleep 60 
+ 1444145359      6810    0.00    0.00    0.00    0.00     1      0.40      0.58  236956   8848   0.05     59.80      0.00      0.00      0.63      0.03  gvim 
+ 1444145359     32291    0.00    0.00    0.00    0.00     3      0.02      0.00  101036   1580   0.01      0.00      0.07      0.00      0.02      0.00  sar -o /tmp/pgxl-explain-example/load/pgxl/sar_raw.out 60 
+ 1444145359     32294    0.00    0.00    0.00    0.00     0      0.03      0.02   59884   3716   0.02      3.93      0.00      0.00      0.08      0.00  ssh pgxl1 
+ 1444145359     32295    0.02    0.00    0.00    0.02     3      2.27      0.00  101024   1580   0.01      0.07      0.13      0.00      0.18      0.02  pidstat -h -l -d -r -u -w 60 
+ 1444145359     32296    0.00    0.00    0.00    0.00     3      0.05      0.00   59884   3768   0.02      0.00      0.00      0.00      0.03      0.00  ssh pgxl2 
+ 1444145359     32299    0.00    0.00    0.00    0.00     0      0.05      0.00   59884   3832   0.02      0.00      0.00      0.00      0.03      0.00  ssh pgxl2 
+ 1444145359     32300    0.00    0.02    0.00    0.02     0      0.73      0.00  101036   1640   0.01      0.80      0.40      0.00      0.85      0.00  sadc 60 -z -S ALL /tmp/pgxl-explain-example/load/pgxl/sar_raw.out 
+ 1444145359     32302    0.02    0.00    0.00    0.02     0      8.13      0.35   59884   3708   0.02     23.80      0.07      0.00      1.45      0.17  ssh pgxl1 
+ 1444145359     32395    0.03    0.53    0.00    0.57     3     38.20      0.02 1764824   8624   0.05      1.53     37.87      0.13      4.17      0.88  gtm -D /tmp/dbt3/pgdata/gtm -l /tmp/pgxl-explain-example/load/gtm.log 
+
+#      Time       PID    %usr %system  %guest    %CPU   CPU  minflt/s  majflt/s     VSZ    RSS   %MEM   kB_rd/s   kB_wr/s kB_ccwr/s   cswch/s nvcswch/s  Command
+ 1444145419         1    0.00    0.00    0.00    0.00     1      0.00      0.00   19292    432   0.00     -1.00     -1.00     -1.00      0.22      0.02  /sbin/init 
+ 1444145419       248    0.00    0.00    0.00    0.00     1      0.02      0.02  245104    272   0.00     -1.00     -1.00     -1.00      0.00      0.00  /sbin/rsyslogd -i /var/run/syslogd.pid -c 5 
+ 1444145419       323    0.00    0.00    0.00    0.00     2      0.17      0.00   20032    464   0.00     -1.00     -1.00     -1.00      0.03      0.00  crond 
+ 1444145419       358    0.00    0.00    0.00    0.00     2      0.00      0.00   93988    176   0.00     -1.00     -1.00     -1.00      0.05      0.00  sshd: mark@pts/4  
+ 1444145419       807    0.00    0.00    0.00    0.00     1      1.43      0.00  100968    464   0.00      0.00      0.00      0.00      0.02      0.00  sleep 60 
+ 1444145419     32291    0.00    0.00    0.00    0.00     2      0.00      0.00  101036   1580   0.01      0.00      0.13      0.00      0.03      0.00  sar -o /tmp/pgxl-explain-example/load/pgxl/sar_raw.out 60 
+ 1444145419     32294    0.00    0.00    0.00    0.00     0      0.00      0.00   59884   3712   0.02      0.00      0.00      0.00      0.00      0.00  ssh pgxl1 
+ 1444145419     32295    0.00    0.00    0.00    0.00     3      2.13      0.00  101024   1580   0.01      0.20      0.13      0.00      0.15      0.45  pidstat -h -l -d -r -u -w 60 
+ 1444145419     32296    0.00    0.00    0.00    0.00     3      0.00      0.00   59884   3764   0.02      0.00      0.00      0.00      0.00      0.00  ssh pgxl2 
+ 1444145419     32299    0.00    0.00    0.00    0.00     0      0.00      0.00   59884   3828   0.02      0.00      0.00      0.00      0.00      0.00  ssh pgxl2 
+ 1444145419     32300    0.00    0.00    0.00    0.00     2      0.73      0.00  101032   1640   0.01      0.47      0.73      0.00      0.70      0.03  sadc 60 -z -S ALL /tmp/pgxl-explain-example/load/pgxl/sar_raw.out 
+ 1444145419     32302    0.00    0.00    0.00    0.00     0      0.00      0.00   59884   3704   0.02      0.00      0.00      0.00      0.00      0.00  ssh pgxl1 
+ 1444145419     32395    0.02    0.02    0.00    0.03     1      1.03      0.00 1748432  24380   0.15      0.00      0.00      0.00      0.20      0.05  gtm -D /tmp/dbt3/pgdata/gtm -l /tmp/pgxl-explain-example/load/gtm.log 
+ 1444145419     32416    0.03    0.05    0.00    0.08     3    175.53      0.00  680772  39260   0.24 155949.13    169.73      4.07      6.08      0.48  /opt/pgxl/bin/postgres --coordinator -D /tmp/dbt3/pgdata/coordinator -c pooler_port=35432 -c listen_addresses=* -c max_prepared
+ 1444145419     32418    0.03    0.00    0.00    0.03     3      5.20      0.00  682072   5316   0.03      0.00      0.07      0.00      7.27      0.67  postgres: pooler process                                                                                                       
+ 1444145419     32419    0.00    0.02    0.00    0.02     2     20.05      0.00  680912  10772   0.07      6.40     18.40      0.00      5.23      1.13  postgres: checkpointer process                                                                                                 
+ 1444145419     32420    0.00    0.05    0.00    0.05     2     18.62      0.00  680772   7512   0.05      0.00      0.00      0.00     12.77      0.22  postgres: writer process                                                                                                       

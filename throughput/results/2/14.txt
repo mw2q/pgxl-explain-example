@@ -1,0 +1,26 @@
+BEGIN;
+BEGIN
+EXPLAIN (ANALYZE, BUFFERS)
+select
+	100.00 * sum(case
+		when p_type like 'PROMO%'
+			then l_extendedprice * (1 - l_discount)
+		else 0
+	end) / sum(l_extendedprice * (1 - l_discount)) as promo_revenue
+from
+	lineitem,
+	part
+where
+	l_partkey = p_partkey
+	and l_shipdate >= date '1995-04-01'
+	and l_shipdate < cast(date '1995-04-01' + interval '1 month' as date);
+                                                                             QUERY PLAN                                                                             
+--------------------------------------------------------------------------------------------------------------------------------------------------------------------
+ Aggregate  (cost=1152290.94..1152290.95 rows=1 width=29) (actual time=10626.274..10626.274 rows=1 loops=1)
+   ->  Remote Subquery Scan on all (datanode_1_1,datanode_2_1)  (cost=101315.96..1139269.70 rows=744071 width=29) (actual time=10609.552..10626.211 rows=2 loops=1)
+ Planning time: 1.326 ms
+ Execution time: 10652.240 ms
+(4 rows)
+
+COMMIT;
+COMMIT

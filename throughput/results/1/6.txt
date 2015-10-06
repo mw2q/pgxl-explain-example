@@ -1,0 +1,22 @@
+BEGIN;
+BEGIN
+EXPLAIN (ANALYZE, BUFFERS)
+select
+	sum(l_extendedprice * l_discount) as revenue
+from
+	lineitem
+where
+	l_shipdate >= date '1994-01-01'
+	and l_shipdate < cast(date '1994-01-01' + interval '1 year' as date)
+	and l_discount between 0.03 - 0.01 and 0.03 + 0.01
+	and l_quantity < 24;
+                                                                            QUERY PLAN                                                                             
+-------------------------------------------------------------------------------------------------------------------------------------------------------------------
+ Aggregate  (cost=1468037.21..1468037.22 rows=1 width=8) (actual time=15795.305..15795.305 rows=1 loops=1)
+   ->  Remote Subquery Scan on all (datanode_1_1,datanode_2_1)  (cost=192464.61..1464198.74 rows=767695 width=8) (actual time=11655.325..15795.254 rows=2 loops=1)
+ Planning time: 0.846 ms
+ Execution time: 15803.956 ms
+(4 rows)
+
+COMMIT;
+COMMIT

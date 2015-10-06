@@ -1,0 +1,61 @@
+BEGIN;
+BEGIN
+create or replace view revenue2 (supplier_no, total_revenue) as
+	select
+		l_suppkey,
+		sum(l_extendedprice * (1 - l_discount))
+	from
+		lineitem
+	where
+		l_shipdate >= '1994-06-01'
+		and l_shipdate < date'1994-06-01' + interval '90 days'
+	group by
+		l_suppkey;
+CREATE VIEW
+EXPLAIN (ANALYZE, BUFFERS)
+select
+	s_suppkey,
+	s_name,
+	s_address,
+	s_phone,
+	total_revenue
+from
+	supplier,
+	revenue2
+where
+	s_suppkey = supplier_no
+	and total_revenue = (
+		select
+			max(total_revenue)
+		from
+			revenue2
+	)
+order by
+	s_suppkey;
+                                                                                        QUERY PLAN                                                                                        
+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+ Merge Join  (cost=2346217.51..2355680.18 rows=3606 width=79) (actual time=19328.446..19328.449 rows=1 loops=1)
+   Merge Cond: (s_suppkey = revenue2.supplier_no)
+   InitPlan 1 (returns $0)
+     ->  Aggregate  (cost=1164934.47..1164934.48 rows=1 width=8) (actual time=5117.214..5117.214 rows=1 loops=1)
+           ->  HashAggregate  (cost=1164853.33..1164889.40 rows=3606 width=12) (actual time=5071.847..5100.830 rows=100000 loops=1)
+                 Group Key: l_suppkey
+                 ->  Remote Subquery Scan on all (datanode_1_1,datanode_2_1)  (cost=45651.84..1143339.53 rows=2151380 width=12) (actual time=3424.085..4836.026 rows=200000 loops=1)
+   ->  Remote Subquery Scan on all (datanode_2_1)  (cost=100.17..16858.74 rows=100000 width=71) (actual time=2.256..29.478 rows=32993 loops=1)
+   ->  Sort  (cost=1181282.87..1181291.88 rows=3606 width=12) (actual time=19271.517..19271.517 rows=1 loops=1)
+         Sort Key: revenue2.supplier_no
+         Sort Method: quicksort  Memory: 25kB
+         ->  Subquery Scan on revenue2  (cost=1180988.68..1181069.82 rows=3606 width=12) (actual time=19271.236..19271.498 rows=1 loops=1)
+               ->  HashAggregate  (cost=1180988.68..1181033.76 rows=3606 width=12) (actual time=19271.234..19271.495 rows=1 loops=1)
+                     Group Key: l_suppkey
+                     Filter: (sum((sum((l_extendedprice * ('1'::double precision - l_discount))))) = $0)
+                     Rows Removed by Filter: 99999
+                     ->  Remote Subquery Scan on all (datanode_1_1,datanode_2_1)  (cost=45651.84..1143339.53 rows=2151380 width=12) (actual time=9757.793..13999.865 rows=200000 loops=1)
+ Planning time: 0.867 ms
+ Execution time: 19336.348 ms
+(19 rows)
+
+drop view revenue2;
+DROP VIEW
+COMMIT;
+COMMIT

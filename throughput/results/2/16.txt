@@ -1,0 +1,48 @@
+BEGIN;
+BEGIN
+EXPLAIN (ANALYZE, BUFFERS)
+select
+	p_brand,
+	p_type,
+	p_size,
+	count(distinct ps_suppkey) as supplier_cnt
+from
+	partsupp,
+	part
+where
+	p_partkey = ps_partkey
+	and p_brand <> 'Brand#21'
+	and p_type not like 'STANDARD POLISHED%'
+	and p_size in (45, 50, 29, 20, 44, 19, 32, 22)
+	and ps_suppkey not in (
+		select
+			s_suppkey
+		from
+			supplier
+		where
+			s_comment like '%Customer%Complaints%'
+	)
+group by
+	p_brand,
+	p_type,
+	p_size
+order by
+	supplier_cnt desc,
+	p_brand,
+	p_type,
+	p_size;
+                                                                                  QUERY PLAN                                                                                  
+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+ Sort  (cost=358145.72..358215.27 rows=27821 width=40) (actual time=24952.677..24954.903 rows=27840 loops=1)
+   Sort Key: (count(DISTINCT partsupp.ps_suppkey)) DESC, part.p_brand, part.p_type, part.p_size
+   Sort Method: quicksort  Memory: 2968kB
+   Buffers: shared hit=14
+   ->  GroupAggregate  (cost=57980.79..356091.99 rows=27821 width=40) (actual time=22227.215..24851.559 rows=27840 loops=1)
+         Group Key: part.p_brand, part.p_type, part.p_size
+         ->  Remote Subquery Scan on all (datanode_1_1,datanode_2_1)  (cost=57980.79..349878.51 rows=593527 width=40) (actual time=22227.164..24285.893 rows=1184198 loops=1)
+ Planning time: 1.686 ms
+ Execution time: 24972.542 ms
+(9 rows)
+
+COMMIT;
+COMMIT

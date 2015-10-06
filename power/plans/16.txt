@@ -1,0 +1,59 @@
+BEGIN;
+BEGIN
+EXPLAIN
+select
+	p_brand,
+	p_type,
+	p_size,
+	count(distinct ps_suppkey) as supplier_cnt
+from
+	partsupp,
+	part
+where
+	p_partkey = ps_partkey
+	and p_brand <> 'Brand#51'
+	and p_type not like 'MEDIUM ANODIZED%'
+	and p_size in (38, 10, 11, 12, 50, 33, 30, 14)
+	and ps_suppkey not in (
+		select
+			s_suppkey
+		from
+			supplier
+		where
+			s_comment like '%Customer%Complaints%'
+	)
+group by
+	p_brand,
+	p_type,
+	p_size
+order by
+	supplier_cnt desc,
+	p_brand,
+	p_type,
+	p_size;
+                                                                QUERY PLAN                                                                
+------------------------------------------------------------------------------------------------------------------------------------------
+ Sort  (cost=393833.83..393903.06 rows=27695 width=40)
+   Sort Key: (count(DISTINCT partsupp.ps_suppkey)) DESC, part.p_brand, part.p_type, part.p_size
+   ->  GroupAggregate  (cost=60174.24..391790.30 rows=27695 width=40)
+         Group Key: part.p_brand, part.p_type, part.p_size
+         ->  Remote Subquery Scan on all (datanode_1_1,datanode_2_1)  (cost=60174.24..385605.02 rows=590833 width=40)
+               ->  Sort  (cost=458399.43..459876.51 rows=590833 width=40)
+                     Sort Key: part.p_brand, part.p_type, part.p_size
+                     ->  Hash Join  (cost=60174.24..385605.02 rows=590833 width=40)
+                           Hash Cond: (partsupp.ps_partkey = part.p_partkey)
+                           ->  Seq Scan on partsupp  (cost=32.37..270994.37 rows=4000120 width=8)
+                                 Filter: (NOT (hashed SubPlan 1))
+                                 SubPlan 1
+                                   ->  Remote Subquery Scan on all (datanode_2_1)  (cost=0.12..32.35 rows=10 width=4)
+                                         ->  Index Scan using supplier_s_suppkey_idx_like on supplier  (cost=0.12..32.35 rows=10 width=4)
+                           ->  Hash  (cost=54141.27..54141.27 rows=295408 width=40)
+                                 ->  Bitmap Heap Scan on part  (cost=5686.27..54141.27 rows=295408 width=40)
+                                       Recheck Cond: (p_size = ANY ('{38,10,11,12,50,33,30,14}'::integer[]))
+                                       Filter: ((p_brand <> 'Brand#51'::bpchar) AND ((p_type)::text !~~ 'MEDIUM ANODIZED%'::text))
+                                       ->  Bitmap Index Scan on part_p_size_idx  (cost=0.00..5612.42 rows=317200 width=0)
+                                             Index Cond: (p_size = ANY ('{38,10,11,12,50,33,30,14}'::integer[]))
+(20 rows)
+
+COMMIT;
+COMMIT

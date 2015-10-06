@@ -1,0 +1,72 @@
+BEGIN;
+BEGIN
+EXPLAIN
+select
+	cntrycode,
+	count(*) as numcust,
+	sum(c_acctbal) as totacctbal
+from
+	(
+		select
+			substr(c_phone, 1, 2) as cntrycode,
+			c_acctbal
+		from
+			customer
+		where
+			substr(c_phone, 1, 2) in
+				('14', '34', '26', '24', '17', '32', '23')
+			and c_acctbal > (
+				select
+					avg(c_acctbal)
+				from
+					customer
+				where
+					c_acctbal > 0.00
+					and substr(c_phone, 1, 2) in
+						('14', '34', '26', '24', '17', '32', '23')
+			)
+			and not exists (
+				select
+					*
+				from
+					orders
+				where
+					o_custkey = c_custkey
+			)
+	) as vip
+group by
+	cntrycode
+order by
+	cntrycode;
+                                                                       QUERY PLAN                                                                        
+---------------------------------------------------------------------------------------------------------------------------------------------------------
+ GroupAggregate  (cost=688297.04..783709.14 rows=1 width=20)
+   Group Key: substr((customer.c_phone)::text, 1, 2)
+   InitPlan 1 (returns $0)
+     ->  Remote Subquery Scan on all (datanode_2_1)  (cost=38543.22..38543.23 rows=1 width=4)
+           ->  Aggregate  (cost=38543.22..38543.23 rows=1 width=4)
+                 ->  Bitmap Heap Scan on customer customer_1  (cost=16.87..38423.80 rows=47764 width=4)
+                       Recheck Cond: ((substr((c_phone)::text, 1, 2) = ANY ('{14,34,26,24,17,32,23}'::text[])) AND (c_acctbal > '0'::double precision))
+                       ->  Bitmap Index Scan on customer_c_phone_idx_c_acctbal  (cost=0.00..4.93 rows=47764 width=0)
+                             Index Cond: (substr((c_phone)::text, 1, 2) = ANY ('{14,34,26,24,17,32,23}'::text[]))
+   ->  Remote Subquery Scan on all (datanode_1_1,datanode_2_1)  (cost=649753.82..745165.89 rows=1 width=20)
+         ->  GroupAggregate  (cost=649753.82..745165.89 rows=1 width=20)
+               Group Key: (substr((customer.c_phone)::text, 1, 2))
+               ->  Sort  (cost=745165.90..745165.91 rows=1 width=20)
+                     Sort Key: (substr((customer.c_phone)::text, 1, 2))
+                     ->  Hash Anti Join  (cost=649753.82..745165.89 rows=1 width=20)
+                           Hash Cond: (customer.c_custkey = orders.o_custkey)
+                           ->  Remote Subquery Scan on all (datanode_1_1)  (cost=476.62..31011.16 rows=17499 width=24)
+                                 Distribute results by H: c_custkey
+                                 ->  Bitmap Heap Scan on customer  (cost=376.62..30403.69 rows=17499 width=24)
+                                       Recheck Cond: ((substr((c_phone)::text, 1, 2) = ANY ('{14,34,26,24,17,32,23}'::text[])) AND (c_acctbal > $0))
+                                       ->  Bitmap Index Scan on customer_c_phone_idx  (cost=0.00..372.24 rows=17499 width=0)
+                                             Index Cond: ((substr((c_phone)::text, 1, 2) = ANY ('{14,34,26,24,17,32,23}'::text[])) AND (c_acctbal > $0))
+                           ->  Hash  (cost=538381.08..538381.08 rows=15000320 width=4)
+                                 ->  Remote Subquery Scan on all (datanode_1_1,datanode_2_1)  (cost=100.00..538381.08 rows=15000320 width=4)
+                                       Distribute results by H: o_custkey
+                                       ->  Seq Scan on orders  (cost=0.00..403278.20 rows=15000320 width=4)
+(26 rows)
+
+COMMIT;
+COMMIT

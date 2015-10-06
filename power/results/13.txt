@@ -1,0 +1,38 @@
+BEGIN;
+BEGIN
+EXPLAIN (ANALYZE, BUFFERS)
+select
+	c_count,
+	count(*) as custdist
+from
+	(
+		select
+			c_custkey,
+			count(o_orderkey)
+		from
+			customer left outer join orders on
+				c_custkey = o_custkey
+				and o_comment not like '%special%requests%'
+		group by
+			c_custkey
+	) as c_orders (c_custkey, c_count)
+group by
+	c_count
+order by
+	custdist desc,
+	c_count desc;
+                                                                                QUERY PLAN                                                                                
+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+ Sort  (cost=804356.36..804356.86 rows=200 width=8) (actual time=25919.110..25919.113 rows=46 loops=1)
+   Sort Key: (pg_catalog.count(*)) DESC, c_orders.c_count DESC
+   Sort Method: quicksort  Memory: 27kB
+   Buffers: shared hit=3
+   ->  HashAggregate  (cost=804346.71..804348.71 rows=200 width=8) (actual time=25919.043..25919.049 rows=46 loops=1)
+         Group Key: c_orders.c_count
+         ->  Remote Subquery Scan on all (datanode_1_1,datanode_2_1)  (cost=766848.09..796846.99 rows=1499945 width=8) (actual time=25918.936..25918.953 rows=90 loops=1)
+ Planning time: 1.559 ms
+ Execution time: 25930.756 ms
+(9 rows)
+
+COMMIT;
+COMMIT

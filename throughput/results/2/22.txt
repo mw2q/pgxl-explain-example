@@ -1,0 +1,55 @@
+BEGIN;
+BEGIN
+EXPLAIN (ANALYZE, BUFFERS)
+select
+	cntrycode,
+	count(*) as numcust,
+	sum(c_acctbal) as totacctbal
+from
+	(
+		select
+			substr(c_phone, 1, 2) as cntrycode,
+			c_acctbal
+		from
+			customer
+		where
+			substr(c_phone, 1, 2) in
+				('18', '31', '10', '25', '21', '12', '20')
+			and c_acctbal > (
+				select
+					avg(c_acctbal)
+				from
+					customer
+				where
+					c_acctbal > 0.00
+					and substr(c_phone, 1, 2) in
+						('18', '31', '10', '25', '21', '12', '20')
+			)
+			and not exists (
+				select
+					*
+				from
+					orders
+				where
+					o_custkey = c_custkey
+			)
+	) as vip
+group by
+	cntrycode
+order by
+	cntrycode;
+                                                                          QUERY PLAN                                                                           
+---------------------------------------------------------------------------------------------------------------------------------------------------------------
+ GroupAggregate  (cost=688297.04..783709.14 rows=1 width=20) (actual time=20913.403..20913.417 rows=7 loops=1)
+   Group Key: substr((customer.c_phone)::text, 1, 2)
+   Buffers: shared hit=3
+   InitPlan 1 (returns $0)
+     ->  Remote Subquery Scan on all (datanode_2_1)  (cost=38543.22..38543.23 rows=1 width=4) (actual time=304.745..304.746 rows=1 loops=1)
+   ->  Remote Subquery Scan on all (datanode_1_1,datanode_2_1)  (cost=649753.82..745165.89 rows=1 width=20) (actual time=20913.390..20913.394 rows=14 loops=1)
+         Buffers: shared hit=3
+ Planning time: 0.673 ms
+ Execution time: 20933.032 ms
+(9 rows)
+
+COMMIT;
+COMMIT

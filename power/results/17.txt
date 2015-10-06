@@ -1,0 +1,30 @@
+BEGIN;
+BEGIN
+EXPLAIN (ANALYZE, BUFFERS)
+select
+	sum(l_extendedprice) / 7.0 as avg_yearly
+from
+	lineitem,
+	part
+where
+	p_partkey = l_partkey
+	and p_brand = 'Brand#12'
+	and p_container = 'JUMBO CAN'
+	and l_quantity < (
+		select
+			0.2 * avg(l_quantity)
+		from
+			lineitem
+		where
+			l_partkey = p_partkey
+	);
+                                                                         QUERY PLAN                                                                         
+------------------------------------------------------------------------------------------------------------------------------------------------------------
+ Aggregate  (cost=334824.35..334824.36 rows=1 width=4) (actual time=1917.159..1917.159 rows=1 loops=1)
+   ->  Remote Subquery Scan on all (datanode_1_1,datanode_2_1)  (cost=137.23..334780.06 rows=17716 width=4) (actual time=1851.534..1917.112 rows=2 loops=1)
+ Planning time: 0.809 ms
+ Execution time: 1918.341 ms
+(4 rows)
+
+COMMIT;
+COMMIT

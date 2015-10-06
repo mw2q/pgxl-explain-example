@@ -1,0 +1,35 @@
+BEGIN;
+BEGIN
+EXPLAIN
+select
+	100.00 * sum(case
+		when p_type like 'PROMO%'
+			then l_extendedprice * (1 - l_discount)
+		else 0
+	end) / sum(l_extendedprice * (1 - l_discount)) as promo_revenue
+from
+	lineitem,
+	part
+where
+	l_partkey = p_partkey
+	and l_shipdate >= date '1995-04-01'
+	and l_shipdate < cast(date '1995-04-01' + interval '1 month' as date);
+                                                               QUERY PLAN                                                               
+----------------------------------------------------------------------------------------------------------------------------------------
+ Aggregate  (cost=1152290.94..1152290.95 rows=1 width=29)
+   ->  Remote Subquery Scan on all (datanode_1_1,datanode_2_1)  (cost=101315.96..1139269.70 rows=744071 width=29)
+         ->  Aggregate  (cost=101315.96..1139269.70 rows=1 width=29)
+               ->  Hash Join  (cost=101315.96..1139269.70 rows=744071 width=29)
+                     Hash Cond: (lineitem.l_partkey = part.p_partkey)
+                     ->  Remote Subquery Scan on all (datanode_1_1,datanode_2_1)  (cost=15890.92..1055332.79 rows=744071 width=12)
+                           Distribute results by H: l_partkey
+                           ->  Bitmap Heap Scan on lineitem  (cost=15790.92..1042583.59 rows=744071 width=12)
+                                 Recheck Cond: ((l_shipdate >= '1995-04-01'::date) AND (l_shipdate < '1995-05-01'::date))
+                                 ->  Bitmap Index Scan on lineitem_l_shipdate_l_suppkey__idx  (cost=0.00..15604.90 rows=744071 width=0)
+                                       Index Cond: ((l_shipdate >= '1995-04-01'::date) AND (l_shipdate < '1995-05-01'::date))
+                     ->  Hash  (cost=60525.02..60525.02 rows=2000002 width=25)
+                           ->  Seq Scan on part  (cost=0.00..60525.02 rows=2000002 width=25)
+(13 rows)
+
+COMMIT;
+COMMIT

@@ -1,0 +1,43 @@
+BEGIN;
+BEGIN
+EXPLAIN
+select
+	sum(l_extendedprice) / 7.0 as avg_yearly
+from
+	lineitem,
+	part
+where
+	p_partkey = l_partkey
+	and p_brand = 'Brand#12'
+	and p_container = 'JUMBO CAN'
+	and l_quantity < (
+		select
+			0.2 * avg(l_quantity)
+		from
+			lineitem
+		where
+			l_partkey = p_partkey
+	);
+                                                                                          QUERY PLAN                                                                                          
+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+ Aggregate  (cost=334824.35..334824.36 rows=1 width=4)
+   ->  Remote Subquery Scan on all (datanode_1_1,datanode_2_1)  (cost=137.23..334780.06 rows=17716 width=4)
+         ->  Aggregate  (cost=137.23..334780.06 rows=1 width=4)
+               ->  Nested Loop  (cost=137.23..334780.06 rows=17716 width=4)
+                     ->  Index Only Scan using part_p_container_p_brand_p_partkey_idx on part  (cost=0.18..7018.56 rows=1772 width=4)
+                           Index Cond: ((p_container = 'JUMBO CAN'::bpchar) AND (p_brand = 'Brand#12'::bpchar))
+                     ->  Materialize  (cost=237.05..285.07 rows=11 width=12)
+                           ->  Remote Subquery Scan on all (datanode_1_1,datanode_2_1)  (cost=237.05..285.04 rows=11 width=12)
+                                 Distribute results by H: l_partkey
+                                 ->  Index Scan using lineitem_l_partkey_l_quantity_l_shipmode_idx on lineitem  (cost=137.05..184.86 rows=11 width=12)
+                                       Index Cond: ((l_partkey = part.p_partkey) AND (l_quantity < (SubPlan 1)))
+                                       SubPlan 1
+                                         ->  Aggregate  (cost=136.85..136.86 rows=1 width=4)
+                                               ->  Remote Subquery Scan on all (datanode_1_1,datanode_2_1)  (cost=0.19..136.76 rows=33 width=4)
+                                                     ->  Aggregate  (cost=0.19..136.76 rows=1 width=4)
+                                                           ->  Index Only Scan using lineitem_l_partkey_l_quantity_l_shipmode_idx on lineitem lineitem_1  (cost=0.19..136.76 rows=33 width=4)
+                                                                 Index Cond: (l_partkey = part.p_partkey)
+(17 rows)
+
+COMMIT;
+COMMIT

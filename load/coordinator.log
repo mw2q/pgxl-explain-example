@@ -1,0 +1,221 @@
+2015-10-06 11:16:33 EDT [32417]: [1-1] user=,db=,app=,client= LOG:  database system was shut down at 2015-10-06 11:16:25 EDT
+2015-10-06 11:16:33 EDT [32417]: [2-1] user=,db=,app=,client= LOG:  MultiXact member wraparound protections are now enabled
+2015-10-06 11:16:33 EDT [32416]: [1-1] user=,db=,app=,client= LOG:  database system is ready to accept connections
+2015-10-06 11:16:33 EDT [32422]: [1-1] user=,db=,app=,client= LOG:  autovacuum launcher started
+2015-10-06 11:16:34 EDT [32419]: [1-1] user=,db=,app=,client= LOG:  checkpoint starting: immediate force wait flush-all
+2015-10-06 11:16:35 EDT [32419]: [2-1] user=,db=,app=,client= LOG:  checkpoint complete: wrote 9 buffers (0.0%); 0 transaction log file(s) added, 0 removed, 0 recycled; write=0.001 s, sync=0.041 s, total=0.076 s; sync files=9, longest=0.008 s, average=0.004 s; distance=4 kB, estimate=4 kB
+2015-10-06 11:16:35 EDT [32419]: [3-1] user=,db=,app=,client= LOG:  checkpoint starting: immediate force wait
+2015-10-06 11:16:35 EDT [32419]: [4-1] user=,db=,app=,client= LOG:  checkpoint complete: wrote 0 buffers (0.0%); 0 transaction log file(s) added, 0 removed, 0 recycled; write=0.000 s, sync=0.000 s, total=0.019 s; sync files=0, longest=0.000 s, average=0.000 s; distance=0 kB, estimate=3 kB
+2015-10-06 11:17:30 EDT [32656]: [1-1] user=mark,db=dbt3,app=psql,client=[local] LOG:  Getting relation statistics for public.region
+2015-10-06 11:17:30 EDT [32656]: [2-1] user=mark,db=dbt3,app=psql,client=[local] STATEMENT:  VACUUM ANALYZE region;
+2015-10-06 11:17:31 EDT [32653]: [1-1] user=mark,db=dbt3,app=psql,client=[local] LOG:  Getting relation statistics for public.nation
+2015-10-06 11:17:31 EDT [32653]: [2-1] user=mark,db=dbt3,app=psql,client=[local] STATEMENT:  VACUUM ANALYZE nation;
+2015-10-06 11:17:31 EDT [32656]: [3-1] user=mark,db=dbt3,app=psql,client=[local] LOG:  Getting relation statistics for public.region
+2015-10-06 11:17:31 EDT [32656]: [4-1] user=mark,db=dbt3,app=psql,client=[local] STATEMENT:  VACUUM ANALYZE region;
+2015-10-06 11:17:31 EDT [32656]: [5-1] user=mark,db=dbt3,app=psql,client=[local] LOG:  Getting detailed statistics for public.region
+2015-10-06 11:17:31 EDT [32656]: [6-1] user=mark,db=dbt3,app=psql,client=[local] STATEMENT:  VACUUM ANALYZE region;
+2015-10-06 11:17:31 EDT [32653]: [3-1] user=mark,db=dbt3,app=psql,client=[local] LOG:  Getting relation statistics for public.nation
+2015-10-06 11:17:31 EDT [32653]: [4-1] user=mark,db=dbt3,app=psql,client=[local] STATEMENT:  VACUUM ANALYZE nation;
+2015-10-06 11:17:31 EDT [32653]: [5-1] user=mark,db=dbt3,app=psql,client=[local] LOG:  Getting detailed statistics for public.nation
+2015-10-06 11:17:31 EDT [32653]: [6-1] user=mark,db=dbt3,app=psql,client=[local] STATEMENT:  VACUUM ANALYZE nation;
+2015-10-06 11:17:35 EDT [32662]: [1-1] user=mark,db=dbt3,app=psql,client=[local] LOG:  process 32662 still waiting for AccessExclusiveLock on relation 16387 of database 16386 after 1000.056 ms
+2015-10-06 11:17:35 EDT [32662]: [2-1] user=mark,db=dbt3,app=psql,client=[local] DETAIL:  Processes holding the lock: 32661, 32664. Wait queue: 32662.
+2015-10-06 11:17:35 EDT [32662]: [3-1] user=mark,db=dbt3,app=psql,client=[local] STATEMENT:  
+	ALTER TABLE supplier
+	ADD CONSTRAINT pk_supplier PRIMARY KEY (s_suppkey);
+2015-10-06 11:17:39 EDT [32662]: [4-1] user=mark,db=dbt3,app=psql,client=[local] LOG:  process 32662 acquired AccessExclusiveLock on relation 16387 of database 16386 after 5848.869 ms
+2015-10-06 11:17:39 EDT [32662]: [5-1] user=mark,db=dbt3,app=psql,client=[local] STATEMENT:  
+	ALTER TABLE supplier
+	ADD CONSTRAINT pk_supplier PRIMARY KEY (s_suppkey);
+2015-10-06 11:17:49 EDT [32673]: [1-1] user=mark,db=dbt3,app=psql,client=[local] LOG:  Getting relation statistics for public.supplier
+2015-10-06 11:17:49 EDT [32673]: [2-1] user=mark,db=dbt3,app=psql,client=[local] STATEMENT:  VACUUM ANALYZE supplier;
+2015-10-06 11:17:49 EDT [32673]: [3-1] user=mark,db=dbt3,app=psql,client=[local] LOG:  Getting relation statistics for public.supplier
+2015-10-06 11:17:49 EDT [32673]: [4-1] user=mark,db=dbt3,app=psql,client=[local] STATEMENT:  VACUUM ANALYZE supplier;
+2015-10-06 11:17:49 EDT [32673]: [5-1] user=mark,db=dbt3,app=psql,client=[local] LOG:  Getting detailed statistics for public.supplier
+2015-10-06 11:17:49 EDT [32673]: [6-1] user=mark,db=dbt3,app=psql,client=[local] STATEMENT:  VACUUM ANALYZE supplier;
+2015-10-06 11:18:21 EDT [32721]: [1-1] user=mark,db=dbt3,app=psql,client=[local] LOG:  process 32721 still waiting for AccessExclusiveLock on relation 16390 of database 16386 after 1000.108 ms
+2015-10-06 11:18:21 EDT [32721]: [2-1] user=mark,db=dbt3,app=psql,client=[local] DETAIL:  Process holding the lock: 32716. Wait queue: 32721, 32717, 32719, 32720.
+2015-10-06 11:18:21 EDT [32721]: [3-1] user=mark,db=dbt3,app=psql,client=[local] STATEMENT:  
+	ALTER TABLE part
+	ADD CONSTRAINT pk_part PRIMARY KEY (p_partkey);
+2015-10-06 11:18:21 EDT [32717]: [1-1] user=mark,db=dbt3,app=psql,client=[local] LOG:  process 32717 still waiting for ShareLock on relation 16390 of database 16386 after 1000.262 ms
+2015-10-06 11:18:21 EDT [32717]: [2-1] user=mark,db=dbt3,app=psql,client=[local] DETAIL:  Process holding the lock: 32716. Wait queue: 32721, 32717, 32719, 32720.
+2015-10-06 11:18:21 EDT [32717]: [3-1] user=mark,db=dbt3,app=psql,client=[local] STATEMENT:  
+	CREATE INDEX part_p_container_p_brand_p_partkey_idx
+	ON part(p_container, p_brand, p_partkey);
+2015-10-06 11:18:21 EDT [32719]: [1-1] user=mark,db=dbt3,app=psql,client=[local] LOG:  process 32719 still waiting for ShareLock on relation 16390 of database 16386 after 1000.098 ms
+2015-10-06 11:18:21 EDT [32719]: [2-1] user=mark,db=dbt3,app=psql,client=[local] DETAIL:  Process holding the lock: 32716. Wait queue: 32721, 32717, 32719, 32720.
+2015-10-06 11:18:21 EDT [32719]: [3-1] user=mark,db=dbt3,app=psql,client=[local] STATEMENT:  
+	CREATE INDEX part_p_name_idx
+	ON part(p_name);
+2015-10-06 11:18:21 EDT [32720]: [1-1] user=mark,db=dbt3,app=psql,client=[local] LOG:  process 32720 still waiting for ShareLock on relation 16390 of database 16386 after 1000.174 ms
+2015-10-06 11:18:21 EDT [32720]: [2-1] user=mark,db=dbt3,app=psql,client=[local] DETAIL:  Process holding the lock: 32716. Wait queue: 32721, 32717, 32719, 32720.
+2015-10-06 11:18:21 EDT [32720]: [3-1] user=mark,db=dbt3,app=psql,client=[local] STATEMENT:  
+	CREATE INDEX part_p_size_idx
+	ON part(p_size);
+2015-10-06 11:18:45 EDT [32721]: [4-1] user=mark,db=dbt3,app=psql,client=[local] LOG:  process 32721 acquired AccessExclusiveLock on relation 16390 of database 16386 after 25276.688 ms
+2015-10-06 11:18:45 EDT [32721]: [5-1] user=mark,db=dbt3,app=psql,client=[local] STATEMENT:  
+	ALTER TABLE part
+	ADD CONSTRAINT pk_part PRIMARY KEY (p_partkey);
+2015-10-06 11:18:57 EDT [32739]: [1-1] user=mark,db=dbt3,app=psql,client=[local] LOG:  process 32739 still waiting for AccessExclusiveLock on relation 16396 of database 16386 after 1000.061 ms
+2015-10-06 11:18:57 EDT [32739]: [2-1] user=mark,db=dbt3,app=psql,client=[local] DETAIL:  Processes holding the lock: 32737, 32736, 32735, 32738. Wait queue: 32739.
+2015-10-06 11:18:57 EDT [32739]: [3-1] user=mark,db=dbt3,app=psql,client=[local] STATEMENT:  
+	ALTER TABLE customer
+	ADD CONSTRAINT pk_customer PRIMARY KEY (c_custkey);
+2015-10-06 11:18:58 EDT [32717]: [4-1] user=mark,db=dbt3,app=psql,client=[local] LOG:  process 32717 acquired ShareLock on relation 16390 of database 16386 after 38650.441 ms
+2015-10-06 11:18:58 EDT [32717]: [5-1] user=mark,db=dbt3,app=psql,client=[local] STATEMENT:  
+	CREATE INDEX part_p_container_p_brand_p_partkey_idx
+	ON part(p_container, p_brand, p_partkey);
+2015-10-06 11:18:58 EDT [32719]: [4-1] user=mark,db=dbt3,app=psql,client=[local] LOG:  process 32719 acquired ShareLock on relation 16390 of database 16386 after 38647.206 ms
+2015-10-06 11:18:58 EDT [32719]: [5-1] user=mark,db=dbt3,app=psql,client=[local] STATEMENT:  
+	CREATE INDEX part_p_name_idx
+	ON part(p_name);
+2015-10-06 11:18:58 EDT [32720]: [4-1] user=mark,db=dbt3,app=psql,client=[local] LOG:  process 32720 acquired ShareLock on relation 16390 of database 16386 after 38647.279 ms
+2015-10-06 11:18:58 EDT [32720]: [5-1] user=mark,db=dbt3,app=psql,client=[local] STATEMENT:  
+	CREATE INDEX part_p_size_idx
+	ON part(p_size);
+2015-10-06 11:19:59 EDT [325]: [1-1] user=mark,db=dbt3,app=psql,client=[local] LOG:  process 325 still waiting for ShareLock on relation 16393 of database 16386 after 1000.053 ms
+2015-10-06 11:19:59 EDT [325]: [2-1] user=mark,db=dbt3,app=psql,client=[local] DETAIL:  Process holding the lock: 326. Wait queue: 325.
+2015-10-06 11:19:59 EDT [325]: [3-1] user=mark,db=dbt3,app=psql,client=[local] STATEMENT:  
+	CREATE INDEX partsupp_ps_suppkey_idx
+	ON partsupp (ps_suppkey);
+2015-10-06 11:20:13 EDT [32739]: [4-1] user=mark,db=dbt3,app=psql,client=[local] LOG:  process 32739 acquired AccessExclusiveLock on relation 16396 of database 16386 after 77017.181 ms
+2015-10-06 11:20:13 EDT [32739]: [5-1] user=mark,db=dbt3,app=psql,client=[local] STATEMENT:  
+	ALTER TABLE customer
+	ADD CONSTRAINT pk_customer PRIMARY KEY (c_custkey);
+2015-10-06 11:20:22 EDT [349]: [1-1] user=mark,db=dbt3,app=psql,client=[local] LOG:  Getting relation statistics for public.part
+2015-10-06 11:20:22 EDT [349]: [2-1] user=mark,db=dbt3,app=psql,client=[local] STATEMENT:  VACUUM ANALYZE part;
+2015-10-06 11:20:22 EDT [349]: [3-1] user=mark,db=dbt3,app=psql,client=[local] LOG:  Getting relation statistics for public.part
+2015-10-06 11:20:22 EDT [349]: [4-1] user=mark,db=dbt3,app=psql,client=[local] STATEMENT:  VACUUM ANALYZE part;
+2015-10-06 11:20:22 EDT [349]: [5-1] user=mark,db=dbt3,app=psql,client=[local] LOG:  Getting detailed statistics for public.part
+2015-10-06 11:20:22 EDT [349]: [6-1] user=mark,db=dbt3,app=psql,client=[local] STATEMENT:  VACUUM ANALYZE part;
+2015-10-06 11:20:25 EDT [325]: [4-1] user=mark,db=dbt3,app=psql,client=[local] LOG:  process 325 acquired ShareLock on relation 16393 of database 16386 after 27307.849 ms
+2015-10-06 11:20:25 EDT [325]: [5-1] user=mark,db=dbt3,app=psql,client=[local] STATEMENT:  
+	CREATE INDEX partsupp_ps_suppkey_idx
+	ON partsupp (ps_suppkey);
+2015-10-06 11:20:33 EDT [385]: [1-1] user=mark,db=dbt3,app=psql,client=[local] LOG:  Getting relation statistics for public.customer
+2015-10-06 11:20:33 EDT [385]: [2-1] user=mark,db=dbt3,app=psql,client=[local] STATEMENT:  VACUUM ANALYZE customer;
+2015-10-06 11:20:34 EDT [385]: [3-1] user=mark,db=dbt3,app=psql,client=[local] LOG:  Getting relation statistics for public.customer
+2015-10-06 11:20:34 EDT [385]: [4-1] user=mark,db=dbt3,app=psql,client=[local] STATEMENT:  VACUUM ANALYZE customer;
+2015-10-06 11:20:34 EDT [385]: [5-1] user=mark,db=dbt3,app=psql,client=[local] LOG:  Getting detailed statistics for public.customer
+2015-10-06 11:20:34 EDT [385]: [6-1] user=mark,db=dbt3,app=psql,client=[local] STATEMENT:  VACUUM ANALYZE customer;
+2015-10-06 11:20:36 EDT [392]: [1-1] user=mark,db=dbt3,app=psql,client=[local] LOG:  Getting relation statistics for public.partsupp
+2015-10-06 11:20:36 EDT [392]: [2-1] user=mark,db=dbt3,app=psql,client=[local] STATEMENT:  VACUUM ANALYZE partsupp;
+2015-10-06 11:20:38 EDT [392]: [3-1] user=mark,db=dbt3,app=psql,client=[local] LOG:  Getting relation statistics for public.partsupp
+2015-10-06 11:20:38 EDT [392]: [4-1] user=mark,db=dbt3,app=psql,client=[local] STATEMENT:  VACUUM ANALYZE partsupp;
+2015-10-06 11:20:38 EDT [392]: [5-1] user=mark,db=dbt3,app=psql,client=[local] LOG:  Getting detailed statistics for public.partsupp
+2015-10-06 11:20:38 EDT [392]: [6-1] user=mark,db=dbt3,app=psql,client=[local] STATEMENT:  VACUUM ANALYZE partsupp;
+2015-10-06 11:21:35 EDT [32419]: [5-1] user=,db=,app=,client= LOG:  checkpoint starting: time
+2015-10-06 11:21:48 EDT [438]: [1-1] user=mark,db=dbt3,app=psql,client=[local] LOG:  process 438 still waiting for ShareLock on relation 16399 of database 16386 after 1000.037 ms
+2015-10-06 11:21:48 EDT [438]: [2-1] user=mark,db=dbt3,app=psql,client=[local] DETAIL:  Process holding the lock: 436. Wait queue: 438, 439.
+2015-10-06 11:21:48 EDT [438]: [3-1] user=mark,db=dbt3,app=psql,client=[local] STATEMENT:  
+	CREATE INDEX orders_o_orderkey_o_orderdate_idx
+	ON orders (o_orderkey, o_orderdate);
+2015-10-06 11:21:48 EDT [439]: [1-1] user=mark,db=dbt3,app=psql,client=[local] LOG:  process 439 still waiting for ShareLock on relation 16399 of database 16386 after 1000.069 ms
+2015-10-06 11:21:48 EDT [439]: [2-1] user=mark,db=dbt3,app=psql,client=[local] DETAIL:  Process holding the lock: 436. Wait queue: 438, 439.
+2015-10-06 11:21:48 EDT [439]: [3-1] user=mark,db=dbt3,app=psql,client=[local] STATEMENT:  
+	CREATE INDEX orders_o_orderdate_o_orderkey_idx
+	ON orders (o_orderdate, o_orderkey);
+2015-10-06 11:21:57 EDT [32419]: [6-1] user=,db=,app=,client= LOG:  checkpoint complete: wrote 86 buffers (0.1%); 0 transaction log file(s) added, 0 removed, 0 recycled; write=8.658 s, sync=13.191 s, total=21.883 s; sync files=44, longest=1.236 s, average=0.299 s; distance=393 kB, estimate=393 kB
+2015-10-06 11:22:11 EDT [439]: [4-1] user=mark,db=dbt3,app=psql,client=[local] LOG:  process 439 acquired ShareLock on relation 16399 of database 16386 after 24511.434 ms
+2015-10-06 11:22:11 EDT [439]: [5-1] user=mark,db=dbt3,app=psql,client=[local] STATEMENT:  
+	CREATE INDEX orders_o_orderdate_o_orderkey_idx
+	ON orders (o_orderdate, o_orderkey);
+2015-10-06 11:22:11 EDT [438]: [4-1] user=mark,db=dbt3,app=psql,client=[local] LOG:  process 438 acquired ShareLock on relation 16399 of database 16386 after 24513.077 ms
+2015-10-06 11:22:11 EDT [438]: [5-1] user=mark,db=dbt3,app=psql,client=[local] STATEMENT:  
+	CREATE INDEX orders_o_orderkey_o_orderdate_idx
+	ON orders (o_orderkey, o_orderdate);
+2015-10-06 11:22:41 EDT [484]: [1-1] user=mark,db=dbt3,app=psql,client=[local] LOG:  Getting relation statistics for public.orders
+2015-10-06 11:22:41 EDT [484]: [2-1] user=mark,db=dbt3,app=psql,client=[local] STATEMENT:  VACUUM ANALYZE orders;
+2015-10-06 11:22:42 EDT [484]: [3-1] user=mark,db=dbt3,app=psql,client=[local] LOG:  Getting relation statistics for public.orders
+2015-10-06 11:22:42 EDT [484]: [4-1] user=mark,db=dbt3,app=psql,client=[local] STATEMENT:  VACUUM ANALYZE orders;
+2015-10-06 11:22:42 EDT [484]: [5-1] user=mark,db=dbt3,app=psql,client=[local] LOG:  Getting detailed statistics for public.orders
+2015-10-06 11:22:42 EDT [484]: [6-1] user=mark,db=dbt3,app=psql,client=[local] STATEMENT:  VACUUM ANALYZE orders;
+2015-10-06 11:26:01 EDT [613]: [1-1] user=mark,db=dbt3,app=psql,client=[local] LOG:  process 613 still waiting for ShareLock on relation 16402 of database 16386 after 1000.042 ms
+2015-10-06 11:26:01 EDT [613]: [2-1] user=mark,db=dbt3,app=psql,client=[local] DETAIL:  Process holding the lock: 611. Wait queue: 613, 612, 614, 619, 621, 620, 615.
+2015-10-06 11:26:01 EDT [613]: [3-1] user=mark,db=dbt3,app=psql,client=[local] STATEMENT:  
+	CREATE INDEX lineitem_l_orderkey_idx_l_returnflag
+	ON lineitem (l_orderkey)
+	WHERE l_returnflag = 'R';
+2015-10-06 11:26:01 EDT [612]: [1-1] user=mark,db=dbt3,app=psql,client=[local] LOG:  process 612 still waiting for ShareLock on relation 16402 of database 16386 after 1000.034 ms
+2015-10-06 11:26:01 EDT [612]: [2-1] user=mark,db=dbt3,app=psql,client=[local] DETAIL:  Process holding the lock: 611. Wait queue: 613, 612, 614, 619, 621, 620, 615.
+2015-10-06 11:26:01 EDT [612]: [3-1] user=mark,db=dbt3,app=psql,client=[local] STATEMENT:  
+	CREATE INDEX lineitem_l_partkey_l_quantity_l_shipmode_idx
+	ON lineitem (l_partkey, l_quantity, l_shipmode);
+2015-10-06 11:26:01 EDT [614]: [1-1] user=mark,db=dbt3,app=psql,client=[local] LOG:  process 614 still waiting for ShareLock on relation 16402 of database 16386 after 1000.039 ms
+2015-10-06 11:26:01 EDT [614]: [2-1] user=mark,db=dbt3,app=psql,client=[local] DETAIL:  Process holding the lock: 611. Wait queue: 613, 612, 614, 619, 621, 620, 615.
+2015-10-06 11:26:01 EDT [614]: [3-1] user=mark,db=dbt3,app=psql,client=[local] STATEMENT:  
+	CREATE INDEX lineitem_l_orderkey_idx_part1
+	ON lineitem (l_orderkey)
+	WHERE l_commitdate < l_receiptdate;
+2015-10-06 11:26:01 EDT [619]: [1-1] user=mark,db=dbt3,app=psql,client=[local] LOG:  process 619 still waiting for ShareLock on relation 16402 of database 16386 after 1000.023 ms
+2015-10-06 11:26:01 EDT [619]: [2-1] user=mark,db=dbt3,app=psql,client=[local] DETAIL:  Process holding the lock: 611. Wait queue: 613, 612, 614, 619, 621, 620, 615.
+2015-10-06 11:26:01 EDT [619]: [3-1] user=mark,db=dbt3,app=psql,client=[local] STATEMENT:  
+	CREATE INDEX lineitem_l_orderkey_l_linenumber_l_shipdate_idx
+	ON lineitem (l_orderkey, l_linenumber, l_shipdate);
+2015-10-06 11:26:01 EDT [621]: [1-1] user=mark,db=dbt3,app=psql,client=[local] LOG:  process 621 still waiting for ShareLock on relation 16402 of database 16386 after 1000.266 ms
+2015-10-06 11:26:01 EDT [621]: [2-1] user=mark,db=dbt3,app=psql,client=[local] DETAIL:  Process holding the lock: 611. Wait queue: 613, 612, 614, 619, 621, 620, 615.
+2015-10-06 11:26:01 EDT [621]: [3-1] user=mark,db=dbt3,app=psql,client=[local] STATEMENT:  
+	CREATE INDEX lineitem_l_orderkey_idx_part2
+	ON lineitem (l_orderkey)
+	WHERE l_commitdate < l_receiptdate
+	  AND l_shipdate < l_commitdate;
+2015-10-06 11:26:01 EDT [620]: [1-1] user=mark,db=dbt3,app=psql,client=[local] LOG:  process 620 still waiting for ShareLock on relation 16402 of database 16386 after 1000.049 ms
+2015-10-06 11:26:01 EDT [620]: [2-1] user=mark,db=dbt3,app=psql,client=[local] DETAIL:  Process holding the lock: 611. Wait queue: 613, 612, 614, 619, 621, 620, 615.
+2015-10-06 11:26:01 EDT [620]: [3-1] user=mark,db=dbt3,app=psql,client=[local] STATEMENT:  
+	CREATE INDEX lineitem_l_orderkey_idx
+	ON lineitem (l_orderkey);
+2015-10-06 11:26:01 EDT [615]: [1-1] user=mark,db=dbt3,app=psql,client=[local] LOG:  process 615 still waiting for ShareLock on relation 16402 of database 16386 after 1000.021 ms
+2015-10-06 11:26:01 EDT [615]: [2-1] user=mark,db=dbt3,app=psql,client=[local] DETAIL:  Process holding the lock: 611. Wait queue: 613, 612, 614, 619, 621, 620, 615.
+2015-10-06 11:26:01 EDT [615]: [3-1] user=mark,db=dbt3,app=psql,client=[local] STATEMENT:  
+	CREATE INDEX lineitem_l_shipdate_l_suppkey__idx
+	ON lineitem (l_shipdate, l_suppkey);
+2015-10-06 11:26:35 EDT [32419]: [7-1] user=,db=,app=,client= LOG:  checkpoint starting: time
+2015-10-06 11:26:39 EDT [32419]: [8-1] user=,db=,app=,client= LOG:  checkpoint complete: wrote 33 buffers (0.1%); 0 transaction log file(s) added, 0 removed, 0 recycled; write=3.208 s, sync=0.113 s, total=3.347 s; sync files=23, longest=0.010 s, average=0.004 s; distance=153 kB, estimate=369 kB
+2015-10-06 11:26:51 EDT [613]: [4-1] user=mark,db=dbt3,app=psql,client=[local] LOG:  process 613 acquired ShareLock on relation 16402 of database 16386 after 50551.077 ms
+2015-10-06 11:26:51 EDT [613]: [5-1] user=mark,db=dbt3,app=psql,client=[local] STATEMENT:  
+	CREATE INDEX lineitem_l_orderkey_idx_l_returnflag
+	ON lineitem (l_orderkey)
+	WHERE l_returnflag = 'R';
+2015-10-06 11:26:51 EDT [612]: [4-1] user=mark,db=dbt3,app=psql,client=[local] LOG:  process 612 acquired ShareLock on relation 16402 of database 16386 after 50551.062 ms
+2015-10-06 11:26:51 EDT [612]: [5-1] user=mark,db=dbt3,app=psql,client=[local] STATEMENT:  
+	CREATE INDEX lineitem_l_partkey_l_quantity_l_shipmode_idx
+	ON lineitem (l_partkey, l_quantity, l_shipmode);
+2015-10-06 11:26:51 EDT [619]: [4-1] user=mark,db=dbt3,app=psql,client=[local] LOG:  process 619 acquired ShareLock on relation 16402 of database 16386 after 50540.836 ms
+2015-10-06 11:26:51 EDT [619]: [5-1] user=mark,db=dbt3,app=psql,client=[local] STATEMENT:  
+	CREATE INDEX lineitem_l_orderkey_l_linenumber_l_shipdate_idx
+	ON lineitem (l_orderkey, l_linenumber, l_shipdate);
+2015-10-06 11:26:51 EDT [614]: [4-1] user=mark,db=dbt3,app=psql,client=[local] LOG:  process 614 acquired ShareLock on relation 16402 of database 16386 after 50540.987 ms
+2015-10-06 11:26:51 EDT [614]: [5-1] user=mark,db=dbt3,app=psql,client=[local] STATEMENT:  
+	CREATE INDEX lineitem_l_orderkey_idx_part1
+	ON lineitem (l_orderkey)
+	WHERE l_commitdate < l_receiptdate;
+2015-10-06 11:26:51 EDT [621]: [4-1] user=mark,db=dbt3,app=psql,client=[local] LOG:  process 621 acquired ShareLock on relation 16402 of database 16386 after 50541.098 ms
+2015-10-06 11:26:51 EDT [621]: [5-1] user=mark,db=dbt3,app=psql,client=[local] STATEMENT:  
+	CREATE INDEX lineitem_l_orderkey_idx_part2
+	ON lineitem (l_orderkey)
+	WHERE l_commitdate < l_receiptdate
+	  AND l_shipdate < l_commitdate;
+2015-10-06 11:26:51 EDT [620]: [4-1] user=mark,db=dbt3,app=psql,client=[local] LOG:  process 620 acquired ShareLock on relation 16402 of database 16386 after 50539.952 ms
+2015-10-06 11:26:51 EDT [620]: [5-1] user=mark,db=dbt3,app=psql,client=[local] STATEMENT:  
+	CREATE INDEX lineitem_l_orderkey_idx
+	ON lineitem (l_orderkey);
+2015-10-06 11:26:51 EDT [615]: [4-1] user=mark,db=dbt3,app=psql,client=[local] LOG:  process 615 acquired ShareLock on relation 16402 of database 16386 after 50540.019 ms
+2015-10-06 11:26:51 EDT [615]: [5-1] user=mark,db=dbt3,app=psql,client=[local] STATEMENT:  
+	CREATE INDEX lineitem_l_shipdate_l_suppkey__idx
+	ON lineitem (l_shipdate, l_suppkey);
+2015-10-06 11:31:04 EDT [843]: [1-1] user=,db=,app=,client= LOG:  Getting relation statistics for public.lineitem
+2015-10-06 11:31:04 EDT [843]: [2-1] user=,db=,app=,client= LOG:  Getting detailed statistics for public.lineitem
+2015-10-06 11:31:08 EDT [836]: [1-1] user=mark,db=dbt3,app=psql,client=[local] LOG:  Getting relation statistics for public.lineitem
+2015-10-06 11:31:08 EDT [836]: [2-1] user=mark,db=dbt3,app=psql,client=[local] STATEMENT:  VACUUM ANALYZE lineitem;
+2015-10-06 11:31:08 EDT [836]: [3-1] user=mark,db=dbt3,app=psql,client=[local] LOG:  Getting relation statistics for public.lineitem
+2015-10-06 11:31:08 EDT [836]: [4-1] user=mark,db=dbt3,app=psql,client=[local] STATEMENT:  VACUUM ANALYZE lineitem;
+2015-10-06 11:31:08 EDT [836]: [5-1] user=mark,db=dbt3,app=psql,client=[local] LOG:  Getting detailed statistics for public.lineitem
+2015-10-06 11:31:08 EDT [836]: [6-1] user=mark,db=dbt3,app=psql,client=[local] STATEMENT:  VACUUM ANALYZE lineitem;
+2015-10-06 11:31:10 EDT [32416]: [2-1] user=,db=,app=,client= LOG:  received fast shutdown request
+2015-10-06 11:31:10 EDT [32416]: [3-1] user=,db=,app=,client= LOG:  aborting any active transactions
+2015-10-06 11:31:10 EDT [32422]: [2-1] user=,db=,app=,client= LOG:  autovacuum launcher shutting down
+2015-10-06 11:31:10 EDT [32419]: [9-1] user=,db=,app=,client= LOG:  shutting down
+2015-10-06 11:31:10 EDT [32419]: [10-1] user=,db=,app=,client= LOG:  checkpoint starting: shutdown immediate
+2015-10-06 11:31:10 EDT [32419]: [11-1] user=,db=,app=,client= LOG:  checkpoint complete: wrote 54 buffers (0.1%); 0 transaction log file(s) added, 0 removed, 0 recycled; write=0.001 s, sync=0.115 s, total=0.156 s; sync files=26, longest=0.008 s, average=0.004 s; distance=254 kB, estimate=358 kB
+2015-10-06 11:31:10 EDT [32419]: [12-1] user=,db=,app=,client= LOG:  database system is shut down

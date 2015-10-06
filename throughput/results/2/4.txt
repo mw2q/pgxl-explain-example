@@ -1,0 +1,39 @@
+BEGIN;
+BEGIN
+EXPLAIN (ANALYZE, BUFFERS)
+select
+	o_orderpriority,
+	count(*) as order_count
+from
+	orders
+where
+	o_orderdate >= date '1993-02-01'
+	and o_orderdate < cast(date '1993-02-01' + interval '3 month' as date)
+	and exists (
+		select
+			*
+		from
+			lineitem
+		where
+			l_orderkey = o_orderkey
+			and l_commitdate < l_receiptdate
+	)
+group by
+	o_orderpriority
+order by
+	o_orderpriority;
+                                                                               QUERY PLAN                                                                                
+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+ Sort  (cost=1408274.32..1408274.33 rows=1 width=16) (actual time=15840.391..15840.392 rows=5 loops=1)
+   Sort Key: orders.o_orderpriority
+   Sort Method: quicksort  Memory: 25kB
+   Buffers: shared hit=5
+   ->  HashAggregate  (cost=1408274.30..1408274.31 rows=1 width=16) (actual time=15840.325..15840.327 rows=5 loops=1)
+         Group Key: orders.o_orderpriority
+         ->  Remote Subquery Scan on all (datanode_1_1,datanode_2_1)  (cost=11961.64..1408190.37 rows=16786 width=16) (actual time=11456.991..15840.247 rows=10 loops=1)
+ Planning time: 0.963 ms
+ Execution time: 15847.200 ms
+(9 rows)
+
+COMMIT;
+COMMIT

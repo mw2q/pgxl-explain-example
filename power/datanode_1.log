@@ -1,0 +1,104 @@
+2015-10-06 11:31:22 EDT [6534]: [1-1] user=,db=,app=,client= LOG:  database system was shut down at 2015-10-06 11:31:17 EDT
+2015-10-06 11:31:22 EDT [6534]: [2-1] user=,db=,app=,client= LOG:  MultiXact member wraparound protections are now enabled
+2015-10-06 11:31:22 EDT [6533]: [1-1] user=,db=,app=,client= LOG:  database system is ready to accept connections
+2015-10-06 11:31:22 EDT [6539]: [1-1] user=,db=,app=,client= LOG:  autovacuum launcher started
+2015-10-06 11:31:36 EDT [6536]: [1-1] user=,db=,app=,client= LOG:  checkpoints are occurring too frequently (14 seconds apart)
+2015-10-06 11:31:36 EDT [6536]: [2-1] user=,db=,app=,client= HINT:  Consider increasing the configuration parameter "max_wal_size".
+2015-10-06 11:31:36 EDT [6536]: [3-1] user=,db=,app=,client= LOG:  checkpoint starting: xlog
+2015-10-06 11:31:59 EDT [6536]: [4-1] user=,db=,app=,client= LOG:  checkpoint complete: wrote 5659 buffers (8.6%); 0 transaction log file(s) added, 0 removed, 1 recycled; write=13.560 s, sync=7.116 s, total=23.734 s; sync files=25, longest=1.172 s, average=0.284 s; distance=407019 kB, estimate=407019 kB
+2015-10-06 11:32:02 EDT [6584]: [1-1] user=mark,db=dbt3,app=pgxc,client=10.0.3.116 LOG:  Producer stats: total 375026 tuples, 187425 tuples to self, 187601 to other nodes
+2015-10-06 11:32:02 EDT [6584]: [2-1] user=mark,db=dbt3,app=pgxc,client=10.0.3.116 LOG:  Producer p_1_4bb_1 is done
+2015-10-06 11:32:02 EDT [6584]: [3-1] user=mark,db=dbt3,app=pgxc,client=10.0.3.116 LOG:  Tuplestore p_1_4bb_1 producer store did 187425 writes and 187425 reads, it spilled to disk after 0 writes and 0 reads, now deleted 0 memtuples out of 1
+2015-10-06 11:32:44 EDT [6547]: [1-1] user=mark,db=dbt3,app=pgxc,client=10.0.3.115 ERROR:  canceling statement due to statement timeout
+2015-10-06 11:32:44 EDT [6547]: [2-1] user=mark,db=dbt3,app=pgxc,client=10.0.3.115 STATEMENT:  Remote Subplan
+2015-10-06 11:32:44 EDT [6547]: [3-1] user=mark,db=dbt3,app=pgxc,client=10.0.3.115 LOG:  Connection error canceling statement due to statement timeout
+2015-10-06 11:32:44 EDT [6583]: [1-1] user=mark,db=dbt3,app=pgxc,client=127.0.0.1 LOG:  Connection error canceling statement due to statement timeout
+2015-10-06 11:32:44 EDT [6586]: [1-1] user=mark,db=dbt3,app=pgxc,client=127.0.0.1 ERROR:  canceling statement due to statement timeout
+2015-10-06 11:32:44 EDT [6583]: [2-1] user=mark,db=dbt3,app=pgxc,client=127.0.0.1 LOG:  Connection error canceling statement due to statement timeout
+2015-10-06 11:32:44 EDT [6586]: [2-1] user=mark,db=dbt3,app=pgxc,client=127.0.0.1 LOG:  Producer p_1_4dd_1 is done
+2015-10-06 11:32:44 EDT [6586]: [3-1] user=mark,db=dbt3,app=pgxc,client=127.0.0.1 LOG:  Producer p_1_4dd_2 is done
+2015-10-06 11:32:44 EDT [6583]: [3-1] user=mark,db=dbt3,app=pgxc,client=127.0.0.1 ERROR:  canceling statement due to statement timeout
+2015-10-06 11:32:44 EDT [6584]: [4-1] user=mark,db=dbt3,app=pgxc,client=10.0.3.116 ERROR:  Failed to read from shared queue - producer failed and set status to 2
+2015-10-06 11:32:44 EDT [6584]: [5-1] user=mark,db=dbt3,app=pgxc,client=10.0.3.116 STATEMENT:  Remote Subplan
+2015-10-06 11:32:44 EDT [6586]: [4-1] user=mark,db=dbt3,app=pgxc,client=127.0.0.1 LOG:  Tuplestore p_1_4dd_1 producer store did 2390545 writes and 2390000 reads, it spilled to disk after 0 writes and 0 reads, now deleted 0 memtuples out of 546
+2015-10-06 11:32:44 EDT [6586]: [5-1] user=mark,db=dbt3,app=pgxc,client=127.0.0.1 STATEMENT:  ROLLBACK TRANSACTION
+2015-10-06 11:32:44 EDT [6586]: [6-1] user=mark,db=dbt3,app=pgxc,client=127.0.0.1 LOG:  Tuplestore p_1_4dd_2 producer store did 108530 writes and 108530 reads, it spilled to disk after 0 writes and 0 reads, now deleted 0 memtuples out of 1
+2015-10-06 11:32:44 EDT [6586]: [7-1] user=mark,db=dbt3,app=pgxc,client=127.0.0.1 STATEMENT:  ROLLBACK TRANSACTION
+2015-10-06 11:32:44 EDT [6583]: [4-1] user=mark,db=dbt3,app=pgxc,client=127.0.0.1 LOG:  Connection error could not send data to server
+2015-10-06 11:32:44 EDT [6583]: [5-1] user=mark,db=dbt3,app=pgxc,client=127.0.0.1 LOG:  Connection error failed to send data to datanode
+2015-10-06 11:32:44 EDT [6583]: [6-1] user=mark,db=dbt3,app=pgxc,client=127.0.0.1 ERROR:  Failed to synchronize data node
+2015-10-06 11:32:44 EDT [6583]: [7-1] user=mark,db=dbt3,app=pgxc,client=127.0.0.1 WARNING:  AbortTransaction while in ABORT state
+2015-10-06 11:32:44 EDT [6583]: [8-1] user=mark,db=dbt3,app=pgxc,client=127.0.0.1 FATAL:  terminating connection because protocol sync was lost
+2015-10-06 11:32:44 EDT [6583]: [9-1] user=mark,db=dbt3,app=pgxc,client=127.0.0.1 LOG:  Tuplestore p_1_4dd_3 producer store did 129629 writes and 129000 reads, it spilled to disk after 0 writes and 0 reads, now deleted 0 memtuples out of 630
+2015-10-06 11:32:44 EDT [6547]: [4-1] user=mark,db=dbt3,app=pgxc,client=10.0.3.115 LOG:  Connection error failed to send ROLLBACK TRANSACTION command
+2015-10-06 11:32:44 EDT [6547]: [5-1] user=mark,db=dbt3,app=pgxc,client=10.0.3.115 LOG:  Connection error canceling statement due to statement timeout
+2015-10-06 11:32:44 EDT [6547]: [6-1] user=mark,db=dbt3,app=pgxc,client=10.0.3.115 LOG:  Connection error canceling statement due to statement timeout
+2015-10-06 11:32:44 EDT [6547]: [7-1] user=mark,db=dbt3,app=pgxc,client=10.0.3.115 LOG:  Connection error canceling statement due to statement timeout
+2015-10-06 11:32:44 EDT [6547]: [8-1] user=mark,db=dbt3,app=pgxc,client=10.0.3.115 LOG:  Connection error Datanode closed the connection unexpectedly
+		This probably means the Datanode terminated abnormally
+		before or while processing the request.
+	
+2015-10-06 11:32:44 EDT [6547]: [9-1] user=mark,db=dbt3,app=pgxc,client=10.0.3.115 LOG:  Connection error unexpected EOF on datanode connection
+2015-10-06 11:32:44 EDT [6547]: [10-1] user=mark,db=dbt3,app=pgxc,client=10.0.3.115 WARNING:  unexpected EOF on datanode connection
+2015-10-06 11:32:44 EDT [6547]: [11-1] user=mark,db=dbt3,app=pgxc,client=10.0.3.115 ERROR:  canceling statement due to statement timeout
+2015-10-06 11:32:44 EDT [6547]: [12-1] user=mark,db=dbt3,app=pgxc,client=10.0.3.115 LOG:  Connection error failed to send ROLLBACK TRANSACTION command
+2015-10-06 11:33:15 EDT [6595]: [1-1] user=mark,db=dbt3,app=pgxc,client=10.0.3.115 ERROR:  canceling statement due to statement timeout
+2015-10-06 11:33:15 EDT [6595]: [2-1] user=mark,db=dbt3,app=pgxc,client=10.0.3.115 STATEMENT:  Remote Subplan
+2015-10-06 11:33:46 EDT [6597]: [1-1] user=mark,db=dbt3,app=pgxc,client=10.0.3.115 ERROR:  canceling statement due to statement timeout
+2015-10-06 11:33:46 EDT [6597]: [2-1] user=mark,db=dbt3,app=pgxc,client=10.0.3.115 STATEMENT:  Remote Subplan
+2015-10-06 11:34:20 EDT [6606]: [1-1] user=mark,db=dbt3,app=pgxc,client=10.0.3.115 ERROR:  canceling statement due to statement timeout
+2015-10-06 11:34:20 EDT [6606]: [2-1] user=mark,db=dbt3,app=pgxc,client=10.0.3.115 STATEMENT:  Remote Subplan
+2015-10-06 11:34:31 EDT [6586]: [8-1] user=mark,db=dbt3,app=pgxc,client=127.0.0.1 LOG:  Tuplestore p_1_577_2 node 0 did 878 writes and 878 reads, it spilled to disk after 0 writes and 0 reads, now deleted 0 memtuples out of 1
+2015-10-06 11:34:31 EDT [6586]: [9-1] user=mark,db=dbt3,app=pgxc,client=127.0.0.1 STATEMENT:  Remote Subplan
+2015-10-06 11:34:31 EDT [6586]: [10-1] user=mark,db=dbt3,app=pgxc,client=127.0.0.1 LOG:  Producer stats: total 202058 tuples, 100527 tuples to self, 101531 to other nodes
+2015-10-06 11:34:31 EDT [6586]: [11-1] user=mark,db=dbt3,app=pgxc,client=127.0.0.1 LOG:  Producer p_1_577_2 is done
+2015-10-06 11:34:31 EDT [6586]: [12-1] user=mark,db=dbt3,app=pgxc,client=127.0.0.1 LOG:  Tuplestore p_1_577_2 producer store did 100527 writes and 100527 reads, it spilled to disk after 0 writes and 0 reads, now deleted 0 memtuples out of 1
+2015-10-06 11:35:03 EDT [6612]: [1-1] user=mark,db=dbt3,app=pgxc,client=10.0.3.115 ERROR:  canceling statement due to statement timeout
+2015-10-06 11:35:03 EDT [6612]: [2-1] user=mark,db=dbt3,app=pgxc,client=10.0.3.115 STATEMENT:  Remote Subplan
+2015-10-06 11:35:03 EDT [6612]: [3-1] user=mark,db=dbt3,app=pgxc,client=10.0.3.115 LOG:  temporary file: path "base/pgsql_tmp/pgsql_tmp6612.13", size 3284992
+2015-10-06 11:35:03 EDT [6612]: [4-1] user=mark,db=dbt3,app=pgxc,client=10.0.3.115 LOG:  temporary file: path "base/pgsql_tmp/pgsql_tmp6612.12", size 3252224
+2015-10-06 11:35:03 EDT [6612]: [5-1] user=mark,db=dbt3,app=pgxc,client=10.0.3.115 LOG:  temporary file: path "base/pgsql_tmp/pgsql_tmp6612.11", size 3276800
+2015-10-06 11:35:03 EDT [6612]: [6-1] user=mark,db=dbt3,app=pgxc,client=10.0.3.115 LOG:  temporary file: path "base/pgsql_tmp/pgsql_tmp6612.10", size 3260416
+2015-10-06 11:35:03 EDT [6612]: [7-1] user=mark,db=dbt3,app=pgxc,client=10.0.3.115 LOG:  temporary file: path "base/pgsql_tmp/pgsql_tmp6612.9", size 3244032
+2015-10-06 11:35:03 EDT [6612]: [8-1] user=mark,db=dbt3,app=pgxc,client=10.0.3.115 LOG:  temporary file: path "base/pgsql_tmp/pgsql_tmp6612.8", size 3260416
+2015-10-06 11:35:03 EDT [6612]: [9-1] user=mark,db=dbt3,app=pgxc,client=10.0.3.115 LOG:  temporary file: path "base/pgsql_tmp/pgsql_tmp6612.7", size 3252224
+2015-10-06 11:35:03 EDT [6612]: [10-1] user=mark,db=dbt3,app=pgxc,client=10.0.3.115 LOG:  temporary file: path "base/pgsql_tmp/pgsql_tmp6612.6", size 105111552
+2015-10-06 11:35:03 EDT [6612]: [11-1] user=mark,db=dbt3,app=pgxc,client=10.0.3.115 LOG:  temporary file: path "base/pgsql_tmp/pgsql_tmp6612.5", size 105086976
+2015-10-06 11:35:03 EDT [6612]: [12-1] user=mark,db=dbt3,app=pgxc,client=10.0.3.115 LOG:  temporary file: path "base/pgsql_tmp/pgsql_tmp6612.4", size 104947712
+2015-10-06 11:35:03 EDT [6612]: [13-1] user=mark,db=dbt3,app=pgxc,client=10.0.3.115 LOG:  temporary file: path "base/pgsql_tmp/pgsql_tmp6612.3", size 105168896
+2015-10-06 11:35:03 EDT [6612]: [14-1] user=mark,db=dbt3,app=pgxc,client=10.0.3.115 LOG:  temporary file: path "base/pgsql_tmp/pgsql_tmp6612.2", size 105054208
+2015-10-06 11:35:03 EDT [6612]: [15-1] user=mark,db=dbt3,app=pgxc,client=10.0.3.115 LOG:  temporary file: path "base/pgsql_tmp/pgsql_tmp6612.1", size 104857600
+2015-10-06 11:35:03 EDT [6612]: [16-1] user=mark,db=dbt3,app=pgxc,client=10.0.3.115 LOG:  temporary file: path "base/pgsql_tmp/pgsql_tmp6612.0", size 105029632
+2015-10-06 11:35:30 EDT [6587]: [1-1] user=mark,db=dbt3,app=pgxc,client=10.0.3.116 LOG:  Producer stats: total 7422706 tuples, 3713315 tuples to self, 3709391 to other nodes
+2015-10-06 11:35:30 EDT [6587]: [2-1] user=mark,db=dbt3,app=pgxc,client=10.0.3.116 LOG:  Producer p_1_5bc_1 is done
+2015-10-06 11:35:30 EDT [6587]: [3-1] user=mark,db=dbt3,app=pgxc,client=10.0.3.116 LOG:  Tuplestore p_1_5bc_1 producer store did 3713315 writes and 3713315 reads, it spilled to disk after 0 writes and 0 reads, now deleted 0 memtuples out of 1
+2015-10-06 11:35:30 EDT [6587]: [4-1] user=mark,db=dbt3,app=pgxc,client=10.0.3.116 LOG:  Producer stats: total 1500000 tuples, 751007 tuples to self, 748993 to other nodes
+2015-10-06 11:35:30 EDT [6587]: [5-1] user=mark,db=dbt3,app=pgxc,client=10.0.3.116 LOG:  Producer p_1_5bc_2 is done
+2015-10-06 11:35:30 EDT [6587]: [6-1] user=mark,db=dbt3,app=pgxc,client=10.0.3.116 LOG:  Tuplestore p_1_5bc_2 producer store did 751007 writes and 751007 reads, it spilled to disk after 0 writes and 0 reads, now deleted 0 memtuples out of 1
+2015-10-06 11:36:00 EDT [6622]: [1-1] user=mark,db=dbt3,app=pgxc,client=10.0.3.115 LOG:  temporary file: path "base/pgsql_tmp/pgsql_tmp6622.0", size 90211224
+2015-10-06 11:36:00 EDT [6622]: [2-1] user=mark,db=dbt3,app=pgxc,client=10.0.3.115 STATEMENT:  Remote Subplan
+2015-10-06 11:36:00 EDT [6622]: [3-1] user=mark,db=dbt3,app=pgxc,client=10.0.3.115 LOG:  temporary file: path "base/pgsql_tmp/pgsql_tmp6622.1", size 2082828
+2015-10-06 11:36:00 EDT [6622]: [4-1] user=mark,db=dbt3,app=pgxc,client=10.0.3.115 STATEMENT:  Remote Subplan
+2015-10-06 11:36:01 EDT [6587]: [7-1] user=mark,db=dbt3,app=pgxc,client=10.0.3.116 LOG:  Producer stats: total 7504094 tuples, 3753880 tuples to self, 3750214 to other nodes
+2015-10-06 11:36:01 EDT [6587]: [8-1] user=mark,db=dbt3,app=pgxc,client=10.0.3.116 LOG:  Producer p_1_5fd_3 is done
+2015-10-06 11:36:01 EDT [6587]: [9-1] user=mark,db=dbt3,app=pgxc,client=10.0.3.116 LOG:  Tuplestore p_1_5fd_3 producer store did 3753880 writes and 3753880 reads, it spilled to disk after 0 writes and 0 reads, now deleted 0 memtuples out of 1
+2015-10-06 11:36:37 EDT [6536]: [5-1] user=,db=,app=,client= LOG:  checkpoint starting: time
+2015-10-06 11:36:37 EDT [6536]: [6-1] user=,db=,app=,client= LOG:  checkpoint complete: wrote 0 buffers (0.0%); 0 transaction log file(s) added, 0 removed, 25 recycled; write=0.001 s, sync=0.006 s, total=0.034 s; sync files=11, longest=0.004 s, average=0.000 s; distance=18383 kB, estimate=368156 kB
+2015-10-06 11:37:21 EDT [6622]: [5-1] user=mark,db=dbt3,app=pgxc,client=10.0.3.115 ERROR:  canceling statement due to statement timeout
+2015-10-06 11:37:21 EDT [6622]: [6-1] user=mark,db=dbt3,app=pgxc,client=10.0.3.115 STATEMENT:  Remote Subplan
+2015-10-06 11:37:52 EDT [6641]: [1-1] user=mark,db=dbt3,app=pgxc,client=10.0.3.115 ERROR:  canceling statement due to statement timeout
+2015-10-06 11:37:52 EDT [6641]: [2-1] user=mark,db=dbt3,app=pgxc,client=10.0.3.115 STATEMENT:  Remote Subplan
+2015-10-06 11:38:28 EDT [6650]: [1-1] user=mark,db=dbt3,app=pgxc,client=10.0.3.115 LOG:  temporary file: path "base/pgsql_tmp/pgsql_tmp6650.0", size 150055560
+2015-10-06 11:38:28 EDT [6650]: [2-1] user=mark,db=dbt3,app=pgxc,client=10.0.3.115 STATEMENT:  Remote Subplan
+2015-10-06 11:38:28 EDT [6650]: [3-1] user=mark,db=dbt3,app=pgxc,client=10.0.3.115 LOG:  temporary file: path "base/pgsql_tmp/pgsql_tmp6650.1", size 2794896
+2015-10-06 11:38:28 EDT [6650]: [4-1] user=mark,db=dbt3,app=pgxc,client=10.0.3.115 STATEMENT:  Remote Subplan
+2015-10-06 11:38:35 EDT [6533]: [2-1] user=,db=,app=,client= LOG:  received fast shutdown request
+2015-10-06 11:38:35 EDT [6533]: [3-1] user=,db=,app=,client= LOG:  aborting any active transactions
+2015-10-06 11:38:35 EDT [6539]: [2-1] user=,db=,app=,client= LOG:  autovacuum launcher shutting down
+2015-10-06 11:38:35 EDT [6586]: [13-1] user=mark,db=dbt3,app=pgxc,client=127.0.0.1 FATAL:  terminating connection due to administrator command
+2015-10-06 11:38:35 EDT [6607]: [1-1] user=mark,db=dbt3,app=pgxc,client=127.0.0.1 FATAL:  terminating connection due to administrator command
+2015-10-06 11:38:35 EDT [6609]: [1-1] user=mark,db=dbt3,app=pgxc,client=127.0.0.1 FATAL:  terminating connection due to administrator command
+2015-10-06 11:38:35 EDT [6536]: [7-1] user=,db=,app=,client= LOG:  shutting down
+2015-10-06 11:38:35 EDT [6536]: [8-1] user=,db=,app=,client= LOG:  checkpoint starting: shutdown immediate
+2015-10-06 11:38:35 EDT [6536]: [9-1] user=,db=,app=,client= LOG:  checkpoint complete: wrote 741 buffers (1.1%); 0 transaction log file(s) added, 1 removed, 0 recycled; write=0.005 s, sync=0.134 s, total=0.169 s; sync files=29, longest=0.013 s, average=0.004 s; distance=7568 kB, estimate=332097 kB
+2015-10-06 11:38:35 EDT [6536]: [10-1] user=,db=,app=,client= LOG:  database system is shut down

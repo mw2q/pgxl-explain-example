@@ -1,0 +1,52 @@
+BEGIN;
+BEGIN
+EXPLAIN (ANALYZE, BUFFERS)
+select
+	c_custkey,
+	c_name,
+	sum(l_extendedprice * (1 - l_discount)) as revenue,
+	c_acctbal,
+	n_name,
+	c_address,
+	c_phone,
+	c_comment
+from
+	customer,
+	orders,
+	lineitem,
+	nation
+where
+	c_custkey = o_custkey
+	and l_orderkey = o_orderkey
+	and o_orderdate >= date '1994-05-01'
+	and o_orderdate < cast(date '1994-05-01' + interval '3 month' as date)
+	and l_returnflag = 'R'
+	and c_nationkey = n_nationkey
+group by
+	c_custkey,
+	c_name,
+	c_acctbal,
+	c_phone,
+	n_name,
+	c_address,
+	c_comment
+order by
+	revenue desc
+LIMIT 20;
+                                                                                      QUERY PLAN                                                                                      
+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+ Limit  (cost=1711385.14..1711385.19 rows=20 width=175) (actual time=14940.635..14940.639 rows=20 loops=1)
+   Buffers: shared hit=3
+   ->  Sort  (cost=1711385.14..1712621.01 rows=494348 width=175) (actual time=14940.632..14940.634 rows=20 loops=1)
+         Sort Key: (sum((sum((lineitem.l_extendedprice * ('1'::double precision - lineitem.l_discount)))))) DESC
+         Sort Method: top-N heapsort  Memory: 30kB
+         Buffers: shared hit=3
+         ->  HashAggregate  (cost=1693287.24..1698230.72 rows=494348 width=175) (actual time=14765.591..14836.124 rows=380948 loops=1)
+               Group Key: customer.c_custkey, customer.c_name, customer.c_acctbal, customer.c_phone, nation.n_name, customer.c_address, customer.c_comment
+               ->  Remote Subquery Scan on all (datanode_1_1,datanode_2_1)  (cost=352721.13..1680928.54 rows=494348 width=175) (actual time=12373.694..13010.060 rows=431325 loops=1)
+ Planning time: 1.141 ms
+ Execution time: 15006.096 ms
+(11 rows)
+
+COMMIT;
+COMMIT
